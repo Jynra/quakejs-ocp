@@ -31,16 +31,12 @@ ENV QJS_G_GAMETYPE="0"
 # 3 q3dm7, pro-q3tourney2, pro-q3tourney4, pro-q3dm6, pro-q3dm13
 # 4 q3tourney6_ctf
 
-ENV QJS_MAP="q3dm7" \
-    && ENV QJS_CAPTURELIMIT="8" \
-    && ENV QJS_FRAGLIMIT="10" \
-    && ENV QJS_TIMELIMIT="10" \
+# Maps
+ENV QJS_MAP="q3dm7" QJS_CAPTURELIMIT="8" ENV QJS_FRAGLIMIT="10" ENV QJS_TIMELIMIT="10"
 
-    # Bots
-    # Number of bots, 1-5
-    ENV QJS_BOT_MINPLAYERS="4" \
-    # Bot difficulty 1-5
-    && ENV QJS_BOT_SKILL="1"
+# Bots
+# Number of bots, 1-5      # Bot skill, 1-5
+ENV QJS_BOT_MINPLAYERS="4" QJS_BOT_SKILL="1"
 
 RUN chgrp -R 0 /usr/src/app
 RUN chmod -R g+rw /usr/src/app
