@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/nodejs-4-rhel7:latest
+FROM registry.access.redhat.com/rhscl/nodejs-4-rhel7:latest
 MAINTAINER bholmes
 
 RUN mkdir -p /usr/src/app
