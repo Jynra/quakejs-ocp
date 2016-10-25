@@ -12,7 +12,7 @@ RUN npm install
 COPY run.sh /usr/src/app
 
 
-EXPOSE 27960
+EXPOSE 8080 27960
 
 # Main
 ENV QJS_FS_GAME="baseq3" QJS_DEDICATED="1" QJS_SERVER_CONFIG="server.cfg"
