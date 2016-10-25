@@ -38,7 +38,7 @@ ENV QJS_MAP="q3dm7" \
 
     # Bots
     # Number of bots, 1-5
-    && ENV QJS_BOT_MINPLAYERS="4" \
+    ENV QJS_BOT_MINPLAYERS="4" \
     # Bot difficulty 1-5
     && ENV QJS_BOT_SKILL="1"
 
