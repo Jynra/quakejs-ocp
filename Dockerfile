@@ -1,5 +1,8 @@
-FROM registry.access.redhat.com/rhscl/nodejs-4-rhel7:latest
+FROM registry.access.redhat.com/rhel7:latest
 MAINTAINER bholmes
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash - \
+  && yum -y install nodejs
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
