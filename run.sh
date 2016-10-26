@@ -214,4 +214,6 @@ echo 'addbot visor '$QJS_BOT_SKILL >> server.cfg
 
 mv server.cfg base/baseq3/server.cfg
 
-node build/ioq3ded.js +set fs_game $QJS_FS_GAME +set dedicated $QJS_DEDICATED +exec $QJS_SERVER_CONFIG
+# node build/ioq3ded.js +set fs_game $QJS_FS_GAME +set dedicated $QJS_DEDICATED +exec $QJS_SERVER_CONFIG 
+node bin/web.js --config ./web.json
+
