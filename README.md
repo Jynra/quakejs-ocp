@@ -1,9 +1,11 @@
 # quakejs-ocp
 QuakeJS on OpenShift - Based on QuakeJS - https://www.quakejs.com/
+
 Initial Dockerisation by Patrick Do - https://github.com/patdohere
 
-To run:
-oc new-app --strategy=docker http://github.com/benemon/quakejs-ocp --name=quakejs
+# To run:
+
+_oc new-app --strategy=docker http://github.com/benemon/quakejs-ocp --name=quakejs_
 
 Expose the service on 8080. 27960 exists to support Dedicated Servers.
 
