@@ -1,6 +1,8 @@
 FROM registry.access.redhat.com/rhoar-nodejs/nodejs-10:latest
 MAINTAINER bholmes
 
+USER root
+
 RUN mkdir -p /opt/quake/
 WORKDIR /opt/quake/
 
@@ -36,5 +38,7 @@ ENV QJS_BOT_MINPLAYERS="4" QJS_BOT_SKILL="1"
 RUN chgrp -R 0 /opt/quake/
 RUN chmod -R g+rw /opt/quake/
 RUN find /opt/quake/ -type d -exec chmod g+x {} +
+
+USER 1001
 
 CMD ["/bin/bash", "run.sh"]
