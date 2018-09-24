@@ -1,12 +1,12 @@
 FROM registry.access.redhat.com/rhoar-nodejs/nodejs-10:latest
 MAINTAINER bholmes
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /opt/quake/
+WORKDIR /opt/quake/
 
-COPY quakejs /usr/src/app
+COPY quakejs /opt/quake/
 RUN npm install
-COPY run.sh /usr/src/app
+COPY run.sh /opt/quake/
 
 EXPOSE 8080 27960
 
@@ -33,8 +33,8 @@ ENV QJS_MAP="q3dm7" QJS_CAPTURELIMIT="8" QJS_FRAGLIMIT="10" QJS_TIMELIMIT="10"
 # Number of bots, 1-5      # Bot skill, 1-5
 ENV QJS_BOT_MINPLAYERS="4" QJS_BOT_SKILL="1"
 
-RUN chgrp -R 0 /usr/src/app
-RUN chmod -R g+rw /usr/src/app
-RUN find /usr/src/app -type d -exec chmod g+x {} +
+RUN chgrp -R 0 /opt/quake/
+RUN chmod -R g+rw /opt/quake/
+RUN find /opt/quake/ -type d -exec chmod g+x {} +
 
 CMD ["/bin/bash", "run.sh"]
