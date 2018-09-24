@@ -1,8 +1,5 @@
-FROM registry.access.redhat.com/rhel7:latest
+FROM registry.access.redhat.com/rhoar-nodejs/nodejs-10:latest
 MAINTAINER bholmes
-
-RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash - \
-  && yum -y install nodejs
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -10,7 +7,6 @@ WORKDIR /usr/src/app
 COPY quakejs /usr/src/app
 RUN npm install
 COPY run.sh /usr/src/app
-
 
 EXPOSE 8080 27960
 
