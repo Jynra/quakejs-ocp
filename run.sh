@@ -16,7 +16,7 @@ echo 'set dmflags "0"' >> server.cfg
 echo 'set fraglimit "'$QJS_FRAGLIMIT'"' >> server.cfg
 echo 'set g_dowarmup "1"' >> server.cfg
 echo 'set g_forceRespawn "20"' >> server.cfg
-echo 'set g_gametype "0"' >> server.cfg
+echo 'set g_gametype "'$QJS_G_GAMETYPE'"' >> server.cfg
 echo 'set g_teamautojoin "0"' >> server.cfg
 echo 'set g_teamforcebalance "0"' >> server.cfg
 echo 'set g_warmup "20"' >> server.cfg
@@ -214,6 +214,12 @@ echo 'addbot visor '$QJS_BOT_SKILL >> server.cfg
 
 mv server.cfg base/baseq3/server.cfg
 
-# node build/ioq3ded.js +set fs_game $QJS_FS_GAME +set dedicated $QJS_DEDICATED +exec $QJS_SERVER_CONFIG 
+# Start dedicated server if requested
+if [ "${QJS_DEDICATED}" != "0" ]; then
+  echo "Starting QuakeJS dedicated server (ioq3ded.js) with dedicated=${QJS_DEDICATED}..."
+  node build/ioq3ded.js +set fs_game "$QJS_FS_GAME" +set dedicated "$QJS_DEDICATED" +exec "$QJS_SERVER_CONFIG" &
+fi
+
+# node build/ioq3ded.js +set fs_game $QJS_FS_GAME +set dedicated $QJS_DEDICATED +exec $QJS_SERVER_CONFIG
 node bin/web.js --config ./web.json
 

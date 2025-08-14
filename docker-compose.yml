@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  quakejs:
+    build: .
+    container_name: quakejs
+    restart: unless-stopped
+    environment:
+      # Activer le serveur dédié (0 pour désactiver, 2 pour Internet/multijoueur)
+      QJS_DEDICATED: "2"
+      # Paramètres serveur
+      QJS_SV_HOSTNAME: "Quake Server"
+      QJS_SV_MAXCLIENTS: "12"
+      QJS_RCONPASSWORD: "change_me"
+      # Paramètres de jeu
+      QJS_G_GAMETYPE: "0"   # 0=DM, 1=Tourney, 3=TDM, 4=CTF
+      QJS_MAP: "q3dm7"
+      QJS_BOT_MINPLAYERS: "4"
+      QJS_BOT_SKILL: "1"
+    ports:
+      - "8080:8080"   # Web (NPM: quake.jynra.ch -> 8080)
+      - "27960:27960" # WebSocket jeu (NPM: ws.quake.jynra.ch -> 27960)
+    # Si vous voulez limiter les ressources, décommentez et ajustez :
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.0'
+    #       memory: 1024M
+
