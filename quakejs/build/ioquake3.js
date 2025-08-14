@@ -12096,34 +12096,34 @@ function copyTempDouble(ptr) {
 }
 
 
-  
-  
+
+
   function _emscripten_memcpy_big(dest, src, num) {
       HEAPU8.set(HEAPU8.subarray(src, src+num), dest);
       return dest;
-    } 
+    }
   Module["_memcpy"] = _memcpy;var _llvm_memcpy_p0i8_p0i8_i32=_memcpy;
 
   function _llvm_lifetime_start() {}
 
-  
-  
-  
+
+
+
   function _isspace(chr) {
       return (chr == 32) || (chr >= 9 && chr <= 13);
     }
-  
-  
+
+
   var ___errno_state=0;function ___setErrNo(value) {
       // For convenient setting and returning of errno.
       HEAP32[((___errno_state)>>2)]=value;
       return value;
     }
-  
+
   var ERRNO_CODES={EPERM:1,ENOENT:2,ESRCH:3,EINTR:4,EIO:5,ENXIO:6,E2BIG:7,ENOEXEC:8,EBADF:9,ECHILD:10,EAGAIN:11,EWOULDBLOCK:11,ENOMEM:12,EACCES:13,EFAULT:14,ENOTBLK:15,EBUSY:16,EEXIST:17,EXDEV:18,ENODEV:19,ENOTDIR:20,EISDIR:21,EINVAL:22,ENFILE:23,EMFILE:24,ENOTTY:25,ETXTBSY:26,EFBIG:27,ENOSPC:28,ESPIPE:29,EROFS:30,EMLINK:31,EPIPE:32,EDOM:33,ERANGE:34,ENOMSG:42,EIDRM:43,ECHRNG:44,EL2NSYNC:45,EL3HLT:46,EL3RST:47,ELNRNG:48,EUNATCH:49,ENOCSI:50,EL2HLT:51,EDEADLK:35,ENOLCK:37,EBADE:52,EBADR:53,EXFULL:54,ENOANO:55,EBADRQC:56,EBADSLT:57,EDEADLOCK:35,EBFONT:59,ENOSTR:60,ENODATA:61,ETIME:62,ENOSR:63,ENONET:64,ENOPKG:65,EREMOTE:66,ENOLINK:67,EADV:68,ESRMNT:69,ECOMM:70,EPROTO:71,EMULTIHOP:72,EDOTDOT:73,EBADMSG:74,ENOTUNIQ:76,EBADFD:77,EREMCHG:78,ELIBACC:79,ELIBBAD:80,ELIBSCN:81,ELIBMAX:82,ELIBEXEC:83,ENOSYS:38,ENOTEMPTY:39,ENAMETOOLONG:36,ELOOP:40,EOPNOTSUPP:95,EPFNOSUPPORT:96,ECONNRESET:104,ENOBUFS:105,EAFNOSUPPORT:97,EPROTOTYPE:91,ENOTSOCK:88,ENOPROTOOPT:92,ESHUTDOWN:108,ECONNREFUSED:111,EADDRINUSE:98,ECONNABORTED:103,ENETUNREACH:101,ENETDOWN:100,ETIMEDOUT:110,EHOSTDOWN:112,EHOSTUNREACH:113,EINPROGRESS:115,EALREADY:114,EDESTADDRREQ:89,EMSGSIZE:90,EPROTONOSUPPORT:93,ESOCKTNOSUPPORT:94,EADDRNOTAVAIL:99,ENETRESET:102,EISCONN:106,ENOTCONN:107,ETOOMANYREFS:109,EUSERS:87,EDQUOT:122,ESTALE:116,ENOTSUP:95,ENOMEDIUM:123,EILSEQ:84,EOVERFLOW:75,ECANCELED:125,ENOTRECOVERABLE:131,EOWNERDEAD:130,ESTRPIPE:86};function __parseInt(str, endptr, base, min, max, bits, unsign) {
       // Skip space.
       while (_isspace(HEAP8[(str)])) str++;
-  
+
       // Check for a plus/minus sign.
       var multiplier = 1;
       if (HEAP8[(str)] == 45) {
@@ -12132,7 +12132,7 @@ function copyTempDouble(ptr) {
       } else if (HEAP8[(str)] == 43) {
         str++;
       }
-  
+
       // Find base.
       var finalBase = base;
       if (!finalBase) {
@@ -12155,7 +12155,7 @@ function copyTempDouble(ptr) {
         }
       }
       if (!finalBase) finalBase = 10;
-  
+
       // Get digits.
       var chr;
       var ret = 0;
@@ -12168,15 +12168,15 @@ function copyTempDouble(ptr) {
           str++;
         }
       }
-  
+
       // Apply sign.
       ret *= multiplier;
-  
+
       // Set end pointer.
       if (endptr) {
         HEAP32[((endptr)>>2)]=str;
       }
-  
+
       // Unsign if needed.
       if (unsign) {
         if (Math.abs(ret) > max) {
@@ -12186,17 +12186,17 @@ function copyTempDouble(ptr) {
           ret = unSign(ret, bits);
         }
       }
-  
+
       // Validate range.
       if (ret > max || ret < min) {
         ret = ret > max ? max : min;
         ___setErrNo(ERRNO_CODES.ERANGE);
       }
-  
+
       if (bits == 64) {
         return ((asm["setTempRet0"]((tempDouble=ret,(+(Math_abs(tempDouble))) >= (+1) ? (tempDouble > (+0) ? ((Math_min((+(Math_floor((tempDouble)/(+4294967296)))), (+4294967295)))|0)>>>0 : (~~((+(Math_ceil((tempDouble - +(((~~(tempDouble)))>>>0))/(+4294967296))))))>>>0) : 0)),ret>>>0)|0);
       }
-  
+
       return ret;
     }function _strtol(str, endptr, base) {
       return __parseInt(str, endptr, base, -2147483648, 2147483647, 32);  // LONG_MIN, LONG_MAX.
@@ -12204,26 +12204,26 @@ function copyTempDouble(ptr) {
       return _strtol(ptr, null, 10);
     }
 
-  
-   
+
+
   Module["_memset"] = _memset;var _llvm_memset_p0i8_i32=_memset;
 
-   
+
   Module["_strlen"] = _strlen;
 
   function _llvm_lifetime_end() {}
 
-   
+
   Module["_strcat"] = _strcat;
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   var ERRNO_MESSAGES={0:"Success",1:"Not super-user",2:"No such file or directory",3:"No such process",4:"Interrupted system call",5:"I/O error",6:"No such device or address",7:"Arg list too long",8:"Exec format error",9:"Bad file number",10:"No children",11:"No more processes",12:"Not enough core",13:"Permission denied",14:"Bad address",15:"Block device required",16:"Mount device busy",17:"File exists",18:"Cross-device link",19:"No such device",20:"Not a directory",21:"Is a directory",22:"Invalid argument",23:"Too many open files in system",24:"Too many open files",25:"Not a typewriter",26:"Text file busy",27:"File too large",28:"No space left on device",29:"Illegal seek",30:"Read only file system",31:"Too many links",32:"Broken pipe",33:"Math arg out of domain of func",34:"Math result not representable",35:"File locking deadlock error",36:"File or path name too long",37:"No record locks available",38:"Function not implemented",39:"Directory not empty",40:"Too many symbolic links",42:"No message of desired type",43:"Identifier removed",44:"Channel number out of range",45:"Level 2 not synchronized",46:"Level 3 halted",47:"Level 3 reset",48:"Link number out of range",49:"Protocol driver not attached",50:"No CSI structure available",51:"Level 2 halted",52:"Invalid exchange",53:"Invalid request descriptor",54:"Exchange full",55:"No anode",56:"Invalid request code",57:"Invalid slot",59:"Bad font file fmt",60:"Device not a stream",61:"No data (for no delay io)",62:"Timer expired",63:"Out of streams resources",64:"Machine is not on the network",65:"Package not installed",66:"The object is remote",67:"The link has been severed",68:"Advertise error",69:"Srmount error",70:"Communication error on send",71:"Protocol error",72:"Multihop attempted",73:"Cross mount point (not really error)",74:"Trying to read unreadable message",75:"Value too large for defined data type",76:"Given log. name not unique",77:"f.d. invalid for this operation",78:"Remote address changed",79:"Can   access a needed shared lib",80:"Accessing a corrupted shared lib",81:".lib section in a.out corrupted",82:"Attempting to link in too many libs",83:"Attempting to exec a shared library",84:"Illegal byte sequence",86:"Streams pipe error",87:"Too many users",88:"Socket operation on non-socket",89:"Destination address required",90:"Message too long",91:"Protocol wrong type for socket",92:"Protocol not available",93:"Unknown protocol",94:"Socket type not supported",95:"Not supported",96:"Protocol family not supported",97:"Address family not supported by protocol family",98:"Address already in use",99:"Address not available",100:"Network interface is not configured",101:"Network is unreachable",102:"Connection reset by network",103:"Connection aborted",104:"Connection reset by peer",105:"No buffer space available",106:"Socket is already connected",107:"Socket is not connected",108:"Can't send after socket shutdown",109:"Too many references",110:"Connection timed out",111:"Connection refused",112:"Host is down",113:"Host is unreachable",114:"Socket already connected",115:"Connection already in progress",116:"Stale file handle",122:"Quota exceeded",123:"No medium (in tape drive)",125:"Operation canceled",130:"Previous owner died",131:"State not recoverable"};
-  
+
   var TTY={ttys:[],init:function () {
         // https://github.com/kripken/emscripten/pull/1555
         // if (ENVIRONMENT_IS_NODE) {
@@ -12342,7 +12342,7 @@ function copyTempDouble(ptr) {
             tty.output.push(TTY.utf8.processCChar(val));
           }
         }}};
-  
+
   var MEMFS={ops_table:null,CONTENT_OWNING:1,CONTENT_FLEXIBLE:2,CONTENT_FIXED:3,mount:function (mount) {
         return MEMFS.createNode(null, '/', 16384 | 0777, 0);
       },createNode:function (parent, name, mode, dev) {
@@ -12606,7 +12606,7 @@ function copyTempDouble(ptr) {
           }
           return { ptr: ptr, allocated: allocated };
         }}};
-  
+
   var IDBFS={dbs:{},indexedDB:function () {
         return window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
       },DB_VERSION:21,DB_STORE_NAME:"FILE_DATA",mount:function (mount) {
@@ -12615,13 +12615,13 @@ function copyTempDouble(ptr) {
       },syncfs:function (mount, populate, callback) {
         IDBFS.getLocalSet(mount, function(err, local) {
           if (err) return callback(err);
-  
+
           IDBFS.getRemoteSet(mount, function(err, remote) {
             if (err) return callback(err);
-  
+
             var src = populate ? remote : local;
             var dst = populate ? local : remote;
-  
+
             IDBFS.reconcile(src, dst, callback);
           });
         });
@@ -12631,7 +12631,7 @@ function copyTempDouble(ptr) {
         if (db) {
           return callback(null, db);
         }
-  
+
         var req;
         try {
           req = IDBFS.indexedDB().open(name, IDBFS.DB_VERSION);
@@ -12641,20 +12641,20 @@ function copyTempDouble(ptr) {
         req.onupgradeneeded = function(e) {
           var db = e.target.result;
           var transaction = e.target.transaction;
-  
+
           var fileStore;
-  
+
           if (db.objectStoreNames.contains(IDBFS.DB_STORE_NAME)) {
             fileStore = transaction.objectStore(IDBFS.DB_STORE_NAME);
           } else {
             fileStore = db.createObjectStore(IDBFS.DB_STORE_NAME);
           }
-  
+
           fileStore.createIndex('timestamp', 'timestamp', { unique: false });
         };
         req.onsuccess = function() {
           db = req.result;
-  
+
           // add to the cache
           IDBFS.dbs[name] = db;
           callback(null, db);
@@ -12664,7 +12664,7 @@ function copyTempDouble(ptr) {
         };
       },getLocalSet:function (mount, callback) {
         var entries = {};
-  
+
         function isRealDir(p) {
           return p !== '.' && p !== '..';
         };
@@ -12673,54 +12673,54 @@ function copyTempDouble(ptr) {
             return PATH.join2(root, p);
           }
         };
-  
+
         var check = FS.readdir(mount.mountpoint).filter(isRealDir).map(toAbsolute(mount.mountpoint));
-  
+
         while (check.length) {
           var path = check.pop();
           var stat;
-  
+
           try {
             stat = FS.stat(path);
           } catch (e) {
             return callback(e);
           }
-  
+
           if (FS.isDir(stat.mode)) {
             check.push.apply(check, FS.readdir(path).filter(isRealDir).map(toAbsolute(path)));
           }
-  
+
           entries[path] = { timestamp: stat.mtime };
         }
-  
+
         return callback(null, { type: 'local', entries: entries });
       },getRemoteSet:function (mount, callback) {
         var entries = {};
-  
+
         IDBFS.getDB(mount.mountpoint, function(err, db) {
           if (err) return callback(err);
-  
+
           var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readonly');
           transaction.onerror = function() { callback(this.error); };
-  
+
           var store = transaction.objectStore(IDBFS.DB_STORE_NAME);
           var index = store.index('timestamp');
-  
+
           index.openKeyCursor().onsuccess = function(event) {
             var cursor = event.target.result;
-  
+
             if (!cursor) {
               return callback(null, { type: 'remote', db: db, entries: entries });
             }
-  
+
             entries[cursor.primaryKey] = { timestamp: cursor.key };
-  
+
             cursor.continue();
           };
         });
       },loadLocalEntry:function (path, callback) {
         var stat, node;
-  
+
         try {
           var lookup = FS.lookupPath(path);
           node = lookup.node;
@@ -12728,7 +12728,7 @@ function copyTempDouble(ptr) {
         } catch (e) {
           return callback(e);
         }
-  
+
         if (FS.isDir(stat.mode)) {
           return callback(null, { timestamp: stat.mtime, mode: stat.mode });
         } else if (FS.isFile(stat.mode)) {
@@ -12745,18 +12745,18 @@ function copyTempDouble(ptr) {
           } else {
             return callback(new Error('node type not supported'));
           }
-  
+
           FS.utime(path, entry.timestamp, entry.timestamp);
         } catch (e) {
           return callback(e);
         }
-  
+
         callback(null);
       },removeLocalEntry:function (path, callback) {
         try {
           var lookup = FS.lookupPath(path);
           var stat = FS.stat(path);
-  
+
           if (FS.isDir(stat.mode)) {
             FS.rmdir(path);
           } else if (FS.isFile(stat.mode)) {
@@ -12765,7 +12765,7 @@ function copyTempDouble(ptr) {
         } catch (e) {
           return callback(e);
         }
-  
+
         callback(null);
       },loadRemoteEntry:function (store, path, callback) {
         var req = store.get(path);
@@ -12781,7 +12781,7 @@ function copyTempDouble(ptr) {
         req.onerror = function() { callback(this.error); };
       },reconcile:function (src, dst, callback) {
         var total = 0;
-  
+
         var create = [];
         Object.keys(src.entries).forEach(function (key) {
           var e = src.entries[key];
@@ -12791,7 +12791,7 @@ function copyTempDouble(ptr) {
             total++;
           }
         });
-  
+
         var remove = [];
         Object.keys(dst.entries).forEach(function (key) {
           var e = dst.entries[key];
@@ -12801,17 +12801,17 @@ function copyTempDouble(ptr) {
             total++;
           }
         });
-  
+
         if (!total) {
           return callback(null);
         }
-  
+
         var errored = false;
         var completed = 0;
         var db = src.type === 'remote' ? src.db : dst.db;
         var transaction = db.transaction([IDBFS.DB_STORE_NAME], 'readwrite');
         var store = transaction.objectStore(IDBFS.DB_STORE_NAME);
-  
+
         function done(err) {
           if (err) {
             if (!done.errored) {
@@ -12824,9 +12824,9 @@ function copyTempDouble(ptr) {
             return callback(null);
           }
         };
-  
+
         transaction.onerror = function() { done(this.error); };
-  
+
         // sort paths in ascending order so directory entries are created
         // before the files inside them
         create.sort().forEach(function (path) {
@@ -12842,7 +12842,7 @@ function copyTempDouble(ptr) {
             });
           }
         });
-  
+
         // sort paths in descending order so files are deleted before their
         // parent directories
         remove.sort().reverse().forEach(function(path) {
@@ -12853,7 +12853,7 @@ function copyTempDouble(ptr) {
           }
         });
       }};
-  
+
   var NODEFS={isWindows:false,staticInit:function () {
         NODEFS.isWindows = !!process.platform.match(/^win/);
       },mount:function (mount) {
@@ -12872,7 +12872,7 @@ function copyTempDouble(ptr) {
         try {
           stat = fs.lstatSync(path);
           if (NODEFS.isWindows) {
-            // On Windows, directories return permission bits 'rw-rw-rw-', even though they have 'rwxrwxrwx', so 
+            // On Windows, directories return permission bits 'rw-rw-rw-', even though they have 'rwxrwxrwx', so
             // propagate write bits to execute bits.
             stat.mode = stat.mode | ((stat.mode & 146) >> 1);
           }
@@ -13073,21 +13073,21 @@ function copyTempDouble(ptr) {
               }
             }
           }
-  
+
           if (position < 0) {
             throw new FS.ErrnoError(ERRNO_CODES.EINVAL);
           }
-  
+
           stream.position = position;
           return position;
         }}};
-  
+
   var _stdin=allocate(1, "i32*", ALLOC_STATIC);
-  
+
   var _stdout=allocate(1, "i32*", ALLOC_STATIC);
-  
+
   var _stderr=allocate(1, "i32*", ALLOC_STATIC);
-  
+
   function _fflush(stream) {
       // int fflush(FILE *stream);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/fflush.html
@@ -13098,7 +13098,7 @@ function copyTempDouble(ptr) {
       },lookupPath:function (path, opts) {
         path = PATH.resolve(FS.cwd(), path);
         opts = opts || {};
-  
+
         var defaults = {
           follow_mount: true,
           recurse_count: 0
@@ -13108,37 +13108,37 @@ function copyTempDouble(ptr) {
             opts[key] = defaults[key];
           }
         }
-  
+
         if (opts.recurse_count > 8) {  // max recursive lookup of 8
           throw new FS.ErrnoError(ERRNO_CODES.ELOOP);
         }
-  
+
         // split the path
         var parts = PATH.normalizeArray(path.split('/').filter(function(p) {
           return !!p;
         }), false);
-  
+
         // start at the root
         var current = FS.root;
         var current_path = '/';
-  
+
         for (var i = 0; i < parts.length; i++) {
           var islast = (i === parts.length-1);
           if (islast && opts.parent) {
             // stop resolving
             break;
           }
-  
+
           current = FS.lookupNode(current, parts[i]);
           current_path = PATH.join2(current_path, parts[i]);
-  
+
           // jump to the mount's root node if this is a mountpoint
           if (FS.isMountpoint(current)) {
             if (!islast || (islast && opts.follow_mount)) {
               current = current.mounted.root;
             }
           }
-  
+
           // by default, lookupPath will not follow a symlink if it is the final path component.
           // setting opts.follow = true will override this behavior.
           if (!islast || opts.follow) {
@@ -13146,17 +13146,17 @@ function copyTempDouble(ptr) {
             while (FS.isLink(current.mode)) {
               var link = FS.readlink(current_path);
               current_path = PATH.resolve(PATH.dirname(current_path), link);
-              
+
               var lookup = FS.lookupPath(current_path, { recurse_count: opts.recurse_count });
               current = lookup.node;
-  
+
               if (count++ > 40) {  // limit max consecutive symlinks to 40 (SYMLOOP_MAX).
                 throw new FS.ErrnoError(ERRNO_CODES.ELOOP);
               }
             }
           }
         }
-  
+
         return { path: current_path, node: current };
       },getPath:function (node) {
         var path;
@@ -13171,8 +13171,8 @@ function copyTempDouble(ptr) {
         }
       },hashName:function (parentid, name) {
         var hash = 0;
-  
-  
+
+
         for (var i = 0; i < name.length; i++) {
           hash = ((hash << 5) - hash + name.charCodeAt(i)) | 0;
         }
@@ -13225,13 +13225,13 @@ function copyTempDouble(ptr) {
             this.stream_ops = {};
             this.rdev = rdev;
           };
-  
+
           FS.FSNode.prototype = {};
-  
+
           // compatibility
           var readMode = 292 | 73;
           var writeMode = 146;
-  
+
           // NOTE we must use Object.defineProperties instead of individual calls to
           // Object.defineProperty in order to make closure compiler happy
           Object.defineProperties(FS.FSNode.prototype, {
@@ -13251,11 +13251,11 @@ function copyTempDouble(ptr) {
             },
           });
         }
-  
+
         var node = new FS.FSNode(parent, name, mode, rdev);
-  
+
         FS.hashAddNode(node);
-  
+
         return node;
       },destroyNode:function (node) {
         FS.hashRemoveNode(node);
@@ -13424,25 +13424,25 @@ function copyTempDouble(ptr) {
       },getMounts:function (mount) {
         var mounts = [];
         var check = [mount];
-  
+
         while (check.length) {
           var m = check.pop();
-  
+
           mounts.push(m);
-  
+
           check.push.apply(check, m.mounts);
         }
-  
+
         return mounts;
       },syncfs:function (populate, callback) {
         if (typeof(populate) === 'function') {
           callback = populate;
           populate = false;
         }
-  
+
         var mounts = FS.getMounts(FS.root.mount);
         var completed = 0;
-  
+
         function done(err) {
           if (err) {
             if (!done.errored) {
@@ -13455,7 +13455,7 @@ function copyTempDouble(ptr) {
             callback(null);
           }
         };
-  
+
         // sync all mounts
         mounts.forEach(function (mount) {
           if (!mount.type.syncfs) {
@@ -13467,78 +13467,78 @@ function copyTempDouble(ptr) {
         var root = mountpoint === '/';
         var pseudo = !mountpoint;
         var node;
-  
+
         if (root && FS.root) {
           throw new FS.ErrnoError(ERRNO_CODES.EBUSY);
         } else if (!root && !pseudo) {
           var lookup = FS.lookupPath(mountpoint, { follow_mount: false });
-  
+
           mountpoint = lookup.path;  // use the absolute path
           node = lookup.node;
-  
+
           if (FS.isMountpoint(node)) {
             throw new FS.ErrnoError(ERRNO_CODES.EBUSY);
           }
-  
+
           if (!FS.isDir(node.mode)) {
             throw new FS.ErrnoError(ERRNO_CODES.ENOTDIR);
           }
         }
-  
+
         var mount = {
           type: type,
           opts: opts,
           mountpoint: mountpoint,
           mounts: []
         };
-  
+
         // create a root node for the fs
         var mountRoot = type.mount(mount);
         mountRoot.mount = mount;
         mount.root = mountRoot;
-  
+
         if (root) {
           FS.root = mountRoot;
         } else if (node) {
           // set as a mountpoint
           node.mounted = mount;
-  
+
           // add the new mount to the current mount's children
           if (node.mount) {
             node.mount.mounts.push(mount);
           }
         }
-  
+
         return mountRoot;
       },unmount:function (mountpoint) {
         var lookup = FS.lookupPath(mountpoint, { follow_mount: false });
-  
+
         if (!FS.isMountpoint(lookup.node)) {
           throw new FS.ErrnoError(ERRNO_CODES.EINVAL);
         }
-  
+
         // destroy the nodes for this mount, and all its child mounts
         var node = lookup.node;
         var mount = node.mounted;
         var mounts = FS.getMounts(mount);
-  
+
         Object.keys(FS.nameTable).forEach(function (hash) {
           var current = FS.nameTable[hash];
-  
+
           while (current) {
             var next = current.name_next;
-  
+
             if (mounts.indexOf(current.mount) !== -1) {
               FS.destroyNode(current);
             }
-  
+
             current = next;
           }
         });
-  
+
         // no longer a mountpoint
         node.mounted = null;
-  
+
         // remove this mount from the child mounts
         var idx = node.mount.mounts.indexOf(mount);
         assert(idx !== -1);
@@ -13867,7 +13867,7 @@ function copyTempDouble(ptr) {
         }
         // we've already handled these, don't pass down to the underlying vfs
         flags &= ~(128 | 512);
-  
+
         // register the stream with the filesystem
         var stream = FS.createStream({
           node: node,
@@ -14063,7 +14063,7 @@ function copyTempDouble(ptr) {
         // TODO deprecate the old functionality of a single
         // input / output callback and that utilizes FS.createDevice
         // and instead require a unique set of stream ops
-  
+
         // by default, we symlink the standard streams to the
         // default tty devices. however, if the standard streams
         // have been overwritten we create a unique device for
@@ -14083,16 +14083,16 @@ function copyTempDouble(ptr) {
         } else {
           FS.symlink('/dev/tty1', '/dev/stderr');
         }
-  
+
         // open default streams for the stdin, stdout and stderr devices
         var stdin = FS.open('/dev/stdin', 'r');
         HEAP32[((_stdin)>>2)]=FS.getPtrForStream(stdin);
         assert(stdin.fd === 0, 'invalid handle for stdin (' + stdin.fd + ')');
-  
+
         var stdout = FS.open('/dev/stdout', 'w');
         HEAP32[((_stdout)>>2)]=FS.getPtrForStream(stdout);
         assert(stdout.fd === 1, 'invalid handle for stdout (' + stdout.fd + ')');
-  
+
         var stderr = FS.open('/dev/stderr', 'w');
         HEAP32[((_stderr)>>2)]=FS.getPtrForStream(stderr);
         assert(stderr.fd === 2, 'invalid handle for stderr (' + stderr.fd + ')');
@@ -14117,24 +14117,24 @@ function copyTempDouble(ptr) {
         });
       },staticInit:function () {
         FS.ensureErrnoError();
-  
+
         FS.nameTable = new Array(4096);
-  
+
         FS.mount(MEMFS, {}, '/');
-  
+
         FS.createDefaultDirectories();
         FS.createDefaultDevices();
       },init:function (input, output, error) {
         assert(!FS.init.initialized, 'FS.init was previously called. If you want to initialize later with custom parameters, remove any earlier calls (note that one is automatically added to the generated code)');
         FS.init.initialized = true;
-  
+
         FS.ensureErrnoError();
-  
+
         // Allow Module.stdin etc. to provide defaults, if none explicitly passed to us here
         Module['stdin'] = input || Module['stdin'];
         Module['stdout'] = output || Module['stdout'];
         Module['stderr'] = error || Module['stderr'];
-  
+
         FS.createStandardStreams();
       },quit:function () {
         FS.init.initialized = false;
@@ -14338,25 +14338,25 @@ function copyTempDouble(ptr) {
               var header;
               var hasByteServing = (header = xhr.getResponseHeader("Accept-Ranges")) && header === "bytes";
               var chunkSize = 1024*1024; // Chunk size in bytes
-  
+
               if (!hasByteServing) chunkSize = datalength;
-  
+
               // Function to get a range from the remote URL.
               var doXHR = (function(from, to) {
                 if (from > to) throw new Error("invalid range (" + from + ", " + to + ") or no bytes requested!");
                 if (to > datalength-1) throw new Error("only " + datalength + " bytes available! programmer error!");
-  
+
                 // TODO: Use mozResponseArrayBuffer, responseStream, etc. if available.
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', url, false);
                 if (datalength !== chunkSize) xhr.setRequestHeader("Range", "bytes=" + from + "-" + to);
-  
+
                 // Some hints to the browser that we want binary data.
                 if (typeof Uint8Array != 'undefined') xhr.responseType = 'arraybuffer';
                 if (xhr.overrideMimeType) {
                   xhr.overrideMimeType('text/plain; charset=x-user-defined');
                 }
-  
+
                 xhr.send(null);
                 if (!(xhr.status >= 200 && xhr.status < 300 || xhr.status === 304)) throw new Error("Couldn't load " + url + ". Status: " + xhr.status);
                 if (xhr.response !== undefined) {
@@ -14376,12 +14376,12 @@ function copyTempDouble(ptr) {
                 if (typeof(lazyArray.chunks[chunkNum]) === "undefined") throw new Error("doXHR failed!");
                 return lazyArray.chunks[chunkNum];
               });
-  
+
               this._length = datalength;
               this._chunkSize = chunkSize;
               this.lengthKnown = true;
           }
-  
+
           var lazyArray = new LazyUint8Array();
           Object.defineProperty(lazyArray, "length", {
               get: function() {
@@ -14399,12 +14399,12 @@ function copyTempDouble(ptr) {
                   return this._chunkSize;
               }
           });
-  
+
           var properties = { isDevice: false, contents: lazyArray };
         } else {
           var properties = { isDevice: false, url: url };
         }
-  
+
         var node = FS.createFile(parent, name, properties, canRead, canWrite);
         // This is a total hack, but I want to get this lazy file code out of the
         // core of MEMFS. If we want to keep this lazy file concept I feel it should
@@ -14697,10 +14697,10 @@ function copyTempDouble(ptr) {
           }
         }},isFullScreen:false,pointerLock:false,moduleContextCreatedCallbacks:[],workers:[],init:function () {
         if (!Module["preloadPlugins"]) Module["preloadPlugins"] = []; // needs to exist even in workers
-  
+
         if (Browser.initted || ENVIRONMENT_IS_WORKER) return;
         Browser.initted = true;
-  
+
         try {
           new Blob();
           Browser.hasBlobConstructor = true;
@@ -14714,7 +14714,7 @@ function copyTempDouble(ptr) {
           console.log("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available.");
           Module.noImageDecoding = true;
         }
-  
+
         // Support for plugins that can process preloaded files. You can add more of these to
         // your app by creating and appending to Module.preloadPlugins.
         //
@@ -14722,7 +14722,7 @@ function copyTempDouble(ptr) {
         // it is given the file's raw data. When it is done, it calls a callback with the file's
         // (possibly modified) data. For example, a plugin might decompress a file, or it
         // might create some side data structure for use later (like an Image element, etc.).
-  
+
         var imagePlugin = {};
         imagePlugin['canHandle'] = function imagePlugin_canHandle(name) {
           return !Module.noImageDecoding && /\.(jpg|jpeg|png|bmp)$/i.test(name);
@@ -14765,7 +14765,7 @@ function copyTempDouble(ptr) {
           img.src = url;
         };
         Module['preloadPlugins'].push(imagePlugin);
-  
+
         var audioPlugin = {};
         audioPlugin['canHandle'] = function audioPlugin_canHandle(name) {
           return !Module.noAudioDecoding && name.substr(-4) in { '.ogg': 1, '.wav': 1, '.mp3': 1 };
@@ -14833,9 +14833,9 @@ function copyTempDouble(ptr) {
           }
         };
         Module['preloadPlugins'].push(audioPlugin);
-  
+
         // Canvas event setup
-  
+
         var canvas = Module['canvas'];
         canvas.requestPointerLock = canvas['requestPointerLock'] ||
                                     canvas['mozRequestPointerLock'] ||
@@ -14845,17 +14845,17 @@ function copyTempDouble(ptr) {
                                  document['webkitExitPointerLock'] ||
                                  function(){}; // no-op if function does not exist
         canvas.exitPointerLock = canvas.exitPointerLock.bind(document);
-  
+
         function pointerLockChange() {
           Browser.pointerLock = document['pointerLockElement'] === canvas ||
                                 document['mozPointerLockElement'] === canvas ||
                                 document['webkitPointerLockElement'] === canvas;
         }
-  
+
         document.addEventListener('pointerlockchange', pointerLockChange, false);
         document.addEventListener('mozpointerlockchange', pointerLockChange, false);
         document.addEventListener('webkitpointerlockchange', pointerLockChange, false);
-  
+
         if (Module['elementPointerLock']) {
           canvas.addEventListener("click", function(ev) {
             if (!Browser.pointerLock && canvas.requestPointerLock) {
@@ -14872,14 +14872,14 @@ function copyTempDouble(ptr) {
               antialias: false,
               alpha: false
             };
-  
+
             if (webGLContextAttributes) {
               for (var attribute in webGLContextAttributes) {
                 contextAttributes[attribute] = webGLContextAttributes[attribute];
               }
             }
-  
-  
+
+
             var errorInfo = '?';
             function onContextCreationError(event) {
               errorInfo = event.statusMessage || errorInfo;
@@ -14903,7 +14903,7 @@ function copyTempDouble(ptr) {
         if (useWebGL) {
           // Set the background of the WebGL canvas to black
           canvas.style.backgroundColor = "black";
-  
+
           // Warn on context loss
           canvas.addEventListener('webglcontextlost', function(event) {
             alert('WebGL context lost. You will need to reload the page.');
@@ -14921,7 +14921,7 @@ function copyTempDouble(ptr) {
         Browser.resizeCanvas = resizeCanvas;
         if (typeof Browser.lockPointer === 'undefined') Browser.lockPointer = true;
         if (typeof Browser.resizeCanvas === 'undefined') Browser.resizeCanvas = false;
-  
+
         var canvas = Module['canvas'];
         function fullScreenChange() {
           Browser.isFullScreen = false;
@@ -14940,14 +14940,14 @@ function copyTempDouble(ptr) {
           }
           if (Module['onFullScreen']) Module['onFullScreen'](Browser.isFullScreen);
         }
-  
+
         if (!Browser.fullScreenHandlersInstalled) {
           Browser.fullScreenHandlersInstalled = true;
           document.addEventListener('fullscreenchange', fullScreenChange, false);
           document.addEventListener('mozfullscreenchange', fullScreenChange, false);
           document.addEventListener('webkitfullscreenchange', fullScreenChange, false);
         }
-  
+
         canvas.requestFullScreen = canvas['requestFullScreen'] ||
                                    canvas['mozRequestFullScreen'] ||
                                    (canvas['webkitRequestFullScreen'] ? function() { canvas['webkitRequestFullScreen'](Element['ALLOW_KEYBOARD_INPUT']) } : null);
@@ -15022,7 +15022,7 @@ function copyTempDouble(ptr) {
             Browser.mouseMovementX = Browser.getMovementX(event);
             Browser.mouseMovementY = Browser.getMovementY(event);
           }
-          
+
           // check if SDL is available
           if (typeof SDL != "undefined") {
           	Browser.mouseX = SDL.mouseX + Browser.mouseMovementX;
@@ -15032,13 +15032,13 @@ function copyTempDouble(ptr) {
           	// FIXME: ideally this should be clamped against the canvas size and zero
           	Browser.mouseX += Browser.mouseMovementX;
           	Browser.mouseY += Browser.mouseMovementY;
-          }        
+          }
         } else {
           // Otherwise, calculate the movement based on the changes
           // in the coordinates.
           var rect = Module["canvas"].getBoundingClientRect();
           var x, y;
-          
+
           // Neither .scrollX or .pageXOffset are defined in a spec, but
           // we prefer .scrollX because it is currently in a spec draft.
           // (see: http://www.w3.org/TR/2013/WD-cssom-view-20131217/)
@@ -15058,7 +15058,7 @@ function copyTempDouble(ptr) {
             x = event.pageX - (scrollX + rect.left);
             y = event.pageY - (scrollY + rect.top);
           }
-  
+
           // the canvas might be CSS-scaled compared to its backbuffer;
           // SDL-using content will want mouse coordinates in terms
           // of backbuffer units.
@@ -15066,7 +15066,7 @@ function copyTempDouble(ptr) {
           var ch = Module["canvas"].height;
           x = x * (cw / rect.width);
           y = y * (ch / rect.height);
-  
+
           Browser.mouseMovementX = x - Browser.mouseX;
           Browser.mouseMovementY = y - Browser.mouseY;
           Browser.mouseX = x;
@@ -15114,7 +15114,7 @@ function copyTempDouble(ptr) {
         this.windowedHeight = canvas.height;
         canvas.width = screen.width;
         canvas.height = screen.height;
-        // check if SDL is available   
+        // check if SDL is available
         if (typeof SDL != "undefined") {
         	var flags = HEAPU32[((SDL.screen+Runtime.QUANTUM_SIZE*0)>>2)];
         	flags = flags | 0x00800000; // set SDL_FULLSCREEN flag
@@ -15125,7 +15125,7 @@ function copyTempDouble(ptr) {
         var canvas = Module['canvas'];
         canvas.width = this.windowedWidth;
         canvas.height = this.windowedHeight;
-        // check if SDL is available       
+        // check if SDL is available
         if (typeof SDL != "undefined") {
         	var flags = HEAPU32[((SDL.screen+Runtime.QUANTUM_SIZE*0)>>2)];
         	flags = flags & ~0x00800000; // clear SDL_FULLSCREEN flag
@@ -15133,7 +15133,7 @@ function copyTempDouble(ptr) {
         }
         Browser.updateResizeListeners();
       }};
-  
+
   var CRC32={TABLE:[0,1996959894,3993919788,2567524794,124634137,1886057615,3915621685,2657392035,249268274,2044508324,3772115230,2547177864,162941995,2125561021,3887607047,2428444049,498536548,1789927666,4089016648,2227061214,450548861,1843258603,4107580753,2211677639,325883990,1684777152,4251122042,2321926636,335633487,1661365465,4195302755,2366115317,997073096,1281953886,3579855332,2724688242,1006888145,1258607687,3524101629,2768942443,901097722,1119000684,3686517206,2898065728,853044451,1172266101,3705015759,2882616665,651767980,1373503546,3369554304,3218104598,565507253,1454621731,3485111705,3099436303,671266974,1594198024,3322730930,2970347812,795835527,1483230225,3244367275,3060149565,1994146192,31158534,2563907772,4023717930,1907459465,112637215,2680153253,3904427059,2013776290,251722036,2517215374,3775830040,2137656763,141376813,2439277719,3865271297,1802195444,476864866,2238001368,4066508878,1812370925,453092731,2181625025,4111451223,1706088902,314042704,2344532202,4240017532,1658658271,366619977,2362670323,4224994405,1303535960,984961486,2747007092,3569037538,1256170817,1037604311,2765210733,3554079995,1131014506,879679996,2909243462,3663771856,1141124467,855842277,2852801631,3708648649,1342533948,654459306,3188396048,3373015174,1466479909,544179635,3110523913,3462522015,1591671054,702138776,2966460450,3352799412,1504918807,783551873,3082640443,3233442989,3988292384,2596254646,62317068,1957810842,3939845945,2647816111,81470997,1943803523,3814918930,2489596804,225274430,2053790376,3826175755,2466906013,167816743,2097651377,4027552580,2265490386,503444072,1762050814,4150417245,2154129355,426522225,1852507879,4275313526,2312317920,282753626,1742555852,4189708143,2394877945,397917763,1622183637,3604390888,2714866558,953729732,1340076626,3518719985,2797360999,1068828381,1219638859,3624741850,2936675148,906185462,1090812512,3747672003,2825379669,829329135,1181335161,3412177804,3160834842,628085408,1382605366,3423369109,3138078467,570562233,1426400815,3317316542,2998733608,733239954,1555261956,3268935591,3050360625,752459403,1541320221,2607071920,3965973030,1969922972,40735498,2617837225,3943577151,1913087877,83908371,2512341634,3803740692,2075208622,213261112,2463272603,3855990285,2094854071,198958881,2262029012,4057260610,1759359992,534414190,2176718541,4139329115,1873836001,414664567,2282248934,4279200368,1711684554,285281116,2405801727,4167216745,1634467795,376229701,2685067896,3608007406,1308918612,956543938,2808555105,3495958263,1231636301,1047427035,2932959818,3654703836,1088359270,936918000,2847714899,3736837829,1202900863,817233897,3183342108,3401237130,1404277552,615818150,3134207493,3453421203,1423857449,601450431,3009837614,3294710456,1567103746,711928724,3020668471,3272380065,1510334235,755167117],Start:function () {
   			return -1;
   		},Update:function (crc, buffer, offset, len) {
@@ -15145,7 +15145,7 @@ function copyTempDouble(ptr) {
   			return (crc ^ -1) >>> 0;
   		}};var SYSC={cb_context_t:{__size__:8,data:0,cb:4},startup_data_t:{__size__:4100,gameName:0,after:4096},download_progress_data_t:{__size__:8,loaded:0,total:4},download_complete_data_t:{__size__:4,progress:0},eula:"LIMITED USE SOFTWARE LICENSE AGREEMENT\n\n \n\nThis Limited Use Software License Agreement (the \"Agreement\") is a legal agreement between you, the end-user, and Id Software, Inc. (\"ID\").  BY CONTINUING THE INSTALLATION OF THIS GAME DEMO PROGRAM ENTITLED QUAKE III: ARENA (THE \"SOFTWARE\"), BY LOADING OR RUNNING THE SOFTWARE, OR BY PLACING OR COPYING THE SOFTWARE ONTO YOUR COMPUTER HARD DRIVE, COMPUTER RAM OR OTHER STORAGE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS AGREEMENT.\n\n\n\n1.         Grant of License.  Subject to the terms and provisions of this Agreement, ID grants to you the non-exclusive and limited right to use the Software only in executable or object code form. The term \"Software\" includes all elements of the Software, including, without limitation, data files and screen displays.  You are not receiving any ownership or proprietary right, title or interest in or to the Software or the copyright, trademarks, or other rights related thereto.  For purposes of this section, \"use\" means loading the Software into RAM and/or onto computer hard drive, as well as installation of the Software on a hard disk or other storage device and means the uses permitted in section 3. hereinbelow.  You agree that the Software will not be shipped, transferred or exported into any country in violation of the U.S. Export Administration Act (or any other law governing such matters) by you or anyone at your direction and that you will not utilize and will not authorize anyone to utilize, in any other manner, the Software in violation of any applicable law.  The Software may not be downloaded or otherwise exported or exported into (or to a national or resident of) any country to which the U.S. has embargoed goods or to anyone or into any country who/which are prohibited, by applicable law, from receiving such property.\n\n\n\n2.         Prohibitions. You, either directly or indirectly, shall not do any of the following acts:\n\n\n\na.         rent the Software;\n\n\n\nb.         sell the Software;\n\n\n\nc.         lease or lend the Software;\n\n\n\nd.         offer the Software on a \"pay-per-play\" basis;\n\n\n\ne.         distribute the Software (except as permitted by section 3. hereinbelow);\n\n\n\nf.         in any other manner and through any medium whatsoever commercially exploit the Software or use the Software for any commercial purpose;\n\n\n\ng.         disassemble, reverse engineer, decompile, modify or alter the Software including, without limitation, creating or developing extra or add-on levels for the Software;\n\n\n\nh.         translate the Software;\n\n\n\ni.         reproduce or copy the Software (except as permitted by section 3. hereinbelow);\n\n\n\nj.         publicly display the Software;\n\n\n\nk.         prepare or develop derivative works based upon the Software; or\n\n\n\nl.         remove or alter any legal notices or other markings or legends, such as trademark and copyright notices, affixed on or within the Software.\n\n\n\n3.         Permitted Distribution and Copying.  So long as this Agreement accompanies each copy you make of  the Software, and so long as you fully comply, at all times, with this Agreement, ID grants to you the non-exclusive and limited right to copy the Software and to distribute such copies of the Software free of charge for non-commercial purposes which shall include the free of charge distribution of copies of the Software as mounted on the covers of magazines; provided, however, you shall not copy or distribute the Software in any infringing manner or in any manner which violates any law or  third party right and you shall not distribute the Software together with any material which is  infringing, libelous, defamatory, obscene, false, misleading, or  otherwise illegal or unlawful. You agree to label conspicuously as \"SHAREWARE\" or \"DEMO\" each CD or other non-electronic copy of the Software that you make and distribute.  ID reserves all rights not granted in this Agreement. You shall not commercially distribute the Software  unless you first  enter into a separate contract with ID, a copy of which you may request, but which ID may decline to execute. For more information visit www.quake3arena.com.\n\n\n\n4.         Intellectual Property Rights.  The Software and all copyrights, trademarks and all other conceivable intellectual property rights related to the Software are owned by ID and are protected by United States copyright laws, international treaty provisions and all applicable law, such as the Lanham Act.  You must treat the Software like any other copyrighted material, as required by 17 U.S.C., §101 et seq. and other applicable law. You agree to use your best efforts to see that any user of the Software licensed hereunder complies with this Agreement.  You agree that you are receiving a copy of the Software by license only and not by sale and that the \"first sale\" doctrine of 17 U.S.C. §109 does not apply to your receipt or use of the Software.\n\n\n\n5.         NO WARRANTIES.  ID DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE WITH RESPECT TO THE SOFTWARE.  ID DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR FREE OR THAT THE SOFTWARE WILL MEET YOUR SPECIFIC REQUIREMENTS.  ADDITIONAL STATEMENTS SUCH AS PRESENTATIONS, WHETHER ORAL OR WRITTEN, DO NOT CONSTITUTE WARRANTIES BY ID AND SHOULD NOT BE RELIED UPON. THIS SECTION 5. SHALL SURVIVE CANCELLATION OR TERMINATION OF THIS AGREEMENT.\n\n\n\n6.         Governing Law, Venue, Indemnity and Liability Limitation.  This Agreement shall be construed in accordance with and governed by the applicable laws of the State of Texas and applicable United States federal law.  Copyright and other proprietary matters will be governed by United States laws and international treaties.  Exclusive venue for all litigation regarding this Agreement shall be in Dallas County, Texas and you agree to submit to the jurisdiction of the courts in Dallas, Texas for any such litigation. You agree to indemnify, defend and hold harmless ID and ID's officers, employees, directors, agents, licensees (excluding you), successors and assigns from and against all losses, lawsuits, damages, causes of action and claims relating to and/or arising from your breach of this Agreement.  You agree that your unauthorized use of the Software, or any part thereof, may immediately and irreparably damage ID such that ID could not be adequately compensated solely by a monetary award and that at ID's option ID shall be entitled to an injunctive order, in addition to all other available remedies including a monetary award, appropriately restraining and/or prohibiting such unauthorized use without the necessity of ID posting bond or other security. IN ANY CASE, ID AND ID'S OFFICERS, EMPLOYEES, DIRECTORS, AGENTS, LICENSEES, SUBLICENSEES, SUCCESSORS AND ASSIGNS SHALL NOT BE LIABLE FOR LOSS OF DATA, LOSS OF PROFITS, LOST SAVINGS, SPECIAL, INCIDENTAL, CONSEQUENTIAL, INDIRECT, PUNITIVE OR OTHER SIMILAR DAMAGES ARISING FROM ANY ALLEGED CLAIM FOR BREACH OF WARRANTY, BREACH OF CONTRACT, NEGLIGENCE, STRICT PRODUCT LIABILITY, OR OTHER LEGAL THEORY EVEN IF ID OR ITS AGENT HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR EVEN IF SUCH DAMAGES ARE FORESEEABLE, OR LIABLE FOR ANY CLAIM BY ANY OTHER PARTY.  Some jurisdictions do not allow the exclusion or limitation of incidental or consequential damages, so the above limitation or exclusion may not apply to you. This Section 6. shall survive cancellation or termination of this Agreement.\n\n\n\n7.         U.S. Government Restricted Rights. To the extent applicable, the United States Government shall only have those rights to use the Software as expressly stated and expressly limited and restricted in this Agreement, as provided in 48 C.F.R. §§ 227.7201 through 227.7204, inclusive.\n\n\n\n8.         General Provisions.  Neither this Agreement nor any part or portion hereof shall be assigned or sublicensed by you.  ID may assign its rights under this Agreement in ID's sole discretion.  Should any provision of this Agreement be held to be void, invalid, unenforceable or illegal by a court of competent jurisdiction, the validity and enforceability of the other provisions shall not be affected thereby.  If any provision is determined to be unenforceable by a court of competent jurisdiction, you agree to a modification of such provision to provide for enforcement of the provision's intent, to the extent permitted by applicable law. Failure of ID to enforce any provision of this Agreement shall not constitute or be construed as a waiver of such provision or of the right to enforce such provision.  Immediately upon your failure to comply with or breach of any term or provision of this Agreement, THIS AGREEMENT AND YOUR LICENSE SHALL AUTOMATICALLY TERMINATE, WITHOUT NOTICE, AND ID MAY PURSUE ALL RELIEF AND REMEDIES AGAINST YOU WHICH ARE AVAILABLE UNDER APPLICABLE LAW AND/OR THIS AGREEMENT.   In the event this Agreement is terminated, you shall have no right to use the Software, in any manner, and you shall immediately destroy all copies of the Software in your possession, custody or control.\n\n\n\nYOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, YOU UNDERSTAND THIS AGREEMENT, AND UNDERSTAND THAT BY CONTINUING THE INSTALLATION OF THE SOFTWARE, BY LOADING OR RUNNING THE SOFTWARE, OR BY PLACING OR COPYING THE SOFTWARE ONTO YOUR COMPUTER HARD DRIVE OR RAM, YOU AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT.  YOU FURTHER AGREE THAT, EXCEPT FOR WRITTEN SEPARATE AGREEMENTS BETWEEN ID AND YOU, THIS AGREEMENT IS A COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE PARTIES HERETO.  THIS AGREEMENT SUPERSEDES ALL PRIOR ORAL AGREEMENTS, PROPOSALS OR UNDERSTANDINGS, AND ANY OTHER COMMUNICATIONS BETWEEN ID AND YOU RELATING TO THE SUBJECT MATTER OF THIS AGREEMENT.",installers:[{name:"linuxq3ademo-1.11-6.x86.gz.sh",offset:5468,paks:[{src:"demoq3/pak0.pk3",dest:"baseq3/pak0.pk3",checksum:2483777038}]},{name:"linuxq3apoint-1.32b-3.x86.run",offset:8251,paks:[{src:"baseq3/pak1.pk3",dest:"baseq3/pak1.pk3",checksum:1635885364},{src:"baseq3/pak2.pk3",dest:"baseq3/pak2.pk3",checksum:2142044321},{src:"baseq3/pak3.pk3",dest:"baseq3/pak3.pk3",checksum:682311620},{src:"baseq3/pak4.pk3",dest:"baseq3/pak4.pk3",checksum:4113726565},{src:"baseq3/pak5.pk3",dest:"baseq3/pak5.pk3",checksum:590466266},{src:"baseq3/pak6.pk3",dest:"baseq3/pak6.pk3",checksum:231612509},{src:"baseq3/pak7.pk3",dest:"baseq3/pak7.pk3",checksum:3663817674},{src:"baseq3/pak8.pk3",dest:"baseq3/pak8.pk3",checksum:136401958}]}],manifest:null,Print:function (str) {
   			str = allocate(intArrayFromString(str + '\n'), 'i8', ALLOC_STACK);
-  
+
   			_Com_Printf(str);
   		},Error:function (level, err) {
   			if (level === 'fatal') {
@@ -15161,9 +15161,9 @@ function copyTempDouble(ptr) {
   			} else {
   				level = 0;
   			}
-  
+
   			err = allocate(intArrayFromString(err + '\n'), 'i8', ALLOC_STACK);
-  
+
   			_Com_Error(level, err);
   		},ProxyCallback:function (context) {
   			try {
@@ -15180,9 +15180,9 @@ function copyTempDouble(ptr) {
   			var chunkSize = 1024*1024;
   			var bufp = allocate(chunkSize, 'i8', ALLOC_STACK);
   			var crc = CRC32.Start();
-  
+
   			var start = Date.now();
-  
+
   			try {
   				var slab = HEAP8;
   				var n = 0;
@@ -15198,23 +15198,23 @@ function copyTempDouble(ptr) {
   				Runtime.stackRestore(stack);
   				return null;
   			}
-  
+
   			SYSC.Print('generated crc32 for ' + path + ' in ' + ((Date.now() - start) / 1000).toFixed(2) + ' seconds');
-  
+
   			Runtime.stackRestore(stack);
   			return CRC32.Finish(crc);
   		},GetCDN:function () {
   			return Pointer_stringify(_Com_GetCDN());
   		},GetManifest:function () {
   			var manifest = Pointer_stringify(_Com_GetManifest());
-  
+
   			if (!manifest) {
   				return [];
   			}
-  
+
   			return manifest.split(' ').map(function (entry) {
   				var split = entry.split('@');
-  
+
   				return {
   					name: split[0],
   					checksum: parseInt(split[1], 10),
@@ -15225,7 +15225,13 @@ function copyTempDouble(ptr) {
   			var root = SYSC.GetCDN();
   			var name = asset.name.replace(/(.+\/|)(.+?)$/, '$1' + asset.checksum + '-$2');
   			var url = 'http://' + root + '/assets/' + name;
-  
+
+				// Ensure HTTPS when page is served over HTTPS to avoid mixed content
+				if (typeof location !== 'undefined' && location.protocol === 'https:') {
+					url = url.replace(/^http:\/\//, 'https://');
+				}
+
+
   			SYS.DoXHR(url, {
   				dataType: 'arraybuffer',
   				onprogress: onprogress,
@@ -15233,41 +15239,41 @@ function copyTempDouble(ptr) {
   			});
   		},DownloadAssets:function (assets, onstartasset, onprogress, onendasset, callback) {
   			var progress = [];
-  
+
   			function downloadedBytes() {
   				return progress.reduce(function (a, b) { return a + b; });
   			}
-  
+
   			function totalBytes() {
   				return assets.reduce(function (a, b) { return a + b.compressed; }, 0);
   			}
-  
+
   			function nextDownload() {
   				nextDownload.pos = nextDownload.pos == undefined ? 0 : nextDownload.pos + 1;
-  
+
   				if (nextDownload.pos >= assets.length) {
   					return callback();
   				}
-  
+
   				var asset = assets[nextDownload.pos];
-  
+
   				onstartasset(asset);
-  
+
   				SYSC.DownloadAsset(asset, function (loaded, total) {
   					progress[nextDownload.pos] = loaded;
-  
+
   					onprogress(downloadedBytes(), totalBytes());
   				}, function (err, data) {
   					if (err) return callback(err);
-  
+
   					onendasset(asset, data, function (err) {
   						if (err) return callback(err);
-  
+
   						setTimeout(nextDownload);
   					});
   				});
   			}
-  
+
   			nextDownload();
   		},UpdateManifest:function (callback) {
   			var fs_cdn = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('fs_cdn'), 'i8', ALLOC_STACK)));
@@ -15275,52 +15281,58 @@ function copyTempDouble(ptr) {
   			var com_basegame = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('com_basegame'), 'i8', ALLOC_STACK)));
   			var mapname = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('mapname'), 'i8', ALLOC_STACK)));
   			var url = 'http://' + fs_cdn + '/assets/manifest.json';
-  
+
+				// Ensure HTTPS when page is served over HTTPS to avoid mixed content
+				if (typeof location !== 'undefined' && location.protocol === 'https:') {
+					url = url.replace(/^http:\/\//, 'https://');
+				}
+
+
   			function isInstaller(name) {
   				return SYSC.installers.some(function (installer) {
   					return installer.name === name;
   				});
   			}
-  
+
   			function isCommon(name) {
   				var basepakRx = RegExp('(' + com_basegame + (fs_game ? '|' + fs_game : '') + ')\/pak.+\.pk3$');
   				return name.match(basepakRx);
   			}
-  
+
   			function isMapPak(name) {
   				return PATH.basename(name) === (mapname + '.pk3');
   			}
-  
+
   			function activePaks(entry) {
   				return isInstaller(entry.name) || isCommon(entry.name) || isMapPak(entry.name);
   			}
-  
+
   			function formatManifestString(manifest) {
   				return manifest.map(function (entry) {
   					return entry.name + '@' + entry.checksum + '@' + entry.compressed;
   				}).join(' ');
   			}
-  
+
   			SYS.DoXHR(url, {
   				dataType: 'json',
   				onload: function (err, manifest) {
   					if (err) return callback(new Error('Failed to download and parse manifest, ' + err.message));
-  
+
   					var fs_manifestName = allocate(intArrayFromString('fs_manifest'), 'i8', ALLOC_STACK);
   					var fs_manifest = allocate(intArrayFromString(formatManifestString(manifest.filter(activePaks))), 'i8', ALLOC_STACK);
   					_Cvar_Set(fs_manifestName, fs_manifest);
-  
+
   					var fs_completeManifestName = allocate(intArrayFromString('fs_completeManifest'), 'i8', ALLOC_STACK);
   					var fs_completeManifest = allocate(intArrayFromString(formatManifestString(manifest)), 'i8', ALLOC_STACK);
   					_Cvar_Set(fs_completeManifestName, fs_completeManifest);
-  
+
   					return callback();
   				}
   			});
   		},SavePak:function (name, buffer, callback) {
   			var fs_homepath = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('fs_homepath'), 'i8', ALLOC_STACK)));
   			var localPath = PATH.join(fs_homepath, name);
-  
+
   			try {
   				FS.mkdir(PATH.dirname(localPath), 0777);
   			} catch (e) {
@@ -15328,31 +15340,31 @@ function copyTempDouble(ptr) {
   					return callback(e);
   				}
   			}
-  
+
   			FS.writeFile(localPath, new Uint8Array(buffer), { encoding: 'binary', flags: 'w', canOwn: true });
-  
+
   			FS.syncfs(callback);
   		},ValidateInstaller:function (installer) {
   			var fs_homepath = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('fs_homepath'), 'i8', ALLOC_STACK)));
-  
+
   			for (var i = 0; i < installer.paks.length; i++) {
   				var pak = installer.paks[i];
   				var localPath = PATH.join(fs_homepath, pak.dest);
   				var crc = SYSC.CRC32File(localPath);
-  
+
   				if (crc !== pak.checksum) {
   					return false;
   				}
   			}
-  
+
   			return true;
   		},DirtyInstallers:function () {
   			var installers = [];
   			var assets = SYSC.GetManifest();
-  
+
   			for (var i = 0; i < SYSC.installers.length; i++) {
   				var installer = SYSC.installers[i];
-  
+
   				var asset;
   				for (var j = 0; j < assets.length; j++) {
   					if (assets[j].name === installer.name) {
@@ -15360,57 +15372,57 @@ function copyTempDouble(ptr) {
   						break;
   					}
   				}
-  
+
   				if (!asset) {
   					return callback(new Error('Failed to find "' + installer.name + '" in manifest'));
   				}
-  
+
   				if (!SYSC.ValidateInstaller(installer)) {
   					// append the installer info to the asset
   					asset.installer = installer;
-  
+
   					installers.push(asset);
   				}
   			}
-  
+
   			return installers;
   		},ExtractInstaller:function (data, paks, callback) {
   			var gunzip = new Zlib.Gunzip(data);
   			var buffer = gunzip.decompress();
   			var tar = new Tar(buffer);
-  
+
   			function nextEntry() {
   				nextEntry.pos = nextEntry.pos == undefined ? 0 : nextEntry.pos + 1;
-  
+
   				if (nextEntry.pos >= paks.length) {
   					return callback();
   				}
-  
+
   				var entry = paks[nextEntry.pos];
-  
+
   				var pakPath = entry.src;
   				var buffer = tar.getContent(pakPath);
-  
+
   				// TODO validate buffer checksum
-  
+
   				SYSC.SavePak(entry.dest, buffer, function (err) {
   					if (err) return callback(err);
-  
+
   					nextEntry();
   				});
   			}
-  
+
   			nextEntry();
   		},SyncInstallers:function (callback) {
   			var downloads = SYSC.DirtyInstallers();
-  
+
   			if (!downloads.length) {
   				return callback();
   			}
-  
+
   			SYS.PromptEULA(function (err) {
   				if (err) return callback(err);
-  
+
   				SYSC.DownloadAssets(downloads, function (asset) {
   					SYS.LoadingDescription('loading ' + asset.name);
   				}, function (loaded, total) {
@@ -15419,7 +15431,7 @@ function copyTempDouble(ptr) {
   					SYSC.ExtractInstaller(new Uint8Array(data, asset.installer.offset), asset.installer.paks, next);
   				}, function (err) {
   					SYS.LoadingDescription(null);
-  
+
   					setTimeout(function () {
   						callback(err);
   					});
@@ -15429,7 +15441,7 @@ function copyTempDouble(ptr) {
   			var fs_homepath = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('fs_homepath'), 'i8', ALLOC_STACK)));
   			var localPath = PATH.join(fs_homepath, asset.name);
   			var crc = SYSC.CRC32File(localPath);
-  
+
   			return crc === asset.checksum;
   		},DirtyPaks:function () {
   			return SYSC.GetManifest().filter(function (asset) {
@@ -15437,7 +15449,7 @@ function copyTempDouble(ptr) {
   			});
   		},SyncPaks:function (callback) {
   			var downloads = SYSC.DirtyPaks();
-  
+
   			SYSC.DownloadAssets(downloads, function (asset) {
   				SYS.LoadingDescription('loading ' + asset.name);
   			}, function (loaded, total) {
@@ -15446,7 +15458,7 @@ function copyTempDouble(ptr) {
   				SYSC.SavePak(asset.name, data, next);
   			}, function (err) {
   				SYS.LoadingDescription(null);
-  
+
   				setTimeout(function () {
   					callback(err);
   				});
@@ -15454,10 +15466,10 @@ function copyTempDouble(ptr) {
   		},FS_Startup:function (callback) {
   			SYSC.UpdateManifest(function (err) {
   				if (err) return callback(err);
-  
+
   				SYSC.SyncInstallers(function (err) {
   					if (err) return callback(err);
-  
+
   					SYSC.SyncPaks(Browser.safeCallback(callback));
   				});
   			});
@@ -15467,7 +15479,7 @@ function copyTempDouble(ptr) {
   			if (!url) {
   				return opts.onload(new Error('Must provide a URL'));
   			}
-  
+
   			var req = new XMLHttpRequest();
   			req.open('GET', url, true);
   			if (opts.dataType &&
@@ -15483,7 +15495,7 @@ function copyTempDouble(ptr) {
   			req.onload = function () {
   				var err = null;
   				var data = req.response;
-  
+
   				if (!(req.status >= 200 && req.status < 300 || req.status === 304)) {
   					err = new Error('Couldn\'t load ' + url + '. Status: ' + req.statusCode);
   				} else {
@@ -15496,7 +15508,7 @@ function copyTempDouble(ptr) {
   						}
   					}
   				}
-  
+
   				if (opts.onload) {
   					opts.onload(err, data);
   				}
@@ -15505,32 +15517,32 @@ function copyTempDouble(ptr) {
   		},LoadingDescription:function (desc) {
   			var progress = document.getElementById('loading-progress');
   			var description = progress.querySelector('.description');
-  
+
   			if (!desc) {
   				SYS.loading.style.display = 'none';
   				SYS.LoadingProgress(0);
   			} else {
   				SYS.loading.style.display = 'block';
   			}
-  
+
   			description.innerHTML = desc;
   		},LoadingProgress:function (frac) {
   			var progress = document.getElementById('loading-progress');
   			var bar = progress.querySelector('.bar');
-  
+
   			bar.style.width = (frac*100) + '%';
   		},PromptEULA:function (callback) {
   			var agree = document.getElementById('agree');
   			var dontAgree = document.getElementById('dont-agree');
-  
+
   			SYS.eula.style.display = 'block';
-  
+
   			agree.onclick = function () {
   				SYS.eula.style.display = 'none';
   				agree.onclick = null;
   				return callback();
   			};
-  
+
   			dontAgree.onclick = function () {
   				SYS.eula.style.display = 'none';
   				dontAgree.onclick = null;
@@ -15540,7 +15552,7 @@ function copyTempDouble(ptr) {
   		if (!SYS.timeBase) {
   			SYS.timeBase = Date.now();
   		}
-  
+
   		if (window.performance.now) {
   			return parseInt(window.performance.now(), 10);
   		} else if (window.performance.webkitNow) {
@@ -15550,7 +15562,7 @@ function copyTempDouble(ptr) {
   		}
   	}
 
-   
+
   Module["_strncpy"] = _strncpy;
 
   var _sin=Math_sin;
@@ -15563,7 +15575,7 @@ function copyTempDouble(ptr) {
   		return false;
   	}
 
-  
+
   function _round(x) {
       return (x < 0) ? -Math.round(-x) : Math.round(x);
     }var _roundf=_round;
@@ -15574,11 +15586,11 @@ function copyTempDouble(ptr) {
 
   var _sqrtf=Math_sqrt;
 
-   
+
   Module["_strcpy"] = _strcpy;
 
-  
-   
+
+
   Module["_memmove"] = _memmove;var _llvm_memmove_p0i8_p0i8_i32=_memmove;
 
   function _strchr(ptr, chr) {
@@ -15607,7 +15619,7 @@ function copyTempDouble(ptr) {
   		return 0;
   	}
 
-   
+
   Module["_tolower"] = _tolower;
 
 
@@ -15620,14 +15632,14 @@ function copyTempDouble(ptr) {
       return 0;
     }
 
-  
-   
+
+
   Module["_rand_r"] = _rand_r;
-  
-  var ___rand_seed=allocate([0x0273459b, 0, 0, 0], "i32", ALLOC_STATIC); 
+
+  var ___rand_seed=allocate([0x0273459b, 0, 0, 0], "i32", ALLOC_STATIC);
   Module["_rand"] = _rand;
 
-  
+
   function _rint(x) {
       if (Math.abs(x % 1) !== 0.5) return Math.round(x);
       return x + x % 2 + ((x < 0) ? 1 : -1);
@@ -15643,20 +15655,20 @@ function copyTempDouble(ptr) {
 
   function _Sys_GLimpInit() {
   		var viewport = Module['viewport'];
-  
+
   		// create a canvas element at this point if one doesnt' already exist
   		if (!Module['canvas']) {
   			var canvas = document.createElement('canvas');
   			canvas.id = 'viewport';
   			canvas.width = viewport.offsetWidth;
   			canvas.height = viewport.offsetHeight;
-  
+
   			Module['canvas'] = viewport.appendChild(canvas);
   		}
   	}
 
-  
-  
+
+
   function __getFloat(text) {
       return /^[+-]?[0-9]*\.?[0-9]+([eE][+-]?[0-9]+)?/.exec(text);
     }function __scanString(format, get, unget, varargs) {
@@ -15691,7 +15703,7 @@ function copyTempDouble(ptr) {
       var fields = 0;
       var argIndex = 0;
       var next;
-  
+
       mainLoop:
       for (var formatIndex = 0; formatIndex < format.length;) {
         if (format[formatIndex] === '%' && format[formatIndex+1] == 'n') {
@@ -15701,7 +15713,7 @@ function copyTempDouble(ptr) {
           formatIndex += 2;
           continue;
         }
-  
+
         if (format[formatIndex] === '%') {
           var nextC = format.indexOf('c', formatIndex+1);
           if (nextC > 0) {
@@ -15725,7 +15737,7 @@ function copyTempDouble(ptr) {
             }
           }
         }
-  
+
         // handle %[...]
         if (format[formatIndex] === '%' && format.indexOf('[', formatIndex+1) > 0) {
           var match = /\%([0-9]*)\[(\^)?(\]?[^\]]*)\]/.exec(format.substring(formatIndex));
@@ -15733,7 +15745,7 @@ function copyTempDouble(ptr) {
             var maxNumCharacters = parseInt(match[1]) || Infinity;
             var negateScanList = (match[2] === '^');
             var scanList = match[3];
-  
+
             // expand "middle" dashs into character sets
             var middleDashMatch;
             while ((middleDashMatch = /([^\-])\-([^\-])/.exec(scanList))) {
@@ -15742,11 +15754,11 @@ function copyTempDouble(ptr) {
               for (var expanded = ''; rangeStartCharCode <= rangeEndCharCode; expanded += String.fromCharCode(rangeStartCharCode++));
               scanList = scanList.replace(middleDashMatch[1] + '-' + middleDashMatch[2], expanded);
             }
-  
+
             var argPtr = HEAP32[(((varargs)+(argIndex))>>2)];
             argIndex += Runtime.getAlignSize('void*', null, true);
             fields++;
-  
+
             for (var i = 0; i < maxNumCharacters; i++) {
               next = get();
               if (negateScanList) {
@@ -15765,14 +15777,14 @@ function copyTempDouble(ptr) {
                 }
               }
             }
-  
+
             // write out null-terminating character
             HEAP8[((argPtr++)|0)]=0;
             formatIndex += match[0].length;
-            
+
             continue;
           }
-        }      
+        }
         // remove whitespace
         while (1) {
           next = get();
@@ -15780,7 +15792,7 @@ function copyTempDouble(ptr) {
           if (!(next in __scanString.whiteSpace)) break;
         }
         unget();
-  
+
         if (format[formatIndex] === '%') {
           formatIndex++;
           var suppressAssignment = false;
@@ -15832,7 +15844,7 @@ function copyTempDouble(ptr) {
           } else {
             next = get();
             var first = true;
-            
+
             // Strip the optional 0x prefix for %x.
             if ((type == 'x' || type == 'X') && (next == 48)) {
               var peek = get();
@@ -15842,7 +15854,7 @@ function copyTempDouble(ptr) {
                 unget();
               }
             }
-            
+
             while ((curr < max_ || isNaN(max_)) && next > 0) {
               if (!(next in __scanString.whiteSpace) && // stop on whitespace
                   (type == 's' ||
@@ -15864,7 +15876,7 @@ function copyTempDouble(ptr) {
           }
           if (buffer.length === 0) return 0;  // Failure.
           if (suppressAssignment) continue;
-  
+
           var text = buffer.join('');
           var argPtr = HEAP32[(((varargs)+(argIndex))>>2)];
           argIndex += Runtime.getAlignSize('void*', null, true);
@@ -15932,9 +15944,9 @@ function copyTempDouble(ptr) {
       return __scanString(format, get, unget, varargs);
     }
 
-  
-  
-  
+
+
+
   function __reallyNegative(x) {
       return x < 0 || (x === 0 && (1/x) === -Infinity);
     }function __formatString(format, varargs) {
@@ -15950,7 +15962,7 @@ function copyTempDouble(ptr) {
           ret = [HEAP32[(((varargs)+(argIndex))>>2)],
                  HEAP32[(((varargs)+(argIndex+8))>>2)]];
           argIndex += 8; // each 32-bit chunk is in a 64-bit block
-  
+
         } else {
           type = 'i32'; // varargs are always i32, i64, or double
           ret = HEAP32[(((varargs)+(argIndex))>>2)];
@@ -15958,7 +15970,7 @@ function copyTempDouble(ptr) {
         argIndex += Math.max(Runtime.getNativeFieldSize(type), Runtime.getAlignSize(type, null, true));
         return ret;
       }
-  
+
       var ret = [];
       var curr, next, currArg;
       while(1) {
@@ -16000,7 +16012,7 @@ function copyTempDouble(ptr) {
             textIndex++;
             next = HEAP8[((textIndex+1)|0)];
           }
-  
+
           // Handle width.
           var width = 0;
           if (next == 42) {
@@ -16014,7 +16026,7 @@ function copyTempDouble(ptr) {
               next = HEAP8[((textIndex+1)|0)];
             }
           }
-  
+
           // Handle precision.
           var precisionSet = false, precision = -1;
           if (next == 46) {
@@ -16040,7 +16052,7 @@ function copyTempDouble(ptr) {
             precision = 6; // Standard default.
             precisionSet = false;
           }
-  
+
           // Handle integer sizes. WARNING: These assume a 32-bit architecture!
           var argSize;
           switch (String.fromCharCode(next)) {
@@ -16077,7 +16089,7 @@ function copyTempDouble(ptr) {
           }
           if (argSize) textIndex++;
           next = HEAP8[((textIndex+1)|0)];
-  
+
           // Handle type specifier.
           switch (String.fromCharCode(next)) {
             case 'd': case 'i': case 'u': case 'o': case 'x': case 'X': case 'p': {
@@ -16150,7 +16162,7 @@ function copyTempDouble(ptr) {
                   argText = '0' + argText;
                 }
               }
-  
+
               // Add sign if needed
               if (currArg >= 0) {
                 if (flagAlwaysSigned) {
@@ -16159,13 +16171,13 @@ function copyTempDouble(ptr) {
                   prefix = ' ' + prefix;
                 }
               }
-  
+
               // Move sign to prefix so we zero-pad after the sign
               if (argText.charAt(0) == '-') {
                 prefix = '-' + prefix;
                 argText = argText.substr(1);
               }
-  
+
               // Add padding.
               while (prefix.length + argText.length < width) {
                 if (flagLeftAlign) {
@@ -16178,7 +16190,7 @@ function copyTempDouble(ptr) {
                   }
                 }
               }
-  
+
               // Insert the result into the buffer.
               argText = prefix + argText;
               argText.split('').forEach(function(chr) {
@@ -16199,7 +16211,7 @@ function copyTempDouble(ptr) {
               } else {
                 var isGeneral = false;
                 var effectivePrecision = Math.min(precision, 20);
-  
+
                 // Convert g/G to f/F or e/E, as per:
                 // http://pubs.opengroup.org/onlinepubs/9699919799/functions/printf.html
                 if (next == 103 || next == 71) {
@@ -16215,7 +16227,7 @@ function copyTempDouble(ptr) {
                   }
                   effectivePrecision = Math.min(precision, 20);
                 }
-  
+
                 if (next == 101 || next == 69) {
                   argText = currArg.toExponential(effectivePrecision);
                   // Make sure the exponent has at least 2 digits.
@@ -16228,7 +16240,7 @@ function copyTempDouble(ptr) {
                     argText = '-' + argText;
                   }
                 }
-  
+
                 var parts = argText.split('e');
                 if (isGeneral && !flagAlternative) {
                   // Discard trailing zeros and periods.
@@ -16243,10 +16255,10 @@ function copyTempDouble(ptr) {
                   while (precision > effectivePrecision++) parts[0] += '0';
                 }
                 argText = parts[0] + (parts.length > 1 ? 'e' + parts[1] : '');
-  
+
                 // Capitalize 'E' if needed.
                 if (next == 69) argText = argText.toUpperCase();
-  
+
                 // Add sign.
                 if (currArg >= 0) {
                   if (flagAlwaysSigned) {
@@ -16256,7 +16268,7 @@ function copyTempDouble(ptr) {
                   }
                 }
               }
-  
+
               // Add padding.
               while (argText.length < width) {
                 if (flagLeftAlign) {
@@ -16269,10 +16281,10 @@ function copyTempDouble(ptr) {
                   }
                 }
               }
-  
+
               // Adjust case.
               if (next < 97) argText = argText.toUpperCase();
-  
+
               // Insert the result into the buffer.
               argText.split('').forEach(function(chr) {
                 ret.push(chr.charCodeAt(0));
@@ -16399,28 +16411,28 @@ function copyTempDouble(ptr) {
       return ret;
     }
 
-  
+
   var ___tm_current=allocate(44, "i8", ALLOC_STATIC);
-  
-  
+
+
   var ___tm_timezone=allocate(intArrayFromString("GMT"), "i8", ALLOC_STATIC);
-  
-  
+
+
   var _tzname=allocate(8, "i32*", ALLOC_STATIC);
-  
+
   var _daylight=allocate(1, "i32*", ALLOC_STATIC);
-  
+
   var _timezone=allocate(1, "i32*", ALLOC_STATIC);function _tzset() {
       // TODO: Use (malleable) environment variables instead of system settings.
       if (_tzset.called) return;
       _tzset.called = true;
-  
+
       HEAP32[((_timezone)>>2)]=-(new Date()).getTimezoneOffset() * 60;
-  
+
       var winter = new Date(2000, 0, 1);
       var summer = new Date(2000, 6, 1);
       HEAP32[((_daylight)>>2)]=Number(winter.getTimezoneOffset() != summer.getTimezoneOffset());
-  
+
       var winterName = 'GMT'; // XXX do not rely on browser timezone info, it is very unpredictable | winter.toString().match(/\(([A-Z]+)\)/)[1];
       var summerName = 'GMT'; // XXX do not rely on browser timezone info, it is very unpredictable | summer.toString().match(/\(([A-Z]+)\)/)[1];
       var winterNamePtr = allocate(intArrayFromString(winterName), 'i8', ALLOC_NORMAL);
@@ -16437,26 +16449,26 @@ function copyTempDouble(ptr) {
       HEAP32[(((tmPtr)+(16))>>2)]=date.getMonth();
       HEAP32[(((tmPtr)+(20))>>2)]=date.getFullYear()-1900;
       HEAP32[(((tmPtr)+(24))>>2)]=date.getDay();
-  
+
       var start = new Date(date.getFullYear(), 0, 1);
       var yday = Math.floor((date.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
       HEAP32[(((tmPtr)+(28))>>2)]=yday;
       HEAP32[(((tmPtr)+(36))>>2)]=start.getTimezoneOffset() * 60;
-  
+
       var dst = Number(start.getTimezoneOffset() != date.getTimezoneOffset());
       HEAP32[(((tmPtr)+(32))>>2)]=dst;
-  
+
       HEAP32[(((tmPtr)+(40))>>2)]=___tm_timezone;
-  
+
       return tmPtr;
     }function _localtime(time) {
       return _localtime_r(time, ___tm_current);
     }
 
-  
+
   var ___tm_formatted=allocate(44, "i8", ALLOC_STATIC);
-  
-  
+
+
   function _mktime(tmPtr) {
       _tzset();
       var year = HEAP32[(((tmPtr)+(20))>>2)];
@@ -16486,13 +16498,13 @@ function copyTempDouble(ptr) {
       return _asctime_r(tmPtr, ___tm_formatted);
     }
 
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   function _mkport() { throw 'TODO' }var SOCKFS={mount:function (mount) {
         return FS.createNode(null, '/', 16384 | 0777, 0);
       },createSocket:function (family, type, protocol) {
@@ -16500,7 +16512,7 @@ function copyTempDouble(ptr) {
         if (protocol) {
           assert(streaming == (protocol == 6)); // if SOCK_STREAM, must be tcp
         }
-  
+
         // create our internal socket structure
         var sock = {
           family: family,
@@ -16512,12 +16524,12 @@ function copyTempDouble(ptr) {
           recv_queue: [],
           sock_ops: SOCKFS.websocket_sock_ops
         };
-  
+
         // create the filesystem node to store the socket structure
         var name = SOCKFS.nextname();
         var node = FS.createNode(SOCKFS.root, name, 49152, 0);
         node.sock = sock;
-  
+
         // and the wrapping stream that enables library functions such
         // as read and write to indirectly interact with the socket
         var stream = FS.createStream({
@@ -16527,11 +16539,11 @@ function copyTempDouble(ptr) {
           seekable: false,
           stream_ops: SOCKFS.stream_ops
         });
-  
+
         // map the new stream to the socket structure (sockets have a 1:1
         // relationship with a stream)
         sock.stream = stream;
-  
+
         return sock;
       },getSocket:function (fd) {
         var stream = FS.getStream(fd);
@@ -16567,13 +16579,13 @@ function copyTempDouble(ptr) {
         return 'socket[' + (SOCKFS.nextname.current++) + ']';
       },websocket_sock_ops:{createPeer:function (sock, addr, port) {
           var ws;
-  
+
           if (typeof addr === 'object') {
             ws = addr;
             addr = null;
             port = null;
           }
-  
+
           if (ws) {
             // for sockets that've already connected (e.g. we're the server)
             // we can inspect the _socket property for the address
@@ -16605,18 +16617,18 @@ function copyTempDouble(ptr) {
               throw new FS.ErrnoError(ERRNO_CODES.EHOSTUNREACH);
             }
           }
-  
-  
+
+
           var peer = {
             addr: addr,
             port: port,
             socket: ws,
             dgram_send_queue: []
           };
-  
+
           SOCKFS.websocket_sock_ops.addPeer(sock, peer);
           SOCKFS.websocket_sock_ops.handlePeerEvents(sock, peer);
-  
+
           // if this is a bound dgram socket, send the port number first to allow
           // us to override the ephemeral port reported to us by remotePort on the
           // remote end.
@@ -16627,7 +16639,7 @@ function copyTempDouble(ptr) {
                 ((sock.sport & 0xff00) >> 8) , (sock.sport & 0xff)
             ]));
           }
-  
+
           return peer;
         },getPeer:function (sock, addr, port) {
           return sock.peers[addr + ':' + port];
@@ -16637,7 +16649,7 @@ function copyTempDouble(ptr) {
           delete sock.peers[peer.addr + ':' + peer.port];
         },handlePeerEvents:function (sock, peer) {
           var first = true;
-  
+
           function handleOpen() {
             try {
               var queued = peer.dgram_send_queue.shift();
@@ -16651,12 +16663,12 @@ function copyTempDouble(ptr) {
               peer.socket.close();
             }
           }
-  
+
           function handleMessage(data) {
             assert(typeof data !== 'string' && data.byteLength !== undefined);  // must receive an ArrayBuffer
             data = new Uint8Array(data);  // make a typed array view on the array buffer
-  
-  
+
+
             // if this is the port message, override the peer's port with it
             var wasfirst = first;
             first = false;
@@ -16671,14 +16683,14 @@ function copyTempDouble(ptr) {
               SOCKFS.websocket_sock_ops.addPeer(sock, peer);
               return;
             }
-  
+
             sock.recv_queue.push({ addr: peer.addr, port: peer.port, data: data });
           }
-  
+
           function handleClose() {
             SOCKFS.websocket_sock_ops.removePeer(sock, peer);
           }
-  
+
           if (ENVIRONMENT_IS_NODE) {
             peer.socket.on('open', handleOpen);
             peer.socket.on('message', function(data, flags) {
@@ -16703,29 +16715,29 @@ function copyTempDouble(ptr) {
             // if there are pending clients.
             return sock.pending.length ? (64 | 1) : 0;
           }
-  
+
           var mask = 0;
           var dest = sock.type === 1 ?  // we only care about the socket state for connection-based sockets
             SOCKFS.websocket_sock_ops.getPeer(sock, sock.daddr, sock.dport) :
             null;
-  
+
           if (sock.recv_queue.length ||
               !dest ||  // connection-less sockets are always ready to read
               (dest && dest.socket.readyState === dest.socket.CLOSING) ||
               (dest && dest.socket.readyState === dest.socket.CLOSED)) {  // let recv return 0 once closed
             mask |= (64 | 1);
           }
-  
+
           if (!dest ||  // connection-less sockets are always ready to write
               (dest && dest.socket.readyState === dest.socket.OPEN)) {
             mask |= 4;
           }
-  
+
           if ((dest && dest.socket.readyState === dest.socket.CLOSING) ||
               (dest && dest.socket.readyState === dest.socket.CLOSED)) {
             mask |= 16;
           }
-  
+
           return mask;
         },ioctl:function (sock, request, arg) {
           switch (request) {
@@ -16787,11 +16799,11 @@ function copyTempDouble(ptr) {
           if (sock.server) {
             throw new FS.ErrnoError(ERRNO_CODS.EOPNOTSUPP);
           }
-  
+
           // TODO autobind
           // if (!sock.addr && sock.type == 2) {
           // }
-  
+
           // early out if we're already connected / in the middle of connecting
           if (typeof sock.daddr !== 'undefined' && typeof sock.dport !== 'undefined') {
             var dest = SOCKFS.websocket_sock_ops.getPeer(sock, sock.daddr, sock.dport);
@@ -16803,13 +16815,13 @@ function copyTempDouble(ptr) {
               }
             }
           }
-  
+
           // add the socket to our peer list and set our
           // destination address / port to match
           var peer = SOCKFS.websocket_sock_ops.createPeer(sock, addr, port);
           sock.daddr = peer.addr;
           sock.dport = peer.port;
-  
+
           // always "fail" in non-blocking mode
           throw new FS.ErrnoError(ERRNO_CODES.EINPROGRESS);
         },listen:function (sock, backlog) {
@@ -16826,16 +16838,16 @@ function copyTempDouble(ptr) {
             port: sock.sport
             // TODO support backlog
           });
-  
+
           sock.server.on('connection', function(ws) {
             if (sock.type === 1) {
               var newsock = SOCKFS.createSocket(sock.family, sock.type, sock.protocol);
-  
+
               // create a peer on the new socket
               var peer = SOCKFS.websocket_sock_ops.createPeer(newsock, ws);
               newsock.daddr = peer.addr;
               newsock.dport = peer.port;
-  
+
               // push to queue for accept to pick up
               sock.pending.push(newsock);
             } else {
@@ -16890,10 +16902,10 @@ function copyTempDouble(ptr) {
             addr = sock.daddr;
             port = sock.dport;
           }
-  
+
           // find the peer for the destination address
           var dest = SOCKFS.websocket_sock_ops.getPeer(sock, addr, port);
-  
+
           // early out if not connected with a connection-based socket
           if (sock.type === 1) {
             if (!dest || dest.socket.readyState === dest.socket.CLOSING || dest.socket.readyState === dest.socket.CLOSED) {
@@ -16902,7 +16914,7 @@ function copyTempDouble(ptr) {
               throw new FS.ErrnoError(ERRNO_CODES.EAGAIN);
             }
           }
-  
+
           // create a copy of the incoming data to send, as the WebSocket API
           // doesn't work entirely with an ArrayBufferView, it'll just send
           // the entire underlying buffer
@@ -16912,7 +16924,7 @@ function copyTempDouble(ptr) {
           } else {  // ArrayBufferView
             data = buffer.buffer.slice(buffer.byteOffset + offset, buffer.byteOffset + offset + length);
           }
-  
+
           // if we're emulating a connection-less dgram socket and don't have
           // a cached connection, queue the buffer to send upon connect and
           // lie, saying the data was sent now.
@@ -16926,7 +16938,7 @@ function copyTempDouble(ptr) {
               return length;
             }
           }
-  
+
           try {
             // send the actual data
             dest.socket.send(data);
@@ -16940,12 +16952,12 @@ function copyTempDouble(ptr) {
             // tcp servers should not be recv()'ing on the listen socket
             throw new FS.ErrnoError(ERRNO_CODES.ENOTCONN);
           }
-  
+
           var queued = sock.recv_queue.shift();
           if (!queued) {
             if (sock.type === 1) {
               var dest = SOCKFS.websocket_sock_ops.getPeer(sock, sock.daddr, sock.dport);
-  
+
               if (!dest) {
                 // if we have a destination address but are not connected, error out
                 throw new FS.ErrnoError(ERRNO_CODES.ENOTCONN);
@@ -16962,7 +16974,7 @@ function copyTempDouble(ptr) {
               throw new FS.ErrnoError(ERRNO_CODES.EAGAIN);
             }
           }
-  
+
           // queued.data will be an ArrayBuffer if it's unadulterated, but if it's
           // requeued TCP data it'll be an ArrayBufferView
           var queuedLength = queued.data.byteLength || queued.data.length;
@@ -16974,15 +16986,15 @@ function copyTempDouble(ptr) {
             addr: queued.addr,
             port: queued.port
           };
-  
-  
+
+
           // push back any unread data for TCP connections
           if (sock.type === 1 && bytesRead < queuedLength) {
             var bytesRemaining = queuedLength - bytesRead;
             queued.data = new Uint8Array(queuedBuffer, queuedOffset + bytesRead, bytesRemaining);
             sock.recv_queue.unshift(queued);
           }
-  
+
           return res;
         }}};function _send(fd, buf, len, flags) {
       var sock = SOCKFS.getSocket(fd);
@@ -16993,7 +17005,7 @@ function copyTempDouble(ptr) {
       // TODO honor flags
       return _write(fd, buf, len);
     }
-  
+
   function _pwrite(fildes, buf, nbyte, offset) {
       // ssize_t pwrite(int fildes, const void *buf, size_t nbyte, off_t offset);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/write.html
@@ -17017,8 +17029,8 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
-  
+
+
       try {
         var slab = HEAP8;
         return FS.write(stream, slab, buf, nbyte);
@@ -17027,7 +17039,7 @@ function copyTempDouble(ptr) {
         return -1;
       }
     }
-  
+
   function _fileno(stream) {
       // int fileno(FILE *stream);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/fileno.html
@@ -17050,10 +17062,10 @@ function copyTempDouble(ptr) {
       // int putchar(int c);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/putchar.html
       return _fputc(c, HEAP32[((_stdout)>>2)]);
-    } 
+    }
   Module["_saveSetjmp"] = _saveSetjmp;
-  
-   
+
+
   Module["_testSetjmp"] = _testSetjmp;function _longjmp(env, value) {
       asm['setThrew'](env, value || 1);
       throw 'longjmp';
@@ -17069,15 +17081,15 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
-  
-  
-  
+
+
+
+
   var _environ=allocate(1, "i32*", ALLOC_STATIC);var ___environ=_environ;function ___buildEnvironment(env) {
       // WARNING: Arbitrary limit!
       var MAX_ENV_VALUES = 64;
       var TOTAL_ENV_SIZE = 1024;
-  
+
       // Statically allocate memory for the environment.
       var poolPtr;
       var envPtr;
@@ -17100,7 +17112,7 @@ function copyTempDouble(ptr) {
         envPtr = HEAP32[((_environ)>>2)];
         poolPtr = HEAP32[((envPtr)>>2)];
       }
-  
+
       // Collect key=value lines.
       var strings = [];
       var totalSize = 0;
@@ -17114,7 +17126,7 @@ function copyTempDouble(ptr) {
       if (totalSize > TOTAL_ENV_SIZE) {
         throw new Error('Environment size exceeded TOTAL_ENV_SIZE!');
       }
-  
+
       // Make new.
       var ptrSize = 4;
       for (var i = 0; i < strings.length; i++) {
@@ -17130,7 +17142,7 @@ function copyTempDouble(ptr) {
       if (name === 0) return 0;
       name = Pointer_stringify(name);
       if (!ENV.hasOwnProperty(name)) return 0;
-  
+
       if (_getenv.ret) _free(_getenv.ret);
       _getenv.ret = allocate(intArrayFromString(ENV[name]), 'i8', ALLOC_NORMAL);
       return _getenv.ret;
@@ -17190,7 +17202,7 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   function _lseek(fildes, offset, whence) {
       // off_t lseek(int fildes, off_t offset, int whence);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/lseek.html
@@ -17231,7 +17243,7 @@ function copyTempDouble(ptr) {
   		return true;
   	}
 
-  
+
   function _unlink(path) {
       // int unlink(const char *path);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/unlink.html
@@ -17244,7 +17256,7 @@ function copyTempDouble(ptr) {
         return -1;
       }
     }
-  
+
   function _rmdir(path) {
       // int rmdir(const char *path);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/rmdir.html
@@ -17268,7 +17280,7 @@ function copyTempDouble(ptr) {
   		return _fopen(ospath, mode);
   	}
 
-  
+
   function _close(fildes) {
       // int close(int fildes);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/close.html
@@ -17285,7 +17297,7 @@ function copyTempDouble(ptr) {
         return -1;
       }
     }
-  
+
   function _fsync(fildes) {
       // int fsync(int fildes);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/fsync.html
@@ -17323,8 +17335,8 @@ function copyTempDouble(ptr) {
   		return 0;
   	}
 
-  
-  
+
+
   function _recv(fd, buf, len, flags) {
       var sock = SOCKFS.getSocket(fd);
       if (!sock) {
@@ -17334,7 +17346,7 @@ function copyTempDouble(ptr) {
       // TODO honor flags
       return _read(fd, buf, len);
     }
-  
+
   function _pread(fildes, buf, nbyte, offset) {
       // ssize_t pread(int fildes, void *buf, size_t nbyte, off_t offset);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/read.html
@@ -17358,8 +17370,8 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
-  
+
+
       try {
         var slab = HEAP8;
         return FS.read(stream, slab, buf, nbyte);
@@ -17419,9 +17431,9 @@ function copyTempDouble(ptr) {
   			ext = null;
   			dironly = true;
   		}
-  
+
   		// TODO support filter
-  		
+
   		var contents;
   		try {
   			contents = FS.readdir(directory);
@@ -17429,43 +17441,43 @@ function copyTempDouble(ptr) {
   			HEAP32[((numfiles)>>2)]=0;
   			return null;
   		}
-  
+
   		var matches = [];
   		for (var i = 0; i < contents.length; i++) {
   			var name = contents[i];
   			var stat = FS.stat(PATH.join(directory, name));
-  
+
   			if (dironly && !FS.isDir(stat.mode)) {
   				continue;
   			}
-  
+
   			if ((!ext || name.lastIndexOf(ext) === (name.length - ext.length))) {
   				matches.push(name);
   			}
   		}
-  
+
   		HEAP32[((numfiles)>>2)]=matches.length;
-  
+
   		if (!matches.length) {
   			return null;
   		}
-  
+
   		// return a copy of the match list
   		var list = _Z_Malloc((matches.length + 1) * 4);
-  
+
   		var i;
   		for (i = 0; i < matches.length; i++) {
   			var filename = _S_Malloc(matches[i].length + 1);
-  
+
   			writeStringToMemory(matches[i], filename);
-  
+
   			// write the string's pointer back to the main array
   			HEAP32[(((list)+(i*4))>>2)]=filename;
   		}
-  
+
   		// add a NULL terminator to the list
   		HEAP32[(((list)+(i*4))>>2)]=0;
-  
+
   		return list;
   	}
 
@@ -17473,13 +17485,13 @@ function copyTempDouble(ptr) {
   		if (!list) {
   			return;
   		}
-  
+
   		var ptr;
-  
+
   		for (var i = 0; (ptr = HEAP32[(((list)+(i*4))>>2)]); i++) {
   			_Z_Free(ptr);
   		}
-  
+
   		_Z_Free(list);
   	}
 
@@ -17505,7 +17517,7 @@ function copyTempDouble(ptr) {
   function _Sys_FS_Shutdown(context) {
   		var name = allocate(intArrayFromString('fs_homepath'), 'i8', ALLOC_STACK);
   		var fs_homepath = Pointer_stringify(_Cvar_VariableString(name));
-  
+
   		FS.syncfs(function (err) {
   			SYSC.FS_Shutdown(Browser.safeCallback(function (err) {
   				if (err) {
@@ -17513,7 +17525,7 @@ function copyTempDouble(ptr) {
   					SYSC.Error('fatal', err);
   					return;
   				}
-  
+
   				SYSC.ProxyCallback(context);
   			}));
   		});
@@ -17526,7 +17538,7 @@ function copyTempDouble(ptr) {
   function _Sys_FS_Startup(context) {
   		var name = allocate(intArrayFromString('fs_homepath'), 'i8', ALLOC_STACK);
   		var fs_homepath = Pointer_stringify(_Cvar_VariableString(name));
-  
+
   		// mount a persistable filesystem into base
   		var dir;
   		try {
@@ -17536,7 +17548,7 @@ function copyTempDouble(ptr) {
   				SYSC.Error('fatal', e.message);
   			}
   		}
-  
+
   		try {
   			FS.mount(IDBFS, {}, fs_homepath);
   		} catch (e) {
@@ -17544,23 +17556,23 @@ function copyTempDouble(ptr) {
   				SYSC.Error('fatal', e.message);
   			}
   		}
-  
+
   		var start = Date.now();
-  
+
   		FS.syncfs(true, function (err) {
   			if (err) {
   				return SYSC.Error('fatal', err.message);
   			}
-  
+
   			SYSC.Print('initial sync completed in ' + ((Date.now() - start) / 1000).toFixed(2) + ' seconds');
-  
+
   			SYSC.FS_Startup(Browser.safeCallback(function (err) {
   				if (err) {
   					// FIXME cb_free_context(context)
   					SYSC.Error('fatal', err);
   					return;
   				}
-  
+
   				SYSC.ProxyCallback(context);
   			}));
   		});
@@ -17572,7 +17584,7 @@ function copyTempDouble(ptr) {
       return ((asm["setTempRet0"](x+y > 4294967295),(x+y)>>>0)|0);
     }
 
-  
+
   function _strerror_r(errnum, strerrbuf, buflen) {
       if (errnum in ERRNO_MESSAGES) {
         if (ERRNO_MESSAGES[errnum].length > buflen - 1) {
@@ -17595,13 +17607,13 @@ function copyTempDouble(ptr) {
       return ___errno_state;
     }
 
-  
+
   function _htons(value) {
       return ((value & 0xff) << 8) + ((value & 0xff00) >> 8);
     }var _ntohs=_htons;
 
-  
-  
+
+
   function __inet_pton4_raw(str) {
       var b = str.split('.');
       for (var i = 0; i < 4; i++) {
@@ -17611,7 +17623,7 @@ function copyTempDouble(ptr) {
       }
       return (b[0] | (b[1] << 8) | (b[2] << 16) | (b[3] << 24)) >>> 0;
     }
-  
+
   function __inet_pton6_raw(str) {
       var words;
       var w, offset, z, i;
@@ -17630,7 +17642,7 @@ function copyTempDouble(ptr) {
       } else {
         str = str.replace("::", ":Z:");
       }
-  
+
       if (str.indexOf(".") > 0) {
         // parse IPv4 embedded stress
         str = str.replace(new RegExp('[.]', 'g'), ":");
@@ -17641,7 +17653,7 @@ function copyTempDouble(ptr) {
       } else {
         words = str.split(":");
       }
-  
+
       offset = 0; z = 0;
       for (w=0; w < words.length; w++) {
         if (typeof words[w] === 'string') {
@@ -17676,32 +17688,32 @@ function copyTempDouble(ptr) {
         if (res) {
           return name;
         }
-  
+
         // See if this name is already mapped.
         var addr;
-  
+
         if (DNS.address_map.addrs[name]) {
           addr = DNS.address_map.addrs[name];
         } else {
           var id = DNS.address_map.id++;
           assert(id < 65535, 'exceeded max address mappings of 65535');
-  
+
           addr = '172.29.' + (id & 0xff) + '.' + (id & 0xff00);
-  
+
           DNS.address_map.names[addr] = name;
           DNS.address_map.addrs[name] = addr;
         }
-  
+
         return addr;
       },lookup_addr:function (addr) {
         if (DNS.address_map.names[addr]) {
           return DNS.address_map.names[addr];
         }
-  
+
         return null;
       }};
-  
-  
+
+
   var Sockets={BUFFER_SIZE:10240,MAX_BUFFER_SIZE:10485760,nextFd:1,fds:{},nextport:1,maxport:65535,peer:null,connections:{},portmap:{},localAddr:4261412874,addrPool:[33554442,50331658,67108874,83886090,100663306,117440522,134217738,150994954,167772170,184549386,201326602,218103818,234881034]};function __write_sockaddr(sa, family, addr, port) {
       switch (family) {
         case 2:
@@ -17730,7 +17742,7 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
+
       // read from the socket
       var msg;
       try {
@@ -17739,12 +17751,12 @@ function copyTempDouble(ptr) {
         FS.handleFSError(e);
         return -1;
       }
-  
+
       if (!msg) {
         // socket is closed
         return 0;
       }
-  
+
       // write the source address out
       if (addr) {
         var res = __write_sockaddr(addr, sock.family, DNS.lookup_name(msg.addr), msg.port);
@@ -17752,16 +17764,16 @@ function copyTempDouble(ptr) {
       }
       // write the buffer out
       HEAPU8.set(msg.buffer, buf);
-  
+
       return msg.buffer.byteLength;
     }
 
-  
-  
+
+
   function __inet_ntop4_raw(addr) {
       return (addr & 0xff) + '.' + ((addr >> 8) & 0xff) + '.' + ((addr >> 16) & 0xff) + '.' + ((addr >> 24) & 0xff)
     }
-  
+
   function __inet_ntop6_raw(ints) {
       //  ref:  http://www.ietf.org/rfc/rfc2373.txt - section 2.5.4
       //  Format for IPv4 compatible and mapped  128-bit IPv6 Addresses
@@ -17794,16 +17806,16 @@ function copyTempDouble(ptr) {
         ints[3] & 0xffff,
         (ints[3] >> 16)
       ];
-  
+
       // Handle IPv4-compatible, IPv4-mapped, loopback and any/unspecified addresses
-  
+
       var hasipv4 = true;
       var v4part = "";
       // check if the 10 high-order bytes are all zeros (first 5 words)
       for (i = 0; i < 5; i++) {
         if (parts[i] !== 0) { hasipv4 = false; break; }
       }
-  
+
       if (hasipv4) {
         // low-order 32-bits store an IPv4 address (bytes 13 to 16) (last 2 words)
         v4part = __inet_ntop4_raw(parts[6] | (parts[7] << 16));
@@ -17823,9 +17835,9 @@ function copyTempDouble(ptr) {
           return str;
         }
       }
-  
+
       // Handle all other IPv6 addresses
-  
+
       // first run to find the longest contiguous zero words
       for (word = 0; word < 8; word++) {
         if (parts[word] === 0) {
@@ -17840,7 +17852,7 @@ function copyTempDouble(ptr) {
           zstart = word - longest + 1;
         }
       }
-  
+
       for (word = 0; word < 8; word++) {
         if (longest > 1) {
           // compress contiguous zeros - to produce "::"
@@ -17862,7 +17874,7 @@ function copyTempDouble(ptr) {
       var family = HEAP16[((sa)>>1)];
       var port = _ntohs(HEAP16[(((sa)+(2))>>1)]);
       var addr;
-  
+
       switch (family) {
         case 2:
           if (salen !== 16) {
@@ -17886,7 +17898,7 @@ function copyTempDouble(ptr) {
         default:
           return { errno: ERRNO_CODES.EAFNOSUPPORT };
       }
-  
+
       return { family: family, addr: addr, port: port };
     }function _sendto(fd, message, length, flags, dest_addr, dest_len) {
       var sock = SOCKFS.getSocket(fd);
@@ -17894,7 +17906,7 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
+
       // read the address and port to send to
       var info = __read_sockaddr(dest_addr, dest_len);
       if (info.errno) {
@@ -17903,7 +17915,7 @@ function copyTempDouble(ptr) {
       }
       var port = info.port;
       var addr = DNS.lookup_addr(info.addr) || info.addr;
-  
+
       // send the message
       try {
         var slab = HEAP8;
@@ -17927,7 +17939,7 @@ function copyTempDouble(ptr) {
         return -1;
       }
       var arg = HEAP32[((varargs)>>2)];
-  
+
       try {
         return FS.ioctl(stream, request, arg);
       } catch (e) {
@@ -17949,7 +17961,7 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
+
       var info = __read_sockaddr(addrp, addrlen);
       if (info.errno) {
         ___setErrNo(info.errno);
@@ -17957,7 +17969,7 @@ function copyTempDouble(ptr) {
       }
       var port = info.port;
       var addr = DNS.lookup_addr(info.addr) || info.addr;
-  
+
       try {
         sock.sock_ops.bind(sock, addr, port);
         return 0;
@@ -17973,7 +17985,7 @@ function copyTempDouble(ptr) {
 
   function _gethostbyname(name) {
       name = Pointer_stringify(name);
-  
+
       // generate hostent
       var ret = _malloc(20); // XXX possibly leaked, as are others here
       var nameBuf = _malloc(name.length+1);
@@ -17999,7 +18011,7 @@ function copyTempDouble(ptr) {
         ___setErrNo(ERRNO_CODES.EBADF);
         return -1;
       }
-  
+
       var info = __read_sockaddr(addrp, addrlen);
       if (info.errno) {
         ___setErrNo(info.errno);
@@ -18007,7 +18019,7 @@ function copyTempDouble(ptr) {
       }
       var port = info.port;
       var addr = DNS.lookup_addr(info.addr) || info.addr;
-  
+
       try {
         sock.sock_ops.connect(sock, addr, port);
         return 0;
@@ -18019,7 +18031,7 @@ function copyTempDouble(ptr) {
 
 
 
-  
+
   var ___DEFAULT_POLLMASK=5;function _select(nfds, readfds, writefds, exceptfds, timeout) {
       // readfds are supported,
       // writefds checks socket open status
@@ -18027,52 +18039,52 @@ function copyTempDouble(ptr) {
       // timeout is always 0 - fully async
       assert(nfds <= 64, 'nfds must be less than or equal to 64');  // fd sets have 64 bits
       assert(!exceptfds, 'exceptfds not supported');
-  
+
       var total = 0;
-      
+
       var srcReadLow = (readfds ? HEAP32[((readfds)>>2)] : 0),
           srcReadHigh = (readfds ? HEAP32[(((readfds)+(4))>>2)] : 0);
       var srcWriteLow = (writefds ? HEAP32[((writefds)>>2)] : 0),
           srcWriteHigh = (writefds ? HEAP32[(((writefds)+(4))>>2)] : 0);
       var srcExceptLow = (exceptfds ? HEAP32[((exceptfds)>>2)] : 0),
           srcExceptHigh = (exceptfds ? HEAP32[(((exceptfds)+(4))>>2)] : 0);
-  
+
       var dstReadLow = 0,
           dstReadHigh = 0;
       var dstWriteLow = 0,
           dstWriteHigh = 0;
       var dstExceptLow = 0,
           dstExceptHigh = 0;
-  
+
       var allLow = (readfds ? HEAP32[((readfds)>>2)] : 0) |
                    (writefds ? HEAP32[((writefds)>>2)] : 0) |
                    (exceptfds ? HEAP32[((exceptfds)>>2)] : 0);
       var allHigh = (readfds ? HEAP32[(((readfds)+(4))>>2)] : 0) |
                     (writefds ? HEAP32[(((writefds)+(4))>>2)] : 0) |
                     (exceptfds ? HEAP32[(((exceptfds)+(4))>>2)] : 0);
-  
+
       function get(fd, low, high, val) {
         return (fd < 32 ? (low & val) : (high & val));
       }
-  
+
       for (var fd = 0; fd < nfds; fd++) {
         var mask = 1 << (fd % 32);
         if (!(get(fd, allLow, allHigh, mask))) {
           continue;  // index isn't in the set
         }
-  
+
         var stream = FS.getStream(fd);
         if (!stream) {
           ___setErrNo(ERRNO_CODES.EBADF);
           return -1;
         }
-  
+
         var flags = ___DEFAULT_POLLMASK;
-  
+
         if (stream.stream_ops.poll) {
           flags = stream.stream_ops.poll(stream);
         }
-  
+
         if ((flags & 1) && get(fd, srcReadLow, srcReadHigh, mask)) {
           fd < 32 ? (dstReadLow = dstReadLow | mask) : (dstReadHigh = dstReadHigh | mask);
           total++;
@@ -18086,7 +18098,7 @@ function copyTempDouble(ptr) {
           total++;
         }
       }
-  
+
       if (readfds) {
         HEAP32[((readfds)>>2)]=dstReadLow;
         HEAP32[(((readfds)+(4))>>2)]=dstReadHigh;
@@ -18099,7 +18111,7 @@ function copyTempDouble(ptr) {
         HEAP32[((exceptfds)>>2)]=dstExceptLow;
         HEAP32[(((exceptfds)+(4))>>2)]=dstExceptHigh;
       }
-      
+
       return total;
     }
 
@@ -18123,7 +18135,7 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   function _htonl(value) {
       return ((value & 0xff) << 24) + ((value & 0xff00) << 8) +
              ((value & 0xff0000) >>> 8) + ((value & 0xff000000) >>> 24);
@@ -18140,11 +18152,11 @@ function copyTempDouble(ptr) {
       var type = 0;
       var proto = 0;
       var ai, last;
-  
+
       function allocaddrinfo(family, type, proto, canon, addr, port) {
         var sa, salen, ai;
         var res;
-  
+
         salen = family === 10 ?
           28 :
           16;
@@ -18154,7 +18166,7 @@ function copyTempDouble(ptr) {
         sa = _malloc(salen);
         res = __write_sockaddr(sa, family, addr, port);
         assert(!res.errno);
-  
+
         ai = _malloc(32);
         HEAP32[(((ai)+(4))>>2)]=family;
         HEAP32[(((ai)+(8))>>2)]=type;
@@ -18169,10 +18181,10 @@ function copyTempDouble(ptr) {
           HEAP32[(((ai)+(16))>>2)]=16;
         }
         HEAP32[(((ai)+(28))>>2)]=0;
-  
+
         return ai;
       }
-  
+
       if (hint) {
         flags = HEAP32[((hint)>>2)];
         family = HEAP32[(((hint)+(4))>>2)];
@@ -18185,7 +18197,7 @@ function copyTempDouble(ptr) {
       if (!type && proto) {
         type = proto === 17 ? 2 : 1;
       }
-  
+
       // If type or proto are set to zero in hints we should really be returning multiple addrinfo values, but for
       // now default to a TCP STREAM socket so we can at least return a sensible addrinfo given NULL hints.
       if (proto === 0) {
@@ -18194,7 +18206,7 @@ function copyTempDouble(ptr) {
       if (type === 0) {
         type = 1;
       }
-  
+
       if (!node && !service) {
         return -2;
       }
@@ -18215,11 +18227,11 @@ function copyTempDouble(ptr) {
       if (family !== 0 && family !== 2 && family !== 10) {
         return -6;
       }
-  
+
       if (service) {
         service = Pointer_stringify(service);
         port = parseInt(service, 10);
-  
+
         if (isNaN(port)) {
           if (flags & 1024) {
             return -2;
@@ -18229,7 +18241,7 @@ function copyTempDouble(ptr) {
           return -8;
         }
       }
-  
+
       if (!node) {
         if (family === 0) {
           family = 2;
@@ -18245,7 +18257,7 @@ function copyTempDouble(ptr) {
         HEAP32[((out)>>2)]=ai;
         return 0;
       }
-  
+
       //
       // try as a numeric address
       //
@@ -18281,7 +18293,7 @@ function copyTempDouble(ptr) {
       if (flags & 4) {
         return -2;
       }
-  
+
       //
       // try as a hostname
       //
@@ -18311,7 +18323,7 @@ function copyTempDouble(ptr) {
       }
       var port = info.port;
       var addr = info.addr;
-  
+
       if (node && nodelen) {
         var lookup;
         if ((flags & 1) || !(lookup = DNS.lookup_addr(addr))) {
@@ -18326,7 +18338,7 @@ function copyTempDouble(ptr) {
         }
         writeStringToMemory(addr, node);
       }
-  
+
       if (serv && servlen) {
         port = '' + port;
         if (port.length > servlen) {
@@ -18334,18 +18346,18 @@ function copyTempDouble(ptr) {
         }
         writeStringToMemory(port, serv);
       }
-  
+
       return 0;
     }
 
-  
+
   var GAI_ERRNO_MESSAGES={};function _gai_strerror(val) {
       var buflen = 256;
-  
+
       // On first call to gai_strerror we initialise the buffer and populate the error messages.
       if (!_gai_strerror.buffer) {
           _gai_strerror.buffer = _malloc(buflen);
-  
+
           GAI_ERRNO_MESSAGES['0'] = 'Success';
           GAI_ERRNO_MESSAGES['' + -1] = 'Invalid value for \'ai_flags\' field';
           GAI_ERRNO_MESSAGES['' + -2] = 'NAME or SERVICE is unknown';
@@ -18358,22 +18370,22 @@ function copyTempDouble(ptr) {
           GAI_ERRNO_MESSAGES['' + -11] = 'System error returned in \'errno\'';
           GAI_ERRNO_MESSAGES['' + -12] = 'Argument buffer overflow';
       }
-  
+
       var msg = 'Unknown error';
-  
+
       if (val in GAI_ERRNO_MESSAGES) {
         if (GAI_ERRNO_MESSAGES[val].length > buflen - 1) {
-          msg = 'Message too long'; // EMSGSIZE message. This should never occur given the GAI_ERRNO_MESSAGES above. 
+          msg = 'Message too long'; // EMSGSIZE message. This should never occur given the GAI_ERRNO_MESSAGES above.
         } else {
           msg = GAI_ERRNO_MESSAGES[val];
         }
       }
-  
+
       writeAsciiToMemory(msg, _gai_strerror.buffer);
       return _gai_strerror.buffer;
     }
 
-  
+
   var AL={contexts:[],currentContext:null,stringCache:{},alcStringCache:{},QUEUE_INTERVAL:25,QUEUE_LOOKAHEAD:100,updateSources:function updateSources(context) {
         for (var i = 0; i < context.src.length; i++) {
           AL.updateSource(context.src[i]);
@@ -18382,22 +18394,22 @@ function copyTempDouble(ptr) {
         if (src.state !== 0x1012 /* AL_PLAYING */) {
           return;
         }
-  
+
         var currentTime = AL.currentContext.ctx.currentTime;
         var startTime = src.bufferPosition;
-  
+
         for (var i = src.buffersPlayed; i < src.queue.length; i++) {
           var entry = src.queue[i];
-  
+
           var startOffset = startTime - currentTime;
           var endTime = startTime + entry.buffer.duration;
-  
+
           // Clean up old buffers.
           if (currentTime >= endTime) {
             // Update our location in the queue.
             src.bufferPosition = endTime;
             src.buffersPlayed = i + 1;
-  
+
             // Stop / restart the source when we hit the end.
             if (src.buffersPlayed >= src.queue.length) {
               if (src.loop) {
@@ -18411,14 +18423,14 @@ function copyTempDouble(ptr) {
           else if (startOffset < (AL.QUEUE_LOOKAHEAD / 1000) && !entry.src) {
             // If the start offset is negative, we need to offset the actual buffer.
             var offset = Math.abs(Math.min(startOffset, 0));
-  
+
             entry.src = AL.currentContext.ctx.createBufferSource();
             entry.src.buffer = entry.buffer;
             entry.src.connect(src.gain);
             entry.src.start(startTime, offset);
-            
+
           }
-  
+
           startTime = endTime;
         }
       },setSourceState:function setSourceState(src, state) {
@@ -18522,11 +18534,11 @@ function copyTempDouble(ptr) {
         AL.currentContext.err = 0xA003 /* ALC_INVALID_ENUM */;
         return 0;
       }
-  
+
       ret = allocate(intArrayFromString(ret), 'i8', ALLOC_NORMAL);
-  
+
       AL.alcStringCache[param] = ret;
-  
+
       return ret;
     }
 
@@ -18539,16 +18551,16 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   var _updateSources=undefined;function _alcCreateContext(device, attrList) {
       if (device != 1) {
         return 0;
       }
-  
+
       if (attrList) {
         return 0;
       }
-  
+
       var ctx;
       try {
         ctx = new AudioContext();
@@ -18557,7 +18569,7 @@ function copyTempDouble(ptr) {
           ctx = new webkitAudioContext();
         } catch (e) {}
       }
-  
+
       if (ctx) {
         var gain = ctx.createGain();
         gain.connect(ctx.destination);
@@ -18639,11 +18651,11 @@ function copyTempDouble(ptr) {
         AL.currentContext.err = 0xA002 /* AL_INVALID_ENUM */;
         return 0;
       }
-  
+
       ret = allocate(intArrayFromString(ret), 'i8', ALLOC_NORMAL);
-  
+
       AL.stringCache[param] = ret;
-  
+
       return ret;
     }
 
@@ -18722,16 +18734,16 @@ function copyTempDouble(ptr) {
         AL.currentContext.err = 0xA003 /* AL_INVALID_VALUE */;
         return;
       }
-  
+
       for (var i = 0; i < count; ++i) {
         var bufferIdx = HEAP32[(((buffers)+(i*4))>>2)] - 1;
-  
+
         // Make sure the buffer index is valid.
         if (bufferIdx >= AL.currentContext.buf.length || !AL.currentContext.buf[bufferIdx]) {
           AL.currentContext.err = 0xA001 /* AL_INVALID_NAME */;
           return;
         }
-  
+
         // Make sure the buffer is no longer in use.
         var buffer = AL.currentContext.buf[bufferIdx];
         for (var j = 0; j < AL.currentContext.src.length; ++j) {
@@ -18747,7 +18759,7 @@ function copyTempDouble(ptr) {
           }
         }
       }
-  
+
       for (var i = 0; i < count; ++i) {
         var bufferIdx = HEAP32[(((buffers)+(i*4))>>2)] - 1;
         delete AL.currentContext.buf[bufferIdx];
@@ -18764,7 +18776,7 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   var _updateSource=undefined;function _alGetSourcei(source, param, value) {
       if (!AL.currentContext) {
         return;
@@ -18774,7 +18786,7 @@ function copyTempDouble(ptr) {
         AL.currentContext.err = 0xA001 /* AL_INVALID_NAME */;
         return;
       }
-  
+
       // Being that we have no way to receive end events from buffer nodes,
       // we currently proccess and update a source's buffer queue every
       // ~QUEUE_INTERVAL milliseconds. However, this interval is not precise,
@@ -18782,7 +18794,7 @@ function copyTempDouble(ptr) {
       // to aid in the common scenario of application calling alGetSourcei(AL_BUFFERS_PROCESSED)
       // to recycle buffers.
       AL.updateSource(src);
-  
+
       switch (param) {
       case 0x202 /* AL_SOURCE_RELATIVE */:
         HEAP32[((value)>>2)]=src.panner ? 1 : 0;
@@ -18837,12 +18849,12 @@ function copyTempDouble(ptr) {
         AL.currentContext.err = 0xA001 /* AL_INVALID_NAME */;
         return;
       }
-  
+
       if (count > src.buffersPlayed) {
         AL.currentContext.err = 0xA003 /* AL_INVALID_VALUE */;
         return;
       }
-  
+
       for (var i = 0; i < count; i++) {
         var entry = src.queue.shift();
         // Write the buffers index out to the return list.
@@ -18855,7 +18867,7 @@ function copyTempDouble(ptr) {
         }
         src.buffersPlayed--;
       }
-  
+
       AL.updateSource(src);
     }
 
@@ -18875,17 +18887,17 @@ function copyTempDouble(ptr) {
           return;
         }
       }
-  
+
       for (var i = 0; i < count; ++i) {
         var bufferIdx = HEAP32[(((buffers)+(i*4))>>2)];
         var buffer = AL.currentContext.buf[bufferIdx - 1];
         src.queue.push({ buffer: buffer, src: null });
       }
-  
+
       AL.updateSource(src);
     }
 
-  
+
   var _setSourceState=undefined;function _alSourcePlay(source) {
       if (!AL.currentContext) {
         return;
@@ -18930,10 +18942,10 @@ function copyTempDouble(ptr) {
         if (value === 1 /* AL_TRUE */) {
           if (src.panner) {
             src.panner = null;
-              
+
             // Disconnect from the panner.
             src.gain.disconnect();
-  
+
             src.gain.connect(AL.currentContext.ctx.destination);
           }
         } else if (value === 0 /* AL_FALSE */) {
@@ -18947,10 +18959,10 @@ function copyTempDouble(ptr) {
             panner.setPosition(src.position[0], src.position[1], src.position[2]);
             panner.setVelocity(src.velocity[0], src.velocity[1], src.velocity[2]);
             panner.connect(AL.currentContext.ctx.destination);
-  
+
             // Disconnect from the default source.
             src.gain.disconnect();
-  
+
             src.gain.connect(panner);
           }
         } else {
@@ -19067,12 +19079,12 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   function _fmod(x, y) {
       return x % y;
     }var _fmodf=_fmod;
 
-  
+
   function _alSource3f(source, param, v1, v2, v3) {
       if (!AL.currentContext) {
         return;
@@ -19247,7 +19259,7 @@ function copyTempDouble(ptr) {
       return ((x&0xff)<<24) | (((x>>8)&0xff)<<16) | (((x>>16)&0xff)<<8) | (x>>>24);
     }
 
-  
+
   function _open(path, oflag, varargs) {
       // int open(const char *path, int oflag, ...);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/open.html
@@ -19302,7 +19314,7 @@ function copyTempDouble(ptr) {
       return Number(stream && stream.error);
     }
 
-  
+
   var VM={vmHeader_t:{__size__:36,vmMagic:0,instructionCount:4,codeOffset:8,codeLength:12,dataOffset:16,dataLength:20,litLength:24,bssLength:28,jtrgLength:32},vm_t:{__size__:156,programStack:0,systemCall:4,name:8,searchPath:72,dllHandle:76,entryPoint:80,destroy:84,currentlyInterpreting:88,compiled:92,codeBase:96,entryOfs:100,codeLength:104,instructionPointers:108,instructionCount:112,dataBase:116,dataMask:120,stackBottom:124,numSymbols:128,symbols:132,callLevel:136,breakFunction:140,breakCount:144,jumpTableTargets:148,numJumpTableTargets:152},vms:[],SUSPENDED:3735928559,MAX_VMMAIN_ARGS:13,ENTRY_FRAME_SIZE:60,OPSTACK_SIZE:1024,TYPE:{F4:1,I4:2,U4:3},Constant4:function (state) {
   			var v = (HEAP8[(((state.codeBase)+(state.pc))|0)] & 0xff) |
   				((HEAP8[(((state.codeBase)+(state.pc+1))|0)] & 0xff) << 8) |
@@ -19316,19 +19328,19 @@ function copyTempDouble(ptr) {
   			return v;
   		},FindLabels:function (state) {
   			var labels = {};
-  
+
   			var op, lastop;
   			for (state.instr = 0, state.pc = 0; state.instr < state.instructionCount; state.instr++) {
   				op = HEAP8[(((state.codeBase)+(state.pc))|0)];
-  
+
   				state.pc++;
-  
+
   				// create a label after each unconditional branching operator
   				// FIXME this is a bit excessive
   				if (lastop === 5 /* OP_CALL */ || lastop === 10 /* OP_JUMP */ || lastop === 7 /* OP_POP */ || lastop === 6 /* OP_PUSH */) {
   					labels[state.instr] = true;
   				}
-  
+
   				switch (op) {
   					case 3 /* OP_ENTER */:
   					case 4 /* OP_LEAVE */:
@@ -19336,7 +19348,7 @@ function copyTempDouble(ptr) {
   					case 34 /* OP_BLOCK_COPY */:
   						VM.Constant4(state);
   					break;
-  
+
   					case 8 /* OP_CONST */:
   						var value = VM.Constant4(state);
   						var nextop = HEAP8[(((state.codeBase)+(state.pc))|0)];
@@ -19344,11 +19356,11 @@ function copyTempDouble(ptr) {
   							labels[value] = true;
   						}
   						break;
-  
+
   					case 33 /* OP_ARG */:
   						VM.Constant1(state);
   					break;
-  
+
   					case 11 /* OP_EQ */:
   					case 12 /* OP_NE */:
   					case 13 /* OP_LTI */:
@@ -19368,18 +19380,18 @@ function copyTempDouble(ptr) {
   						// create labels for any explicit branch destination
   						labels[VM.Constant4(state)] = true;
   					break;
-  
+
   					default:
   					break;
   				}
-  
+
   				lastop = op;
   			}
-  
+
   			return labels;
   		},CompileModule:function (name, instructionCount, codeBase, dataBase) {
   			var fs_game = Pointer_stringify(_Cvar_VariableString(allocate(intArrayFromString('fs_game'), 'i8', ALLOC_STACK)));
-  
+
   			var state = {
   				name: name,
   				instructionCount: instructionCount,
@@ -19388,7 +19400,7 @@ function copyTempDouble(ptr) {
   				pc: 0,
   				instr: 0
   			};
-  
+
   			var labels = VM.FindLabels(state);
   			var fninstr = 0;
   			var eof = false;
@@ -19397,53 +19409,53 @@ function copyTempDouble(ptr) {
   			var u32 = new Uint32Array(ab);
   			var f32 = new Float32Array(ab);
   			var callargs = [];
-  
+
   			//
   			// expressions
   			//
   			var exprStack = [];
-  
+
   			function PUSH_EXPR(expr) {
   				exprStack.push(expr);
   			}
-  
+
   			function POP_EXPR(type) {
   				return exprStack.pop();
   			}
-  
+
   			function CAST_STR(type, expr) {
   				switch (type) {
   					case VM.TYPE.F4:
   						return '+(' + expr + ')';
-  
+
   					case VM.TYPE.I4:
   						return '(' + expr + ')|0';
-  
+
   					case VM.TYPE.U4:
   						return '(' + expr + ')>>>0';
-  
+
   					default:
   						throw new Error('unexpected data type');
   				}
   			}
-  
+
   			function BITCAST_STR(type, expr) {
   				if (type === expr.type) {
   					return expr.toString();
   				}
-  
+
   				if (expr.type === VM.TYPE.I4 && type === VM.TYPE.F4) {
   					if (expr instanceof CNST) {
   						i32[0] = expr.value;
   						return CAST_STR(type, f32[0]);
   					}
-  
+
   					if (expr instanceof LOAD4) {
   						// by default, every pointer value is loaded from HEAP32
   						// don't use the scratch array if we can load directly from HEAPF32
   						return CAST_STR(type, 'HEAPF32[((' + OFFSET_STR(expr.addr) + ')>>2)]');
   					}
-  
+
   					return CAST_STR(type, 'i32[0] = ' + expr + ', f32[0]');
   				} else if (expr.type === VM.TYPE.U4 && type === VM.TYPE.F4) {
   					return CAST_STR(type, 'u32[0] = ' + expr + ', f32[0]');
@@ -19459,7 +19471,7 @@ function copyTempDouble(ptr) {
   					throw new Error('unsupported bitcast operands ' + expr.type + ' ' + type);
   				}
   			}
-  
+
   			function OFFSET_STR(expr) {
   				if (expr instanceof CNST) {
   					return state.dataBase + expr.value;
@@ -19468,7 +19480,7 @@ function copyTempDouble(ptr) {
   				}
   				return state.dataBase + '+' + expr;
   			}
-  
+
   			function CNST(value) {
   				var ctor = CNST.ctor;
   				if (!ctor) {
@@ -19483,7 +19495,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(value);
   			}
-  
+
   			function LOCAL(offset) {
   				var ctor = LOCAL.ctor;
   				if (!ctor) {
@@ -19498,7 +19510,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(offset);
   			}
-  
+
   			function LOAD4(addr) {
   				var ctor = LOAD4.ctor;
   				if (!ctor) {
@@ -19513,7 +19525,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(addr);
   			}
-  
+
   			function LOAD2(addr) {
   				var ctor = LOAD2.ctor;
   				if (!ctor) {
@@ -19529,7 +19541,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(addr);
   			}
-  
+
   			function LOAD1(addr) {
   				var ctor = LOAD1.ctor;
   				if (!ctor) {
@@ -19545,7 +19557,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(addr);
   			}
-  
+
   			function UNARY(type, op, expr) {
   				var ctor = UNARY.ctor;
   				if (!ctor) {
@@ -19557,23 +19569,23 @@ function copyTempDouble(ptr) {
   					ctor.prototype = Object.create(UNARY.prototype);
   					ctor.prototype.toString = function () {
   						var expr = BITCAST_STR(this.type, this.expr);
-  
+
   						switch (this.op) {
   							case 35 /* OP_SEX8 */:
   								return '((' + expr + ')<<24)>>24';
-  
+
   							case 36 /* OP_SEX16 */:
   								return '((' + expr + ')<<16)>>16';
-  
+
   							case 37 /* OP_NEGI */:
   								return '-(' + expr + ')';
-  
+
   							case 49 /* OP_BCOM */:
   								return '(' + expr + ')^-1';
-  
+
   							case 53 /* OP_NEGF */:
   								return '(-.0)-(' + expr + ')';
-  
+
   							default:
   								throw new Error('unknown op type for unary expression');
   						}
@@ -19581,7 +19593,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(type, op, expr);
   			}
-  
+
   			function BINARY(type, op, lhs, rhs) {
   				var ctor = BINARY.ctor;
   				if (!ctor) {
@@ -19595,50 +19607,50 @@ function copyTempDouble(ptr) {
   					ctor.prototype.toString = function () {
   						var lhs = '(' + BITCAST_STR(this.type, this.lhs) + ')';
   						var rhs = '(' + BITCAST_STR(this.type, this.rhs) + ')';
-  
+
   						switch (this.op) {
   							case 38 /* OP_ADD */:
   							case 54 /* OP_ADDF */:
   								return lhs + '+' + rhs;
-  
+
   							case 39 /* OP_SUB */:
   							case 55 /* OP_SUBF */:
   								return lhs + '-' + rhs;
-  
+
   							case 40 /* OP_DIVI */:
   							case 41 /* OP_DIVU */:
   							case 56 /* OP_DIVF */:
   								return lhs + '/' + rhs;
-  
+
   							case 42 /* OP_MODI */:
   							case 43 /* OP_MODU */:
   								return lhs + '%' + rhs;
-  
+
   							case 44 /* OP_MULI */:
   							case 45 /* OP_MULU */:
   								return 'Math.imul(' + lhs + ', ' + rhs +')';
-  
+
   							case 57 /* OP_MULF */:
   								return lhs + '*' + rhs;
-  
+
   							case 46 /* OP_BAND */:
   								return lhs + '&' + rhs;
-  
+
   							case 47 /* OP_BOR */:
   								return lhs + '|' + rhs;
-  
+
   							case 48 /* OP_BXOR */:
   								return lhs + '^' + rhs;
-  
+
   							case 50 /* OP_LSH */:
   								return lhs + '<<' + rhs;
-  
+
   							case 51 /* OP_RSHI */:
   								return lhs + '>>' + rhs;
-  
+
   							case 52 /* OP_RSHU */:
   								return lhs + '>>>' + rhs;
-  
+
   							default:
   								throw new Error('unknown op type for binary expression');
   						}
@@ -19646,7 +19658,7 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(type, op, lhs, rhs);
   			}
-  
+
   			function CONVERT(type, from_type, expr) {
   				var ctor = CONVERT.ctor;
   				if (!ctor) {
@@ -19662,13 +19674,13 @@ function copyTempDouble(ptr) {
   				}
   				return new ctor(type, from_type, expr);
   			}
-  
+
   			//
   			// statements
   			//
   			var moduleStr = '';
   			var indent = 0;
-  
+
   			function EmitStatement(str) {
   				var prefix = '';
   				for (var i = 0; i < indent; i++) {
@@ -19676,7 +19688,7 @@ function copyTempDouble(ptr) {
   				}
   				moduleStr += prefix + str + '\n';
   			}
-  
+
   			function EmitEnter(frameSize) {
   				EmitStatement('var fn' + fninstr + ' = FUNCTIONS[' + fninstr + '] = function fn' + fninstr + '(override) {');
   				indent++;
@@ -19687,13 +19699,13 @@ function copyTempDouble(ptr) {
   				indent++;
   				EmitStatement('STACKTOP -= ' + frameSize + ';');
   			}
-  
+
   			function EmitLeave(frameSize, ret) {
   				// leave the return value on the stack
   				EmitStatement('HEAP32[((' + OFFSET_STR(LOCAL(frameSize - 4)) + ')>>2)]=' + ret + ';');
   				EmitStatement('STACKTOP += ' + frameSize + ';');
   				EmitStatement('return;');
-  
+
   				if (eof) {
   					indent--;
   					indent--;
@@ -19702,7 +19714,7 @@ function copyTempDouble(ptr) {
   					EmitStatement('};');
   				}
   			}
-  
+
   			function EmitCall(addr) {
   				var translate = {
   					'cgame': {
@@ -19740,66 +19752,66 @@ function copyTempDouble(ptr) {
   						'-109': 'ceil'
   					},
   				};
-  
+
   				// emit return address info
   				EmitStore4(LOCAL(0), fninstr);
   				EmitStore4(LOCAL(4), state.instr + 1);
-  
+
   				// emit args
   				while (callargs.length) {
   					var arg = callargs.shift();
   					EmitStore4(arg.addr, arg.value);
   				}
-  
+
   				// go ahead and directly translate a few syscalls to speed things up
   				var table = translate[state.name];
   				var translation = table && table[addr];
-  
+
   				if (translation) {
   					switch (translation) {
   						case 'memset':
   							EmitStatement('HEAP32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=_memset(' + state.dataBase + '+' + LOAD4(LOCAL(8)) + ', ' + LOAD4(LOCAL(12)) + ', ' + LOAD4(LOCAL(16)) + ');');
   						break;
-  
+
   						case 'memcpy':
   							EmitStatement('HEAP32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=_memcpy(' + state.dataBase + '+' + LOAD4(LOCAL(8)) + ', ' + state.dataBase + '+' + LOAD4(LOCAL(12)) + ', ' + LOAD4(LOCAL(16)) + ');');
   						break;
-  
+
   						case 'strncpy':
   							EmitStatement('HEAP32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=_strncpy(' + state.dataBase + '+' + LOAD4(LOCAL(8)) + ', ' + state.dataBase + '+' + LOAD4(LOCAL(12)) + ', ' + LOAD4(LOCAL(16)) + ');');
   						break;
-  
+
   						case 'sin':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.sin(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
-  
+
   						case 'cos':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.cos(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
-  
+
   						case 'atan2':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.atan2(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ', ' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(12)))) + ');');
   						break;
-  
+
   						case 'sqrt':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.sqrt(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
-  
+
   						case 'floor':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.floor(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
-  
+
   						case 'ceil':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.ceil(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
-  
+
   						case 'acos':
   							EmitStatement('HEAPF32[((' + OFFSET_STR(LOCAL(-4)) + ')>>2)]=Math.acos(' + (BITCAST_STR(VM.TYPE.F4, LOAD4(LOCAL(8)))) + ');');
   						break;
   					}
   				} else {
   					var expr = 'call(' + addr + ')';
-  
+
   					// remove the indirection if we can
   					if (addr instanceof CNST) {
   						if (addr.value >= 0) {
@@ -19808,22 +19820,22 @@ function copyTempDouble(ptr) {
   							expr = 'syscall(' + addr.value + ')';
   						}
   					}
-  
+
   					EmitStatement(expr + ';');
   				}
-  
+
   				// push return value to stack
   				PUSH_EXPR(LOAD4(LOCAL(-4)));
   			}
-  
+
   			function EmitJump(label) {
   				EmitStatement('label = ' + label + ';');
   				EmitStatement('break;');
   			}
-  
+
   			function EmitConditionalJump(lhs, rhs, cond, label) {
   				var expr = '(' + lhs + ') ' + cond + ' (' + rhs + ')';
-  
+
   				// MEGA HACK FOR CPMA 1.47
   				// ignore its built in pak-file checking since we repackage our own paks
   				if (fs_game === 'cpma' && name === 'qagame' && (state.instr === 1382 || state.instr === 1392)) {
@@ -19831,14 +19843,14 @@ function copyTempDouble(ptr) {
   					// 1392 is checking if trap_FS_FOpenFile's returned length matches the expected length and if so, jumps to a success block
   					expr = state.instr === 1382 ? '0' : '1';
   				}
-  
+
   				EmitStatement('if (' + expr + ') {');
   				indent++;
   				EmitJump(label);
   				indent--;
   				EmitStatement('}');
   			}
-  
+
   			function EmitStore4(addr, value) {
   				if (value.type === VM.TYPE.F4) {
   					EmitStatement('HEAPF32[((' + OFFSET_STR(addr) + ')>>2)]=' + value + ';');
@@ -19846,25 +19858,25 @@ function copyTempDouble(ptr) {
   					EmitStatement('HEAP32[((' + OFFSET_STR(addr) + ')>>2)]=' + value + ';');
   				}
   			}
-  
+
   			function EmitStore2(addr, value) {
   				EmitStatement('HEAP16[((' + OFFSET_STR(addr) + ')>>1)]=' + value + ';');
   			}
-  
+
   			function EmitStore1(addr, value) {
   				EmitStatement('HEAP8[((' + OFFSET_STR(addr) + ')|0)]=' + value + ';');
   			}
-  
+
   			function EmitBlockCopy(dest, src, bytes) {
   				EmitStatement('(_memcpy(' + OFFSET_STR(dest) + ', ' + OFFSET_STR(src) + ', ' + bytes + ')|0);');
   			}
-  
+
   			EmitStatement('(function () {');
   			indent++;
-  
+
   			EmitStatement('var FUNCTIONS = {};');
   			EmitStatement('var STACKTOP;');
-  
+
   			EmitStatement('function syscall(callnum) {');
   			EmitStatement('\tcallnum = ~callnum;');
   			EmitStatement('\t// save the current vm');
@@ -19909,7 +19921,7 @@ function copyTempDouble(ptr) {
   			}
   			EmitStatement('\treturn;');
   			EmitStatement('}');
-  
+
   			EmitStatement('function call(addr) {');
   			EmitStatement('\tif (addr >= 0) {');
   			EmitStatement('\t\tvar fn = FUNCTIONS[addr];');
@@ -19918,24 +19930,24 @@ function copyTempDouble(ptr) {
   			EmitStatement('\t}');
   			EmitStatement('\tsyscall(addr);');
   			EmitStatement('}');
-  
+
   			EmitStatement('var ab = new ArrayBuffer(4);');
   			EmitStatement('var i32 = new Int32Array(ab);');
   			EmitStatement('var u32 = new Uint32Array(ab);');
   			EmitStatement('var f32 = new Float32Array(ab);');
-  
+
   			var lastop1, lastop2;
   			for (state.instr = 0, state.pc = 0; state.instr < state.instructionCount; state.instr++) {
   				var op = HEAP8[(((state.codeBase)+(state.pc))|0)];
-  
+
   				state.pc++;
-  
+
   				if (labels[state.instr]) {
   					indent--;
   					EmitStatement('case ' + state.instr + ':');
   					indent++;
   				}
-  
+
   				switch (op) {
   					//
   					// expressions
@@ -19944,42 +19956,42 @@ function copyTempDouble(ptr) {
   						PUSH_EXPR(CNST(0));
   						eof = true;
   					break;
-  
+
   					case 7 /* OP_POP */:
   						POP_EXPR();
   					break;
-  
+
   					case 8 /* OP_CONST */:
   						PUSH_EXPR(CNST(VM.Constant4(state)));
   					break;
-  
+
   					case 9 /* OP_LOCAL */:
   						PUSH_EXPR(LOCAL(VM.Constant4(state)));
   					break;
-  
+
   					case 27 /* OP_LOAD1 */:
   						PUSH_EXPR(LOAD1(POP_EXPR()));
   					break;
-  
+
   					case 28 /* OP_LOAD2 */:
   						PUSH_EXPR(LOAD2(POP_EXPR()));
   					break;
-  
+
   					case 29 /* OP_LOAD4 */:
   						PUSH_EXPR(LOAD4(POP_EXPR()));
   					break;
-  
+
   					case 35 /* OP_SEX8 */:
   					case 36 /* OP_SEX16 */:
   					case 37 /* OP_NEGI */:
   					case 49 /* OP_BCOM */:
   						PUSH_EXPR(UNARY(VM.TYPE.I4, op, POP_EXPR()));
   					break;
-  
+
   					case 53 /* OP_NEGF */:
   						PUSH_EXPR(UNARY(VM.TYPE.F4, op, POP_EXPR()));
   					break;
-  
+
   					case 38 /* OP_ADD */:
   					case 39 /* OP_SUB */:
   					case 40 /* OP_DIVI */:
@@ -19994,7 +20006,7 @@ function copyTempDouble(ptr) {
   						var lhs = POP_EXPR();
   						PUSH_EXPR(BINARY(VM.TYPE.I4, op, lhs, rhs));
   					break;
-  
+
   					case 41 /* OP_DIVU */:
   					case 43 /* OP_MODU */:
   					case 45 /* OP_MULU */:
@@ -20003,7 +20015,7 @@ function copyTempDouble(ptr) {
   						var lhs = POP_EXPR();
   						PUSH_EXPR(BINARY(VM.TYPE.U4, op, lhs, rhs));
   					break;
-  
+
   					case 54 /* OP_ADDF */:
   					case 55 /* OP_SUBF */:
   					case 56 /* OP_DIVF */:
@@ -20012,40 +20024,40 @@ function copyTempDouble(ptr) {
   						var lhs = POP_EXPR();
   						PUSH_EXPR(BINARY(VM.TYPE.F4, op, lhs, rhs));
   					break;
-  
+
   					case 58 /* OP_CVIF */:
   						PUSH_EXPR(CONVERT(VM.TYPE.F4, VM.TYPE.I4, POP_EXPR()));
   					break;
-  
+
   					case 59 /* OP_CVFI */:
   						PUSH_EXPR(CONVERT(VM.TYPE.I4, VM.TYPE.F4, POP_EXPR()));
   					break;
-  
+
   					//
   					// statements
   					//
   					case 0 /* OP_UNDEF */:
   					case 1 /* OP_IGNORE */:
   					break;
-  
+
   					case 2 /* OP_BREAK */:
   						EmitStatement('debugger;');
   					break;
-  
+
   					case 3 /* OP_ENTER */:
   						fninstr = state.instr;
   						eof = false;
   						EmitEnter(VM.Constant4(state));
   					break;
-  
+
   					case 4 /* OP_LEAVE */:
   						EmitLeave(VM.Constant4(state), BITCAST_STR(VM.TYPE.I4, POP_EXPR()));
   					break;
-  
+
   					case 5 /* OP_CALL */:
   						EmitCall(POP_EXPR());
   					break;
-  
+
   					case 10 /* OP_JUMP */:
   						// OP_LEAVE ops have explicit jumps written out afterwards that we can ignore
   						// RETI4
@@ -20057,127 +20069,127 @@ function copyTempDouble(ptr) {
   							EmitJump(instr);
   						}
   					break;
-  
+
   					case 11 /* OP_EQ */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '===', VM.Constant4(state));
   					break;
-  
+
   					case 12 /* OP_NE */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '!==', VM.Constant4(state));
   					break;
-  
+
   					case 13 /* OP_LTI */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<', VM.Constant4(state));
   					break;
-  
+
   					case 14 /* OP_LEI */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<=', VM.Constant4(state));
   					break;
-  
+
   					case 15 /* OP_GTI */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>', VM.Constant4(state));
   					break;
-  
+
   					case 16 /* OP_GEI */:
   						var rhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>=', VM.Constant4(state));
   					break;
-  
+
   					case 17 /* OP_LTU */:
   						var rhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<', VM.Constant4(state));
   					break;
-  
+
   					case 18 /* OP_LEU */:
   						var rhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<=', VM.Constant4(state));
   					break;
-  
+
   					case 19 /* OP_GTU */:
   						var rhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>', VM.Constant4(state));
   					break;
-  
+
   					case 20 /* OP_GEU */:
   						var rhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.U4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>=', VM.Constant4(state));
   					break;
-  
+
   					case 21 /* OP_EQF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '===', VM.Constant4(state));
   					break;
-  
+
   					case 22 /* OP_NEF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '!==', VM.Constant4(state));
   					break;
-  
+
   					case 23 /* OP_LTF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<', VM.Constant4(state));
   					break;
-  
+
   					case 24 /* OP_LEF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '<=', VM.Constant4(state));
   					break;
-  
+
   					case 25 /* OP_GTF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>', VM.Constant4(state));
   					break;
-  
+
   					case 26 /* OP_GEF */:
   						var rhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						var lhs = BITCAST_STR(VM.TYPE.F4, POP_EXPR());
   						EmitConditionalJump(lhs, rhs, '>=', VM.Constant4(state));
   					break;
-  
+
   					case 30 /* OP_STORE1 */:
   						var value = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var addr = POP_EXPR();
   						EmitStore1(addr, value);
   					break;
-  
+
   					case 31 /* OP_STORE2 */:
   						var value = BITCAST_STR(VM.TYPE.I4, POP_EXPR());
   						var addr = POP_EXPR();
   						EmitStore2(addr, value);
   					break;
-  
+
   					case 32 /* OP_STORE4 */:
   						var value = POP_EXPR();
   						var addr = POP_EXPR();
   						EmitStore4(addr, value);
   					break;
-  
+
   					case 33 /* OP_ARG */:
   						var value = POP_EXPR();
   						var addr = LOCAL(VM.Constant1(state));
   						callargs.push({ addr: addr, value: value });
   					break;
-  
+
   					case 34 /* OP_BLOCK_COPY */:
   						var src = POP_EXPR();
   						var dest = POP_EXPR();
@@ -20185,24 +20197,24 @@ function copyTempDouble(ptr) {
   						EmitBlockCopy(dest, src, bytes);
   					break;
   				}
-  
+
   				lastop1 = lastop2;
   				lastop2 = op;
   			}
-  
+
   			EmitStatement('return Object.create(Object.prototype, {');
   			EmitStatement('\tFUNCTIONS: { value: FUNCTIONS },');
   			EmitStatement('\tSTACKTOP: { get: function () { return STACKTOP; }, set: function (val) { STACKTOP = val; } },');
   			EmitStatement('});');
   			indent--;
   			EmitStatement('})');
-  
+
   			return moduleStr;
   		}};
-  
+
   function _VM_Destroy(vmp) {
   		var handle = HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)];
-  
+
   		delete VM.vms[handle];
   	}function _VM_Compile(vmp, headerp) {
   		var current = _VM_GetCurrent();
@@ -20210,14 +20222,14 @@ function copyTempDouble(ptr) {
   		var dataBase = HEAP32[(((vmp)+(VM.vm_t.dataBase))>>2)];
   		var codeOffset = HEAP32[(((headerp)+(VM.vmHeader_t.codeOffset))>>2)];
   		var instructionCount = HEAP32[(((headerp)+(VM.vmHeader_t.instructionCount))>>2)];
-  
+
   		var vm;
   		try {
   			var start = Date.now();
-  
+
   			var module = VM.CompileModule(name, instructionCount, headerp + codeOffset, dataBase);
   			vm = eval(module)();
-  
+
   			SYSC.Print('VM file ' + name + ' compiled in ' + (Date.now() - start) + ' milliseconds');
   		} catch (e) {
   			if (e.longjmp || e === 'longjmp') {
@@ -20225,93 +20237,93 @@ function copyTempDouble(ptr) {
   			}
   			SYSC.Error('fatal', e);
   		}
-  
+
   		var handle = VM.vms.length+1;
   		VM.vms[handle] = vm;
-  
+
   		if (!VM.DestroyPtr) {
   			VM.DestroyPtr = Runtime.addFunction(_VM_Destroy);
   		}
-  
+
   		HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)]=handle;
   		HEAP32[(((vmp)+(VM.vm_t.destroy))>>2)]=VM.DestroyPtr;
   	}
 
-  
+
   function _VM_SuspendCompiled(vmp, stackOnEntry) {
   		var handle = HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)];
   		var vm = VM.vms[handle];
-  
+
   		if (!vm) {
   			SYSC.Error('drop', 'invalid vm handle');
   			return;
   		}
-  
+
   		vm.suspended = true;
   		vm.stackOnEntry = stackOnEntry;
   	}function _VM_CallCompiled(vmp, args) {
   		var handle = HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)];
   		var vm = VM.vms[handle];
-  
+
   		// we can't re-enter the vm until it's been resumed
   		if (vm.suspended) {
   			SYSC.Error('drop', 'attempted to re-enter suspended vm');
   		}
-  
+
   		// set the current vm
   		var savedVM = _VM_GetCurrent();
   		_VM_SetCurrent(vmp);
-  
+
   		// save off the stack pointer
   		var image = HEAP32[(((vmp)+(VM.vm_t.dataBase))>>2)];
-  
+
   		// set up the stack frame
   		var stackOnEntry = HEAP32[(((vmp)+(VM.vm_t.programStack))>>2)];
   		var stackTop = stackOnEntry - VM.ENTRY_FRAME_SIZE;
-  
+
   		HEAP32[(((image)+(stackTop))>>2)]=-1;
   		HEAP32[(((image)+(stackTop + 4))>>2)]=0;
-  
+
   		for (var i = 0; i < VM.MAX_VMMAIN_ARGS; i++) {
   			var arg = HEAP32[(((args)+(i * 4))>>2)];
   			HEAP32[(((image)+(stackTop + 8 + i * 4))>>2)]=arg;
   		}
-  
+
   		// call into the entry point
   		var result;
-  
+
   		try {
   			var entryPoint = vm.FUNCTIONS[0];
-  
+
   			vm.STACKTOP = stackTop;
-  
+
   			entryPoint();
-  
+
   			if (vm.STACKTOP !== (stackOnEntry - VM.ENTRY_FRAME_SIZE)) {
   				SYSC.Error('fatal', 'program stack corrupted, is ' + vm.STACKTOP + ', expected ' + (stackOnEntry - VM.ENTRY_FRAME_SIZE));
   			}
-  
+
   			result = HEAP32[(((image)+(vm.STACKTOP - 4))>>2)];
-  
+
   			HEAP32[(((vmp)+(VM.vm_t.programStack))>>2)]=stackOnEntry;
   		} catch (e) {
   			if (e.longjmp || e === 'longjmp') {
   				throw e;
   			}
-  
+
   			if (!e.suspend) {
   				SYSC.Error('fatal', e);
   				return;
   			}
-  
+
   			_VM_SuspendCompiled(vmp, stackOnEntry);
-  
+
   			result = VM.SUSPENDED;
   		}
-  
+
   		// restore the current vm
   		_VM_SetCurrent(savedVM);
-  
+
   		// return value is at the top of the stack still
   		return result;
   	}
@@ -20329,75 +20341,75 @@ function copyTempDouble(ptr) {
   function _VM_IsSuspendedCompiled(vmp) {
   		var handle = HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)];
   		var vm = VM.vms[handle];
-  
+
   		if (!vm) {
   			SYSC.Error('drop', 'invalid vm handle');
   			return;
   		}
-  
+
   		return vm.suspended;
   	}
 
   function _VM_ResumeCompiled(vmp) {
   		var handle = HEAP32[(((vmp)+(VM.vm_t.entryOfs))>>2)];
   		var vm = VM.vms[handle];
-  
+
   		if (!vm) {
   			SYSC.Error('drop', 'invalid vm handle');
   			return;
   		}
-  
+
   		var savedVM = _VM_GetCurrent();
   		_VM_SetCurrent(vmp);
-  
+
   		var image = HEAP32[(((vmp)+(VM.vm_t.dataBase))>>2)];
   		var stackOnEntry = vm.stackOnEntry;
   		var result;
-  
+
   		vm.suspended = false;
-  
+
   		try {
   			while (true) {
   				// grab the last return address off the stack top and resume execution
   				var fninstr = HEAP32[(((image)+(vm.STACKTOP))>>2)];
   				var opinstr = HEAP32[(((image)+(vm.STACKTOP + 4))>>2)];
-  
+
   				if (fninstr === -1) {
   					// we're done unwinding
   					break;
   				}
-  
+
   				var fn = vm.FUNCTIONS[fninstr];
-  
+
   				fn(opinstr);
   			}
-  
+
   			if (vm.STACKTOP !== (stackOnEntry - VM.ENTRY_FRAME_SIZE)) {
   				SYSC.Error('drop', 'program stack corrupted, is ' + vm.STACKTOP + ', expected ' + (stackOnEntry - VM.ENTRY_FRAME_SIZE));
   				return;
   			}
-  
+
   			result = HEAP32[(((image)+(vm.STACKTOP - 4))>>2)];
-  
+
   			HEAP32[(((vmp)+(VM.vm_t.programStack))>>2)]=stackOnEntry;
   		} catch (e) {
   			if (e.longjmp || e === 'longjmp') {
   				throw e;
   			}
-  
+
   			if (!e.suspend) {
   				SYSC.Error('drop', e);
   				return;
   			}
-  
+
   			_VM_SuspendCompiled(vmp, stackOnEntry);
-  
+
   			result = VM.SUSPENDED;
   		}
-  
+
   		// restore the current vm
   		_VM_SetCurrent(savedVM);
-  
+
   		return result;
   	}
 
@@ -20429,7 +20441,7 @@ function copyTempDouble(ptr) {
       return _asctime(_localtime(timer));
     }
 
-  
+
   var SDL={defaults:{width:320,height:200,copyOnLock:true},version:null,surfaces:{},canvasPool:[],events:[],fonts:[null],audios:[null],rwops:[null],music:{audio:null,volume:1},mixerFrequency:22050,mixerFormat:32784,mixerNumChannels:2,mixerChunkSize:1024,channelMinimumNumber:0,GL:false,glAttributes:{0:3,1:3,2:2,3:0,4:0,5:1,6:16,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:1,16:0,17:0,18:0},keyboardState:null,keyboardMap:{},canRequestFullscreen:false,isRequestingFullscreen:false,textInput:false,startTime:null,initFlags:0,buttonState:0,modState:0,DOMButtons:[0,0,0],DOMEventToSDLEvent:{},keyCodes:{16:1249,17:1248,18:1250,33:1099,34:1102,37:1104,38:1106,39:1103,40:1105,46:127,96:1112,97:1113,98:1114,99:1115,100:1116,101:1117,102:1118,103:1119,104:1120,105:1121,112:1082,113:1083,114:1084,115:1085,116:1086,117:1087,118:1088,119:1089,120:1090,121:1091,122:1092,123:1093,173:45,188:44,190:46,191:47,192:96},scanCodes:{8:42,9:43,13:40,27:41,32:44,44:54,46:55,47:56,48:39,49:30,50:31,51:32,52:33,53:34,54:35,55:36,56:37,57:38,59:51,61:46,91:47,92:49,93:48,96:52,97:4,98:5,99:6,100:7,101:8,102:9,103:10,104:11,105:12,106:13,107:14,108:15,109:16,110:17,111:18,112:19,113:20,114:21,115:22,116:23,117:24,118:25,119:26,120:27,121:28,122:29,305:224,308:226},loadRect:function (rect) {
         return {
           x: HEAP32[((rect + 0)>>2)],
@@ -20454,19 +20466,19 @@ function copyTempDouble(ptr) {
         var is_SDL_HWSURFACE = flags & 0x00000001;
         var is_SDL_HWPALETTE = flags & 0x00200000;
         var is_SDL_OPENGL = flags & 0x04000000;
-  
+
         var surf = _malloc(60);
         var pixelFormat = _malloc(44);
         //surface with SDL_HWPALETTE flag is 8bpp surface (1 byte)
         var bpp = is_SDL_HWPALETTE ? 1 : 4;
         var buffer = 0;
-  
+
         // preemptively initialize this for software surfaces,
         // otherwise it will be lazily initialized inside of SDL_LockSurface
         if (!is_SDL_HWSURFACE && !is_SDL_OPENGL) {
           buffer = _malloc(width * height * 4);
         }
-  
+
         HEAP32[((surf)>>2)]=flags;
         HEAP32[(((surf)+(4))>>2)]=pixelFormat;
         HEAP32[(((surf)+(8))>>2)]=width;
@@ -20476,17 +20488,17 @@ function copyTempDouble(ptr) {
         HEAP32[(((surf)+(20))>>2)]=buffer;
         HEAP32[(((surf)+(36))>>2)]=0;
         HEAP32[(((surf)+(56))>>2)]=1;
-  
+
         HEAP32[((pixelFormat)>>2)]=0 /* XXX missing C define SDL_PIXELFORMAT_RGBA8888 */;
         HEAP32[(((pixelFormat)+(4))>>2)]=0;// TODO
         HEAP8[(((pixelFormat)+(8))|0)]=bpp * 8;
         HEAP8[(((pixelFormat)+(9))|0)]=bpp;
-  
+
         HEAP32[(((pixelFormat)+(12))>>2)]=rmask || 0x000000ff;
         HEAP32[(((pixelFormat)+(16))>>2)]=gmask || 0x0000ff00;
         HEAP32[(((pixelFormat)+(20))>>2)]=bmask || 0x00ff0000;
         HEAP32[(((pixelFormat)+(24))>>2)]=amask || 0xff000000;
-  
+
         // Decide if we want to use WebGL or not
         SDL.GL = SDL.GL || is_SDL_OPENGL;
         var canvas;
@@ -20501,15 +20513,15 @@ function copyTempDouble(ptr) {
         } else {
           canvas = Module['canvas'];
         }
-  
+
         var webGLContextAttributes = {
           antialias: ((SDL.glAttributes[13 /*SDL_GL_MULTISAMPLEBUFFERS*/] != 0) && (SDL.glAttributes[14 /*SDL_GL_MULTISAMPLESAMPLES*/] > 1)),
           depth: (SDL.glAttributes[6 /*SDL_GL_DEPTH_SIZE*/] > 0),
           stencil: (SDL.glAttributes[7 /*SDL_GL_STENCIL_SIZE*/] > 0)
         };
-        
+
         var ctx = Browser.createContext(canvas, is_SDL_OPENGL, usePageCanvas, webGLContextAttributes);
-              
+
         SDL.surfaces[surf] = {
           width: width,
           height: height,
@@ -20523,12 +20535,12 @@ function copyTempDouble(ptr) {
           locked: 0,
           usePageCanvas: usePageCanvas,
           source: source,
-  
+
           isFlagSet: function(flag) {
             return flags & flag;
           }
         };
-  
+
         return surf;
       },copyIndexedColorData:function (surfData, rX, rY, rW, rH) {
         // HWPALETTE works with palette
@@ -20536,19 +20548,19 @@ function copyTempDouble(ptr) {
         if (!surfData.colors) {
           return;
         }
-        
+
         var fullWidth  = Module['canvas'].width;
         var fullHeight = Module['canvas'].height;
-  
+
         var startX  = rX || 0;
         var startY  = rY || 0;
         var endX    = (rW || (fullWidth - startX)) + startX;
         var endY    = (rH || (fullHeight - startY)) + startY;
-        
+
         var buffer  = surfData.buffer;
         var data    = surfData.image.data;
         var colors  = surfData.colors;
-  
+
         for (var y = startY; y < endY; ++y) {
           var indexBase = y * fullWidth;
           var colorBase = indexBase * 4;
@@ -20556,7 +20568,7 @@ function copyTempDouble(ptr) {
             // HWPALETTE have only 256 colors (not rgba)
             var index = HEAPU8[((buffer + indexBase + x)|0)] * 3;
             var colorOffset = colorBase + x * 4;
-  
+
             data[colorOffset   ] = colors[index   ];
             data[colorOffset +1] = colors[index +1];
             data[colorOffset +2] = colors[index +2];
@@ -20570,7 +20582,7 @@ function copyTempDouble(ptr) {
           HEAP32[((refcountPointer)>>2)]=refcount - 1;
           return;
         }
-  
+
         var info = SDL.surfaces[surf];
         if (!info.usePageCanvas && info.canvas) SDL.canvasPool.push(info.canvas);
         if (info.buffer) _free(info.buffer);
@@ -20641,7 +20653,7 @@ function copyTempDouble(ptr) {
             if (event.type !== 'keydown' || (!SDL.unicode && !SDL.textInput) || (event.keyCode === 8 /* backspace */ || event.keyCode === 9 /* tab */)) {
               event.preventDefault();
             }
-  
+
             if (event.type == 'DOMMouseScroll' || event.type == 'mousewheel') {
               var button = Browser.getMouseWheelDelta(event) > 0 ? 4 : 3;
               var event2 = {
@@ -20665,10 +20677,10 @@ function copyTempDouble(ptr) {
               if (!SDL.DOMButtons[event.button]) {
                 return;
               }
-  
+
               SDL.DOMButtons[event.button] = 0;
             }
-  
+
             // We can only request fullscreen as the result of user input.
             // Due to this limitation, we toggle a boolean on keydown which
             // SDL_WM_ToggleFullScreen will check and subsequently set another
@@ -20685,7 +20697,7 @@ function copyTempDouble(ptr) {
               }
               SDL.canRequestFullscreen = false;
             }
-  
+
             // SDL expects a unicode character to be passed to its keydown events.
             // Unfortunately, the browser APIs only provide a charCode property on
             // keypress events, so we must backfill in keydown events with their
@@ -20697,7 +20709,7 @@ function copyTempDouble(ptr) {
             } else if (event.type === 'keydown') {
               SDL.savedKeydown = event;
             }
-  
+
             // Don't push keypress events unless SDL_StartTextInput has been called.
             if (event.type !== 'keypress' || SDL.textInput) {
               SDL.events.push(event);
@@ -20753,7 +20765,7 @@ function copyTempDouble(ptr) {
       },handleEvent:function (event) {
         if (event.handled) return;
         event.handled = true;
-  
+
         switch (event.type) {
           case 'keydown': case 'keyup': {
             var down = event.type === 'keydown';
@@ -20763,19 +20775,19 @@ function copyTempDouble(ptr) {
             } else {
               code = SDL.keyCodes[event.keyCode] || event.keyCode;
             }
-  
+
             HEAP8[(((SDL.keyboardState)+(code))|0)]=down;
             // TODO: lmeta, rmeta, numlock, capslock, KMOD_MODE, KMOD_RESERVED
             SDL.modState = (HEAP8[(((SDL.keyboardState)+(1248))|0)] ? 0x0040 | 0x0080 : 0) | // KMOD_LCTRL & KMOD_RCTRL
               (HEAP8[(((SDL.keyboardState)+(1249))|0)] ? 0x0001 | 0x0002 : 0) | // KMOD_LSHIFT & KMOD_RSHIFT
               (HEAP8[(((SDL.keyboardState)+(1250))|0)] ? 0x0100 | 0x0200 : 0); // KMOD_LALT & KMOD_RALT
-  
+
             if (down) {
               SDL.keyboardMap[code] = event.keyCode; // save the DOM input, which we can use to unpress it during blur
             } else {
               delete SDL.keyboardMap[code];
             }
-  
+
             break;
           }
           case 'mousedown': case 'mouseup':
@@ -20799,9 +20811,9 @@ function copyTempDouble(ptr) {
           _memcpy(ptr, event, 28); // XXX
           return;
         }
-  
+
         SDL.handleEvent(event);
-  
+
         switch (event.type) {
           case 'keydown': case 'keyup': {
             var down = event.type === 'keydown';
@@ -20818,7 +20830,7 @@ function copyTempDouble(ptr) {
             } else {
               scan = SDL.scanCodes[key] || key;
             }
-  
+
             HEAP32[((ptr)>>2)]=SDL.DOMEventToSDLEvent[event.type];
             HEAP8[(((ptr)+(8))|0)]=down ? 1 : 0;
             HEAP8[(((ptr)+(9))|0)]=0; // TODO
@@ -20827,7 +20839,7 @@ function copyTempDouble(ptr) {
             HEAP16[(((ptr)+(20))>>1)]=SDL.modState;
             // some non-character keys (e.g. backspace and tab) won't have keypressCharCode set, fill in with the keyCode.
             HEAP32[(((ptr)+(24))>>2)]=event.keypressCharCode || key;
-  
+
             break;
           }
           case 'keypress': {
@@ -20946,7 +20958,7 @@ function copyTempDouble(ptr) {
         for (var i = 0; i < state.buttons.length; i++) {
           buttons[i] = SDL.getJoystickButtonState(state.buttons[i]);
         }
-  
+
         SDL.lastJoystickState[joystick] = {
           buttons: buttons,
           axes: state.axes.slice(0),
@@ -20998,7 +21010,7 @@ function copyTempDouble(ptr) {
                 });
               }
             }
-  
+
             SDL.recordJoystickState(joystick, state);
           }
         }
@@ -21021,7 +21033,7 @@ function copyTempDouble(ptr) {
         return null;
       }};function _SDL_GetAppState() {
       var state = 0;
-  
+
       if (Browser.pointerLock) {
         state |= 0x01;  // SDL_APPMOUSEFOCUS
       }
@@ -21029,7 +21041,7 @@ function copyTempDouble(ptr) {
         state |= 0x02;  // SDL_APPINPUTFOCUS
       }
       state |= 0x04;  // SDL_APPACTIVE
-  
+
       return state;
     }
 
@@ -21040,11 +21052,11 @@ function copyTempDouble(ptr) {
       return SDL.keyboardState;
     }
 
-  
+
   function _SDL_Init(initFlags) {
       SDL.startTime = Date.now();
       SDL.initFlags = initFlags;
-  
+
       // capture all key events. we just keep down and up, but also capture press to prevent default actions
       if (!Module['doNotCaptureKeyboard']) {
         document.addEventListener("keydown", SDL.receiveEvent);
@@ -21053,7 +21065,7 @@ function copyTempDouble(ptr) {
         window.addEventListener("blur", SDL.receiveEvent);
         document.addEventListener("visibilitychange", SDL.receiveEvent);
       }
-  
+
       if (initFlags & 0x200) {
         // SDL_INIT_JOYSTICK
         // Firefox will not give us Joystick data unless we register this NOP
@@ -21061,7 +21073,7 @@ function copyTempDouble(ptr) {
         // https://bugzilla.mozilla.org/show_bug.cgi?id=936104
         addEventListener("gamepadconnected", function() {});
       }
-  
+
       window.addEventListener("unload", SDL.receiveEvent);
       SDL.keyboardState = _malloc(0x10000); // Our SDL needs 512, but 64K is safe for older SDLs
       _memset(SDL.keyboardState, 0, 0x10000);
@@ -21279,28 +21291,28 @@ function copyTempDouble(ptr) {
       return 0;
     }
 
-  
+
   function _SDL_VideoDriverName(buf, max_size) {
       if (SDL.startTime === null) {
         return 0; //return NULL
       }
       //driverName - emscripten_sdl_driver
-      var driverName = [101, 109, 115, 99, 114, 105, 112, 116, 101, 
+      var driverName = [101, 109, 115, 99, 114, 105, 112, 116, 101,
         110, 95, 115, 100, 108, 95, 100, 114, 105, 118, 101, 114];
-  
+
       var index = 0;
       var size  = driverName.length;
-  
+
       if (max_size <= size) {
         size = max_size - 1; //-1 cause null-terminator
       }
-  
+
       while (index < size) {
           var value = driverName[index];
           HEAP8[(((buf)+(index))|0)]=value;
           index++;
       }
-  
+
       HEAP8[(((buf)+(index))|0)]=0;
       return buf;
     }function _SDL_AudioDriverName(buf, max_size) {
@@ -21356,16 +21368,16 @@ function copyTempDouble(ptr) {
         } else if ((SDL.audio.samples & (SDL.audio.samples-1)) != 0) {
           throw 'Audio callback buffer size ' + SDL.audio.samples + ' must be a power-of-two!';
         }
-        
+
         var totalSamples = SDL.audio.samples*SDL.audio.channels;
         SDL.audio.bytesPerSample = (SDL.audio.format == 0x0008 /*AUDIO_U8*/ || SDL.audio.format == 0x8008 /*AUDIO_S8*/) ? 1 : 2;
         SDL.audio.bufferSize = totalSamples*SDL.audio.bytesPerSample;
         SDL.audio.buffer = _malloc(SDL.audio.bufferSize);
-        
+
         // To account for jittering in frametimes, always have multiple audio buffers queued up for the audio output device.
         // This helps that we won't starve that easily if a frame takes long to complete.
         SDL.audio.numSimultaneouslyQueuedBuffers = Module['SDL_numSimultaneouslyQueuedBuffers'] || 3;
-        
+
         // Create a callback function that will be routinely called to ask more audio data from the user application.
         SDL.audio.caller = function SDL_audio_caller() {
           if (!SDL.audio) {
@@ -21374,7 +21386,7 @@ function copyTempDouble(ptr) {
           Runtime.dynCall('viii', SDL.audio.callback, [SDL.audio.userdata, SDL.audio.buffer, SDL.audio.bufferSize]);
           SDL.audio.pushAudio(SDL.audio.buffer, SDL.audio.bufferSize);
         };
-        
+
         SDL.audio.audioOutput = new Audio();
         // As a workaround use Mozilla Audio Data API on Firefox until it ships with Web Audio and sound quality issues are fixed.
         if (typeof(SDL.audio.audioOutput['mozSetup'])==='function') {
@@ -21398,7 +21410,7 @@ function copyTempDouble(ptr) {
             }
             // Submit the audio data to audio device.
             SDL.audio.audioOutput['mozWriteAudio'](mozBuffer);
-            
+
             // Compute when the next audio callback should be called.
             var curtime = Date.now() / 1000.0 - SDL.audio.startTime;
             var playtime = Math.max(curtime, SDL.audio.nextPlayTime);
@@ -21428,13 +21440,13 @@ function copyTempDouble(ptr) {
           SDL.audio.soundSource = new Array(); // Use an array of sound sources as a ring buffer to queue blocks of synthesized audio to Web Audio API.
           SDL.audio.nextSoundSource = 0; // Index of the next sound buffer in the ring buffer queue to play.
           SDL.audio.nextPlayTime = 0; // Time in seconds when the next audio block is due to start.
-          
+
           // The pushAudio function with a new audio buffer whenever there is new audio data to schedule to be played back on the device.
           SDL.audio.pushAudio=function(ptr,sizeBytes) {
             try {
               --SDL.audio.numAudioTimersPending;
               if (SDL.audio.paused) return;
-  
+
               var sizeSamples = sizeBytes / SDL.audio.bytesPerSample; // How many samples fit in the callback buffer?
               var sizeSamplesPerChannel = sizeSamples / SDL.audio.channels; // How many samples per a single channel fit in the cb buffer?
               if (sizeSamplesPerChannel != SDL.audio.samples) {
@@ -21448,11 +21460,11 @@ function copyTempDouble(ptr) {
               SDL.audio.soundSource[SDL.audio.nextSoundSource] = source;
               var soundBuffer = SDL.audioContext['createBuffer'](SDL.audio.channels,sizeSamplesPerChannel,SDL.audio.freq);
               SDL.audio.soundSource[SDL.audio.nextSoundSource]['connect'](SDL.audioContext['destination']);
-  
+
               SDL.fillWebAudioBufferFromHeap(ptr, sizeSamplesPerChannel, soundBuffer);
               // Workaround https://bugzilla.mozilla.org/show_bug.cgi?id=883675 by setting the buffer only after filling. The order is important here!
               source['buffer'] = soundBuffer;
-              
+
               // Schedule the generated sample buffer to be played out at the correct time right after the previously scheduled
               // sample buffer has finished.
               var curtime = SDL.audioContext['currentTime'];
@@ -21464,12 +21476,12 @@ function copyTempDouble(ptr) {
               // Extra buffers are needed to avoid disturbing playing buffer.
               SDL.audio.nextSoundSource = (SDL.audio.nextSoundSource + 1) % (SDL.audio.numSimultaneouslyQueuedBuffers + 2);
               var secsUntilNextCall = playtime-curtime;
-              
+
               // Queue the next audio frame push to be performed when the previously queued buffer has finished playing.
               var preemptBufferFeedMSecs = 1000*buffer_duration/2.0;
               SDL.audio.timer = Browser.safeSetTimeout(SDL.audio.caller, Math.max(0.0, 1000.0*secsUntilNextCall-preemptBufferFeedMSecs));
               ++SDL.audio.numAudioTimersPending;
-  
+
               // If we are risking starving, immediately queue extra buffers.
               if (SDL.audio.numAudioTimersPending < SDL.audio.numSimultaneouslyQueuedBuffers) {
                 ++SDL.audio.numAudioTimersPending;
@@ -21480,7 +21492,7 @@ function copyTempDouble(ptr) {
             }
           }
         }
-  
+
         if (obtained) {
           // Report back the initialized audio parameters.
           HEAP32[((obtained)>>2)]=SDL.audio.freq;
@@ -21492,7 +21504,7 @@ function copyTempDouble(ptr) {
           HEAP32[(((obtained)+(20))>>2)]=SDL.audio.userdata;
         }
         SDL.allocateChannels(32);
-  
+
       } catch(e) {
         console.log('Initializing SDL audio threw an exception: "' + e.toString() + '"! Continuing without audio.');
         SDL.audio = null;
@@ -21610,25 +21622,25 @@ function copyTempDouble(ptr) {
 
   function _Sys_ErrorDialog(error) {
   		error = Pointer_stringify(error);
-  
+
   		var handler = Module['exitHandler'];
   		if (handler) {
   			SYS.exited = true;
   			handler(error);
   			return;
   		}
-  
+
   		var title = SYS.dialog.querySelector('.title');
   		title.className = 'title error';
   		title.innerHTML = 'Error';
-  
+
   		var description = SYS.dialog.querySelector('.description');
   		description.innerHTML = error;
-  
+
   		SYS.dialog.style.display = 'block';
   	}
 
-  
+
   var DLFCN={error:null,errorMsg:null,loadedLibs:{},loadedLibNames:{}};function _dlclose(handle) {
       // int dlclose(void *handle);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlclose.html
@@ -21652,16 +21664,16 @@ function copyTempDouble(ptr) {
       // void *dlopen(const char *file, int mode);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlopen.html
       filename = filename === 0 ? '__self__' : (ENV['LD_LIBRARY_PATH'] || '/') + Pointer_stringify(filename);
-  
+
       abort('need to build with DLOPEN_SUPPORT=1 to get dlopen support in asm.js');
-  
+
       if (DLFCN.loadedLibNames[filename]) {
         // Already loaded; increment ref count and return.
         var handle = DLFCN.loadedLibNames[filename];
         DLFCN.loadedLibs[handle].refcount++;
         return handle;
       }
-  
+
       if (filename === '__self__') {
         var handle = -1;
         var lib_module = Module;
@@ -21675,7 +21687,7 @@ function copyTempDouble(ptr) {
           FS.forceLoadFile(target);
           var lib_data = intArrayToString(target.contents);
         }
-  
+
         try {
           var lib_module = eval(lib_data)(
             DLFCN.functionTable.length,
@@ -21685,13 +21697,13 @@ function copyTempDouble(ptr) {
           DLFCN.errorMsg = 'Could not evaluate dynamic lib: ' + filename;
           return 0;
         }
-  
+
         // Not all browsers support Object.keys().
         var handle = 1;
         for (var key in DLFCN.loadedLibs) {
           if (DLFCN.loadedLibs.hasOwnProperty(key)) handle++;
         }
-  
+
         // We don't care about RTLD_NOW and RTLD_LAZY.
         if (flag & 256) { // RTLD_GLOBAL
           for (var ident in lib_module) {
@@ -21700,7 +21712,7 @@ function copyTempDouble(ptr) {
             }
           }
         }
-  
+
         var cached_functions = {};
       }
       DLFCN.loadedLibs[handle] = {
@@ -21710,7 +21722,7 @@ function copyTempDouble(ptr) {
         cached_functions: cached_functions
       };
       DLFCN.loadedLibNames[filename] = handle;
-  
+
       return handle;
     }
 
@@ -21732,7 +21744,7 @@ function copyTempDouble(ptr) {
       // void *dlsym(void *restrict handle, const char *restrict name);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlsym.html
       symbol = '_' + Pointer_stringify(symbol);
-  
+
       if (!DLFCN.loadedLibs[handle]) {
         DLFCN.errorMsg = 'Tried to dlsym() from an unopened handle: ' + handle;
         return 0;
@@ -21776,14 +21788,14 @@ function copyTempDouble(ptr) {
   		style.setAttribute('type', 'text/css');
   		style.innerHTML = SYS.css;
   		SYS.style = document.getElementsByTagName('head')[0].appendChild(style);
-  
+
   		// add dialog elements to viewport
   		var dialog = document.createElement('div');
   		dialog.id = 'dialog';
   		dialog.innerHTML = '<h4 class="title"></h4>' +
   			'<p class="description"></p>';
   		SYS.dialog = Module['viewport'].appendChild(dialog);
-  
+
   		// add loading elements to viewport
   		var loading = document.createElement('div');
   		loading.id = 'loading';
@@ -21792,7 +21804,7 @@ function copyTempDouble(ptr) {
   			'	<div class="bar-wrapper"><div class="bar">&nbsp;</div></div>' +
   			'</div>';
   		SYS.loading = Module['viewport'].appendChild(loading);
-  
+
   		// add eula frame to viewport
   		var eula = document.createElement('div');
   		eula.id = 'eula-frame';
@@ -21825,7 +21837,7 @@ function copyTempDouble(ptr) {
 
   function _emscripten_set_main_loop(func, fps, simulateInfiniteLoop) {
       Module['noExitRuntime'] = true;
-  
+
       Browser.mainLoop.runner = function Browser_mainLoop_runner() {
         if (ABORT) return;
         if (Browser.mainLoop.queue.length > 0) {
@@ -21854,20 +21866,20 @@ function copyTempDouble(ptr) {
           Browser.mainLoop.shouldPause = false;
           return;
         }
-  
+
         // Signal GL rendering layer that processing of a new frame is about to start. This helps it optimize
         // VBO double-buffering and reduce GPU stalls.
         GL.newRenderingFrameStarted();
-  
+
         if (Browser.mainLoop.method === 'timeout' && Module.ctx) {
           Module.printErr('Looks like you are rendering without using requestAnimationFrame for the main loop. You should use 0 for the frame rate in emscripten_set_main_loop in order to use requestAnimationFrame, as that can greatly improve your frame rates!');
           Browser.mainLoop.method = ''; // just warn once per call to set main loop
         }
-  
+
         if (Module['preMainLoop']) {
           Module['preMainLoop']();
         }
-  
+
         try {
           Runtime.dynCall('v', func);
         } catch (e) {
@@ -21878,11 +21890,11 @@ function copyTempDouble(ptr) {
             throw e;
           }
         }
-  
+
         if (Module['postMainLoop']) {
           Module['postMainLoop']();
         }
-  
+
         if (Browser.mainLoop.shouldPause) {
           // catch pauses from the main loop itself
           Browser.mainLoop.paused = true;
@@ -21903,7 +21915,7 @@ function copyTempDouble(ptr) {
         Browser.mainLoop.method = 'rAF';
       }
       Browser.mainLoop.scheduler();
-  
+
       if (simulateInfiniteLoop) {
         throw 'SimulateInfiniteLoop';
       }
@@ -21929,26 +21941,26 @@ function copyTempDouble(ptr) {
   			}
   			return;
   		}
-  
+
   		// we want to leave around an error dialog if one exists
   		// SYS.style.remove();
   		// SYS.style = null;
-  
+
   		// SYS.dialog.remove();
   		// SYS.dialog = null;
-  
+
   		SYS.loading.remove();
   		SYS.loading = null;
-  
+
   		SYS.eula.remove();
   		SYS.eula = null;
-  
+
   		if (Module['canvas']) {
   			Module['canvas'].remove();
   		}
   	}
 
-  
+
   function __exit(status) {
       // void _exit(int status);
       // http://pubs.opengroup.org/onlinepubs/000095399/functions/exit.html
@@ -21959,7 +21971,7 @@ function copyTempDouble(ptr) {
 
   var _exp=Math_exp;
 
-  var ctlz_i8 = allocate([8,7,6,6,5,5,5,5,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "i8", ALLOC_STATIC); 
+  var ctlz_i8 = allocate([8,7,6,6,5,5,5,5,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "i8", ALLOC_STATIC);
   Module["_llvm_ctlz_i32"] = _llvm_ctlz_i32;
 
   var _log=Math_log;
@@ -21979,7 +21991,7 @@ function copyTempDouble(ptr) {
       return 0;
     }
 
-  
+
   var GL={counter:1,lastError:0,buffers:[],programs:[],framebuffers:[],renderbuffers:[],textures:[],uniforms:[],shaders:[],currArrayBuffer:0,currElementArrayBuffer:0,byteSizeByTypeRoot:5120,byteSizeByType:[1,1,2,2,4,4,4,2,3,4,8],programInfos:{},stringCache:{},packAlignment:4,unpackAlignment:4,init:function () {
         GL.createLog2ceilLookup(GL.MAX_TEMP_BUFFER_SIZE);
         Browser.moduleContextCreatedCallbacks.push(GL.initExtensions);
@@ -22023,7 +22035,7 @@ function copyTempDouble(ptr) {
             ringbuffer1[j] = ringbuffer2[j] = null; // Created on-demand
           }
         }
-  
+
         if (quads) {
           // GL_QUAD indexes can be precalculated
           GL.tempQuadIndexBuffer = GLctx.createBuffer();
@@ -22183,7 +22195,7 @@ function copyTempDouble(ptr) {
             ret = 0x1908; // GL_RGBA
             break;
         }
-  
+
         if (ret === undefined) {
           var result = GLctx.getParameter(name_);
           switch (typeof(result)) {
@@ -22245,7 +22257,7 @@ function copyTempDouble(ptr) {
               return;
           }
         }
-  
+
         switch (type) {
           case 'Integer': HEAP32[((p)>>2)]=ret;    break;
           case 'Float':   HEAPF32[((p)>>2)]=ret;  break;
@@ -22329,30 +22341,30 @@ function copyTempDouble(ptr) {
       },initExtensions:function () {
         if (GL.initExtensions.done) return;
         GL.initExtensions.done = true;
-  
+
         if (!Module.useWebGL) return; // an app might link both gl and 2d backends
-  
+
         GL.miniTempBuffer = new Float32Array(GL.MINI_TEMP_BUFFER_SIZE);
         for (var i = 0; i < GL.MINI_TEMP_BUFFER_SIZE; i++) {
           GL.miniTempBufferViews[i] = GL.miniTempBuffer.subarray(0, i+1);
         }
-  
+
         GL.maxVertexAttribs = GLctx.getParameter(GLctx.MAX_VERTEX_ATTRIBS);
-  
-        // Detect the presence of a few extensions manually, this GL interop layer itself will need to know if they exist. 
+
+        // Detect the presence of a few extensions manually, this GL interop layer itself will need to know if they exist.
         GL.compressionExt = GLctx.getExtension('WEBGL_compressed_texture_s3tc') ||
                             GLctx.getExtension('MOZ_WEBGL_compressed_texture_s3tc') ||
                             GLctx.getExtension('WEBKIT_WEBGL_compressed_texture_s3tc');
-  
+
         GL.anisotropicExt = GLctx.getExtension('EXT_texture_filter_anisotropic') ||
                             GLctx.getExtension('MOZ_EXT_texture_filter_anisotropic') ||
                             GLctx.getExtension('WEBKIT_EXT_texture_filter_anisotropic');
-  
+
         GL.floatExt = GLctx.getExtension('OES_texture_float');
-        
+
         // Extension available from Firefox 26 and Google Chrome 30
         GL.instancedArraysExt = GLctx.getExtension('ANGLE_instanced_arrays');
-  
+
         // These are the 'safe' feature-enabling extensions that don't add any performance impact related to e.g. debugging, and
         // should be enabled by default so that client GLES2/GL code will not need to go through extra hoops to get its stuff working.
         // As new extensions are ratified at http://www.khronos.org/registry/webgl/extensions/ , feel free to add your new extensions
@@ -22364,7 +22376,7 @@ function copyTempDouble(ptr) {
                                                "OES_texture_float_linear", "OES_texture_half_float_linear", "WEBGL_compressed_texture_atc",
                                                "WEBGL_compressed_texture_pvrtc", "EXT_color_buffer_half_float", "WEBGL_color_buffer_float",
                                                "EXT_frag_depth", "EXT_sRGB", "WEBGL_draw_buffers", "WEBGL_shared_resources" ];
-  
+
         function shouldEnableAutomatically(extension) {
           for(var i in automaticallyEnabledExtensions) {
             var include = automaticallyEnabledExtensions[i];
@@ -22374,7 +22386,7 @@ function copyTempDouble(ptr) {
           }
           return false;
         }
-  
+
         var extensions = GLctx.getSupportedExtensions();
         for(var e in extensions) {
           var ext = extensions[e].replace('MOZ_', '').replace('WEBKIT_', '');
@@ -22389,7 +22401,7 @@ function copyTempDouble(ptr) {
           maxUniformLength: 0, // This is eagerly computed below, since we already enumerate all uniforms anyway.
           maxAttributeLength: -1 // This is lazily computed and cached, computed when/if first asked, "-1" meaning not computed yet.
         };
-  
+
         var ptable = GL.programInfos[program];
         var utable = ptable.uniforms;
         // A program's uniform table maps the string name of an uniform to an integer location of that uniform.
@@ -22397,29 +22409,29 @@ function copyTempDouble(ptr) {
         var numUniforms = GLctx.getProgramParameter(p, GLctx.ACTIVE_UNIFORMS);
         for (var i = 0; i < numUniforms; ++i) {
           var u = GLctx.getActiveUniform(p, i);
-  
+
           var name = u.name;
           ptable.maxUniformLength = Math.max(ptable.maxUniformLength, name.length+1);
-  
+
           // Strip off any trailing array specifier we might have got, e.g. "[0]".
           if (name.indexOf(']', name.length-1) !== -1) {
             var ls = name.lastIndexOf('[');
             name = name.slice(0, ls);
           }
-  
-          // Optimize memory usage slightly: If we have an array of uniforms, e.g. 'vec3 colors[3];', then 
+
+          // Optimize memory usage slightly: If we have an array of uniforms, e.g. 'vec3 colors[3];', then
           // only store the string 'colors' in utable, and 'colors[0]', 'colors[1]' and 'colors[2]' will be parsed as 'colors'+i.
           // Note that for the GL.uniforms table, we still need to fetch the all WebGLUniformLocations for all the indices.
           var loc = GLctx.getUniformLocation(p, name);
           var id = GL.getNewId(GL.uniforms);
           utable[name] = [u.size, id];
           GL.uniforms[id] = loc;
-  
+
           for (var j = 1; j < u.size; ++j) {
             var n = name + '['+j+']';
             loc = GLctx.getUniformLocation(p, n);
             id = GL.getNewId(GL.uniforms);
-  
+
             GL.uniforms[id] = loc;
           }
         }
@@ -22495,7 +22507,7 @@ function copyTempDouble(ptr) {
         case 0x1908 /* GL_RGBA */:
           sizePerPixel = 4;
           break;
-        default: 
+        default:
           GL.recordError(0x0500/*GL_INVALID_ENUM*/);
           return;
       }
@@ -22530,7 +22542,7 @@ function copyTempDouble(ptr) {
 
   function _glGetString(name_) {
       if (GL.stringCache[name_]) return GL.stringCache[name_];
-      var ret; 
+      var ret;
       switch(name_) {
         case 0x1F00 /* GL_VENDOR */:
         case 0x1F01 /* GL_RENDERER */:
@@ -22601,7 +22613,7 @@ function copyTempDouble(ptr) {
       g = Math.max(Math.min(g, 1), 0);
       b = Math.max(Math.min(b, 1), 0);
       a = Math.max(Math.min(a, 1), 0);
-  
+
       // TODO: make ub the default, not f, save a few mathops
       if (GLImmediate.mode >= 0) {
         var start = GLImmediate.vertexCounter << 2;
@@ -22620,52 +22632,52 @@ function copyTempDouble(ptr) {
     }
 
   function _glDrawElements(mode, count, type, indices) {
-  
+
       GLctx.drawElements(mode, count, type, indices);
-  
+
     }
 
   function _glPolygonOffset(x0, x1) { GLctx.polygonOffset(x0, x1) }
 
-  
-  
-  
-  
+
+
+
+
   function _glIsEnabled(x0) { return GLctx.isEnabled(x0) }
-  
+
   function _glGetBooleanv(name_, p) {
       return GL.get(name_, p, 'Boolean');
     }
-  
+
   function _glCreateShader(shaderType) {
       var id = GL.getNewId(GL.shaders);
       GL.shaders[id] = GLctx.createShader(shaderType);
       return id;
     }
-  
+
   function _glShaderSource(shader, count, string, length) {
       var source = GL.getSource(shader, count, string, length);
       GLctx.shaderSource(GL.shaders[shader], source);
     }
-  
+
   function _glCompileShader(shader) {
       GLctx.compileShader(GL.shaders[shader]);
     }
-  
+
   function _glAttachShader(program, shader) {
       GLctx.attachShader(GL.programs[program],
                               GL.shaders[shader]);
     }
-  
+
   function _glDetachShader(program, shader) {
       GLctx.detachShader(GL.programs[program],
                               GL.shaders[shader]);
     }
-  
+
   function _glUseProgram(program) {
       GLctx.useProgram(program ? GL.programs[program] : null);
     }
-  
+
   function _glDeleteProgram(program) {
       var program = GL.programs[program];
       GLctx.deleteProgram(program);
@@ -22673,65 +22685,65 @@ function copyTempDouble(ptr) {
       GL.programs[program] = null;
       GL.programInfos[program] = null;
     }
-  
+
   function _glBindAttribLocation(program, index, name) {
       name = Pointer_stringify(name);
       GLctx.bindAttribLocation(GL.programs[program], index, name);
     }
-  
+
   function _glLinkProgram(program) {
       GLctx.linkProgram(GL.programs[program]);
       GL.programInfos[program] = null; // uniforms no longer keep the same names after linking
       GL.populateUniformTable(program);
     }
-  
+
   function _glBindBuffer(target, buffer) {
       var bufferObj = buffer ? GL.buffers[buffer] : null;
-  
+
       if (target == GLctx.ARRAY_BUFFER) {
         GLImmediate.lastArrayBuffer = GL.currArrayBuffer = buffer;
       } else if (target == GLctx.ELEMENT_ARRAY_BUFFER) {
         GL.currElementArrayBuffer = buffer;
       }
-  
+
       GLctx.bindBuffer(target, bufferObj);
     }
-  
+
   function _glGetFloatv(name_, p) {
       return GL.get(name_, p, 'Float');
     }
-  
+
   function _glHint(x0, x1) { GLctx.hint(x0, x1) }
-  
+
   function _glEnableVertexAttribArray(index) {
       GLctx.enableVertexAttribArray(index);
     }
-  
+
   function _glDisableVertexAttribArray(index) {
       GLctx.disableVertexAttribArray(index);
     }
-  
+
   function _glVertexAttribPointer(index, size, type, normalized, stride, ptr) {
       GLctx.vertexAttribPointer(index, size, type, normalized, stride, ptr);
     }
-  
+
   function _glActiveTexture(x0) { GLctx.activeTexture(x0) }var GLEmulation={fogStart:0,fogEnd:1,fogDensity:1,fogColor:null,fogMode:2048,fogEnabled:false,vaos:[],currentVao:null,enabledVertexAttribArrays:{},hasRunInit:false,init:function () {
         // Do not activate immediate/emulation code (e.g. replace glDrawElements) when in FULL_ES2 mode.
         // We do not need full emulation, we instead emulate client-side arrays etc. in FULL_ES2 code in
         // a straightforward manner, and avoid not having a bound buffer be ambiguous between es2 emulation
         // code and legacy gl emulation code.
-  
+
         if (GLEmulation.hasRunInit) {
           return;
         }
         GLEmulation.hasRunInit = true;
-  
+
         GLEmulation.fogColor = new Float32Array(4);
-  
+
         // Add some emulation workarounds
         Module.printErr('WARNING: using emscripten GL emulation. This is a collection of limited workarounds, do not expect it to work.');
         Module.printErr('WARNING: using emscripten GL emulation unsafe opts. If weirdness happens, try -s GL_UNSAFE_OPTS=0');
-  
+
         // XXX some of the capabilities we don't support may lead to incorrect rendering, if we do not emulate them in shaders
         var validCapabilities = {
           0x0B44: 1, // GL_CULL_FACE
@@ -22744,7 +22756,7 @@ function copyTempDouble(ptr) {
           0x809E: 1, // GL_SAMPLE_ALPHA_TO_COVERAGE
           0x80A0: 1  // GL_SAMPLE_COVERAGE
         };
-  
+
         var glEnable = _glEnable;
         _glEnable = _emscripten_glEnable = function _glEnable(cap) {
           // Clean up the renderer on any change to the rendering state. The optimization of
@@ -22769,7 +22781,7 @@ function copyTempDouble(ptr) {
           }
           glEnable(cap);
         };
-  
+
         var glDisable = _glDisable;
         _glDisable = _emscripten_glDisable = function _glDisable(cap) {
           if (GLImmediate.lastRenderer) GLImmediate.lastRenderer.cleanup();
@@ -22800,7 +22812,7 @@ function copyTempDouble(ptr) {
           }
           return GLctx.isEnabled(cap);
         };
-  
+
         var glGetBooleanv = _glGetBooleanv;
         _glGetBooleanv = _emscripten_glGetBooleanv = function _glGetBooleanv(pname, p) {
           var attrib = GLEmulation.getAttributeFromCapability(pname);
@@ -22811,7 +22823,7 @@ function copyTempDouble(ptr) {
           }
           glGetBooleanv(pname, p);
         };
-  
+
         var glGetIntegerv = _glGetIntegerv;
         _glGetIntegerv = _emscripten_glGetIntegerv = function _glGetIntegerv(pname, params) {
           switch (pname) {
@@ -22880,7 +22892,7 @@ function copyTempDouble(ptr) {
           }
           glGetIntegerv(pname, params);
         };
-  
+
         var glGetString = _glGetString;
         _glGetString = _emscripten_glGetString = function _glGetString(name_) {
           if (GL.stringCache[name_]) return GL.stringCache[name_];
@@ -22896,7 +22908,7 @@ function copyTempDouble(ptr) {
           }
           return glGetString(name_);
         };
-  
+
         // Do some automatic rewriting to work around GLSL differences. Note that this must be done in
         // tandem with the rest of the program, by itself it cannot suffice.
         // Note that we need to remember shader types for this rewriting, saving sources makes it easier to debug.
@@ -22910,14 +22922,14 @@ function copyTempDouble(ptr) {
           };
           return id;
         };
-  
+
         function ensurePrecision(source) {
           if (!/precision +(low|medium|high)p +float *;/.test(source)) {
             source = 'precision mediump float;\n' + source;
           }
           return source;
         }
-  
+
         var glShaderSource = _glShaderSource;
         _glShaderSource = _emscripten_glShaderSource = function _glShaderSource(shader, count, string, length) {
           var source = GL.getSource(shader, count, string, length);
@@ -22963,7 +22975,7 @@ function copyTempDouble(ptr) {
                   source = 'varying vec4 v_texCoord' + i + ';   \n' + source;
                 }
               }
-  
+
               old = source;
               source = source.replace(new RegExp('gl_TextureMatrix\\[' + i + '\\]', 'g'), 'u_textureMatrix' + i);
               if (source != old) {
@@ -23023,12 +23035,12 @@ function copyTempDouble(ptr) {
           }
           GLctx.shaderSource(GL.shaders[shader], source);
         };
-  
+
         var glCompileShader = _glCompileShader;
         _glCompileShader = _emscripten_glCompileShader = function _glCompileShader(shader) {
           GLctx.compileShader(GL.shaders[shader]);
         };
-  
+
         GL.programShaders = {};
         var glAttachShader = _glAttachShader;
         _glAttachShader = _emscripten_glAttachShader = function _glAttachShader(program, shader) {
@@ -23036,7 +23048,7 @@ function copyTempDouble(ptr) {
           GL.programShaders[program].push(shader);
           glAttachShader(program, shader);
         };
-  
+
         var glDetachShader = _glDetachShader;
         _glDetachShader = _emscripten_glDetachShader = function _glDetachShader(program, shader) {
           var programShader = GL.programShaders[program];
@@ -23048,7 +23060,7 @@ function copyTempDouble(ptr) {
           programShader.splice(index, 1);
           glDetachShader(program, shader);
         };
-  
+
         var glUseProgram = _glUseProgram;
         _glUseProgram = _emscripten_glUseProgram = function _glUseProgram(program) {
           if (GL.currProgram != program) {
@@ -23058,7 +23070,7 @@ function copyTempDouble(ptr) {
             glUseProgram(program);
           }
         }
-  
+
         var glDeleteProgram = _glDeleteProgram;
         _glDeleteProgram = _emscripten_glDeleteProgram = function _glDeleteProgram(program) {
           glDeleteProgram(program);
@@ -23067,7 +23079,7 @@ function copyTempDouble(ptr) {
             GL.currProgram = 0;
           }
         };
-  
+
         // If attribute 0 was not bound, bind it to 0 for WebGL performance reasons. Track if 0 is free for that.
         var zeroUsedPrograms = {};
         var glBindAttribLocation = _glBindAttribLocation;
@@ -23082,7 +23094,7 @@ function copyTempDouble(ptr) {
           }
           glLinkProgram(program);
         };
-  
+
         var glBindBuffer = _glBindBuffer;
         _glBindBuffer = _emscripten_glBindBuffer = function _glBindBuffer(target, buffer) {
           glBindBuffer(target, buffer);
@@ -23094,7 +23106,7 @@ function copyTempDouble(ptr) {
             if (GLEmulation.currentVao) GLEmulation.currentVao.elementArrayBuffer = buffer;
           }
         };
-  
+
         var glGetFloatv = _glGetFloatv;
         _glGetFloatv = _emscripten_glGetFloatv = function _glGetFloatv(pname, params) {
           if (pname == 0x0BA6) { // GL_MODELVIEW_MATRIX
@@ -23117,7 +23129,7 @@ function copyTempDouble(ptr) {
             glGetFloatv(pname, params);
           }
         };
-  
+
         var glHint = _glHint;
         _glHint = _emscripten_glHint = function _glHint(target, mode) {
           if (target == 0x84EF) { // GL_TEXTURE_COMPRESSION_HINT
@@ -23125,21 +23137,21 @@ function copyTempDouble(ptr) {
           }
           glHint(target, mode);
         };
-  
+
         var glEnableVertexAttribArray = _glEnableVertexAttribArray;
         _glEnableVertexAttribArray = _emscripten_glEnableVertexAttribArray = function _glEnableVertexAttribArray(index) {
           glEnableVertexAttribArray(index);
           GLEmulation.enabledVertexAttribArrays[index] = 1;
           if (GLEmulation.currentVao) GLEmulation.currentVao.enabledVertexAttribArrays[index] = 1;
         };
-  
+
         var glDisableVertexAttribArray = _glDisableVertexAttribArray;
         _glDisableVertexAttribArray = _emscripten_glDisableVertexAttribArray = function _glDisableVertexAttribArray(index) {
           glDisableVertexAttribArray(index);
           delete GLEmulation.enabledVertexAttribArrays[index];
           if (GLEmulation.currentVao) delete GLEmulation.currentVao.enabledVertexAttribArrays[index];
         };
-  
+
         var glVertexAttribPointer = _glVertexAttribPointer;
         _glVertexAttribPointer = _emscripten_glVertexAttribPointer = function _glVertexAttribPointer(index, size, type, normalized, stride, pointer) {
           glVertexAttribPointer(index, size, type, normalized, stride, pointer);
@@ -23168,13 +23180,13 @@ function copyTempDouble(ptr) {
          */
         function CNaiveListMap() {
           var list = [];
-  
+
           this.insert = function CNaiveListMap_insert(key, val) {
             if (this.contains(key|0)) return false;
             list.push([key, val]);
             return true;
           };
-  
+
           var __contains_i;
           this.contains = function CNaiveListMap_contains(key) {
             for (__contains_i = 0; __contains_i < list.length; ++__contains_i) {
@@ -23182,7 +23194,7 @@ function copyTempDouble(ptr) {
             }
             return false;
           };
-  
+
           var __get_i;
           this.get = function CNaiveListMap_get(key) {
             for (__get_i = 0; __get_i < list.length; ++__get_i) {
@@ -23191,23 +23203,23 @@ function copyTempDouble(ptr) {
             return undefined;
           };
         };
-  
+
         /* A tree of map nodes.
           Uses `KeyView`s to allow descending the tree without garbage.
           Example: {
             // Create our map object.
             var map = new ObjTreeMap();
-  
+
             // Grab the static keyView for the map.
             var keyView = map.GetStaticKeyView();
-  
+
             // Let's make a map for:
             // root: <undefined>
             //   1: <undefined>
             //     2: <undefined>
             //       5: "Three, sir!"
             //       3: "Three!"
-  
+
             // Note how we can chain together `Reset` and `Next` to
             // easily descend based on multiple key fragments.
             keyView.Reset().Next(1).Next(2).Next(5).Set("Three, sir!");
@@ -23217,66 +23229,66 @@ function copyTempDouble(ptr) {
         function CMapTree() {
           function CNLNode() {
             var map = new CNaiveListMap();
-  
+
             this.child = function CNLNode_child(keyFrag) {
               if (!map.contains(keyFrag|0)) {
                 map.insert(keyFrag|0, new CNLNode());
               }
               return map.get(keyFrag|0);
             };
-  
+
             this.value = undefined;
             this.get = function CNLNode_get() {
               return this.value;
             };
-  
+
             this.set = function CNLNode_set(val) {
               this.value = val;
             };
           }
-  
+
           function CKeyView(root) {
             var cur;
-  
+
             this.reset = function CKeyView_reset() {
               cur = root;
               return this;
             };
             this.reset();
-  
+
             this.next = function CKeyView_next(keyFrag) {
               cur = cur.child(keyFrag);
               return this;
             };
-  
+
             this.get = function CKeyView_get() {
               return cur.get();
             };
-  
+
             this.set = function CKeyView_set(val) {
               cur.set(val);
             };
           };
-  
+
           var root;
           var staticKeyView;
-  
+
           this.createKeyView = function CNLNode_createKeyView() {
             return new CKeyView(root);
           }
-  
+
           this.clear = function CNLNode_clear() {
             root = new CNLNode();
             staticKeyView = this.createKeyView();
           };
           this.clear();
-  
+
           this.getStaticKeyView = function CNLNode_getStaticKeyView() {
             staticKeyView.reset();
             return staticKeyView;
           };
         };
-  
+
         // Exports:
         return {
           create: function() {
@@ -23299,29 +23311,29 @@ function copyTempDouble(ptr) {
         var GL_TEXTURE_CUBE_MAP_NEGATIVE_Y = 0x8518;
         var GL_TEXTURE_CUBE_MAP_POSITIVE_Z = 0x8519;
         var GL_TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851A;
-  
+
         var GL_SRC0_RGB = 0x8580;
         var GL_SRC1_RGB = 0x8581;
         var GL_SRC2_RGB = 0x8582;
-  
+
         var GL_SRC0_ALPHA = 0x8588;
         var GL_SRC1_ALPHA = 0x8589;
         var GL_SRC2_ALPHA = 0x858A;
-  
+
         var GL_OPERAND0_RGB = 0x8590;
         var GL_OPERAND1_RGB = 0x8591;
         var GL_OPERAND2_RGB = 0x8592;
-  
+
         var GL_OPERAND0_ALPHA = 0x8598;
         var GL_OPERAND1_ALPHA = 0x8599;
         var GL_OPERAND2_ALPHA = 0x859A;
-  
+
         var GL_COMBINE_RGB = 0x8571;
         var GL_COMBINE_ALPHA = 0x8572;
-  
+
         var GL_RGB_SCALE = 0x8573;
         var GL_ALPHA_SCALE = 0x0D1C;
-  
+
         // env.mode
         var GL_ADD      = 0x0104;
         var GL_BLEND    = 0x0BE2;
@@ -23329,29 +23341,29 @@ function copyTempDouble(ptr) {
         var GL_MODULATE = 0x2100;
         var GL_DECAL    = 0x2101;
         var GL_COMBINE  = 0x8570;
-  
+
         // env.color/alphaCombiner
         //var GL_ADD         = 0x0104;
         //var GL_REPLACE     = 0x1E01;
         //var GL_MODULATE    = 0x2100;
         var GL_SUBTRACT    = 0x84E7;
         var GL_INTERPOLATE = 0x8575;
-  
+
         // env.color/alphaSrc
         var GL_TEXTURE       = 0x1702;
         var GL_CONSTANT      = 0x8576;
         var GL_PRIMARY_COLOR = 0x8577;
         var GL_PREVIOUS      = 0x8578;
-  
+
         // env.color/alphaOp
         var GL_SRC_COLOR           = 0x0300;
         var GL_ONE_MINUS_SRC_COLOR = 0x0301;
         var GL_SRC_ALPHA           = 0x0302;
         var GL_ONE_MINUS_SRC_ALPHA = 0x0303;
-  
+
         var GL_RGB  = 0x1907;
         var GL_RGBA = 0x1908;
-  
+
         // Our defs:
         var TEXENVJIT_NAMESPACE_PREFIX = "tej_";
         // Not actually constant, as they can be changed between JIT passes:
@@ -23359,30 +23371,30 @@ function copyTempDouble(ptr) {
         var TEX_COORD_VARYING_PREFIX = "vTexCoord";
         var PRIM_COLOR_VARYING = "vPrimColor";
         var TEX_MATRIX_UNIFORM_PREFIX = "uTexMatrix";
-  
+
         // Static vars:
         var s_texUnits = null; //[];
         var s_activeTexture = 0;
-  
+
         var s_requiredTexUnitsForPass = [];
-  
+
         // Static funcs:
         function abort(info) {
           assert(false, "[TexEnvJIT] ABORT: " + info);
         }
-  
+
         function abort_noSupport(info) {
           abort("No support: " + info);
         }
-  
+
         function abort_sanity(info) {
           abort("Sanity failure: " + info);
         }
-  
+
         function genTexUnitSampleExpr(texUnitID) {
           var texUnit = s_texUnits[texUnitID];
           var texType = texUnit.getTexType();
-  
+
           var func = null;
           switch (texType) {
             case GL_TEXTURE_1D:
@@ -23399,14 +23411,14 @@ function copyTempDouble(ptr) {
             default:
               return abort_sanity("Unknown texType: 0x" + texType.toString(16));
           }
-  
+
           var texCoordExpr = TEX_COORD_VARYING_PREFIX + texUnitID;
           if (TEX_MATRIX_UNIFORM_PREFIX != null) {
             texCoordExpr = "(" + TEX_MATRIX_UNIFORM_PREFIX + texUnitID + " * " + texCoordExpr + ")";
           }
           return func + "(" + TEX_UNIT_UNIFORM_PREFIX + texUnitID + ", " + texCoordExpr + ".xy)";
         }
-  
+
         function getTypeFromCombineOp(op) {
           switch (op) {
             case GL_SRC_COLOR:
@@ -23416,14 +23428,14 @@ function copyTempDouble(ptr) {
             case GL_ONE_MINUS_SRC_ALPHA:
               return "float";
           }
-  
+
           return abort_noSupport("Unsupported combiner op: 0x" + op.toString(16));
         }
-  
+
         function getCurTexUnit() {
           return s_texUnits[s_activeTexture];
         }
-  
+
         function genCombinerSourceExpr(texUnitID, constantExpr, previousVar,
                                        src, op)
         {
@@ -23444,7 +23456,7 @@ function copyTempDouble(ptr) {
             default:
                 return abort_noSupport("Unsupported combiner src: 0x" + src.toString(16));
           }
-  
+
           var expr = null;
           switch (op) {
             case GL_SRC_COLOR:
@@ -23462,16 +23474,16 @@ function copyTempDouble(ptr) {
             default:
               return abort_noSupport("Unsupported combiner op: 0x" + op.toString(16));
           }
-  
+
           return expr;
         }
-  
+
         function valToFloatLiteral(val) {
           if (val == Math.round(val)) return val + '.0';
           return val;
         }
-  
-  
+
+
         // Classes:
         function CTexEnv() {
           this.mode = GL_MODULATE;
@@ -23480,7 +23492,7 @@ function copyTempDouble(ptr) {
           this.colorScale = 1;
           this.alphaScale = 1;
           this.envColor = [0, 0, 0, 0];
-  
+
           this.colorSrc = [
             GL_TEXTURE,
             GL_PREVIOUS,
@@ -23501,7 +23513,7 @@ function copyTempDouble(ptr) {
             GL_SRC_ALPHA,
             GL_SRC_ALPHA
           ];
-  
+
           // Map GLenums to small values to efficiently pack the enums to bits for tighter access.
           this.traverseKey = {
             // mode
@@ -23511,30 +23523,30 @@ function copyTempDouble(ptr) {
             0x0BE2 /* GL_BLEND */: 3,
             0x2101 /* GL_DECAL */: 4,
             0x8570 /* GL_COMBINE */: 5,
-  
+
             // additional color and alpha combiners
             0x84E7 /* GL_SUBTRACT */: 3,
             0x8575 /* GL_INTERPOLATE */: 4,
-  
+
             // color and alpha src
             0x1702 /* GL_TEXTURE */: 0,
             0x8576 /* GL_CONSTANT */: 1,
             0x8577 /* GL_PRIMARY_COLOR */: 2,
             0x8578 /* GL_PREVIOUS */: 3,
-  
+
             // color and alpha op
             0x0300 /* GL_SRC_COLOR */: 0,
             0x0301 /* GL_ONE_MINUS_SRC_COLOR */: 1,
             0x0302 /* GL_SRC_ALPHA */: 2,
             0x0300 /* GL_ONE_MINUS_SRC_ALPHA */: 3
           };
-  
+
           // The tuple (key0,key1,key2) uniquely identifies the state of the variables in CTexEnv.
           // -1 on key0 denotes 'the whole cached key is dirty'
           this.key0 = -1;
           this.key1 = 0;
           this.key2 = 0;
-  
+
           this.computeKey0 = function() {
             var k = this.traverseKey;
             var key = k[this.mode] * 1638400; // 6 distinct values.
@@ -23554,12 +23566,12 @@ function copyTempDouble(ptr) {
           this.computeKey1 = function() {
             var k = this.traverseKey;
             key = k[this.colorOp[0]] * 4096;
-            key += k[this.colorOp[1]] * 1024;             
+            key += k[this.colorOp[1]] * 1024;
             key += k[this.colorOp[2]] * 256;
             key += k[this.alphaOp[0]] * 16;
             key += k[this.alphaOp[1]] * 4;
             key += k[this.alphaOp[2]];
-            return key;            
+            return key;
           }
           // TODO: remove this. The color should not be part of the key!
           this.computeKey2 = function() {
@@ -23575,7 +23587,7 @@ function copyTempDouble(ptr) {
             GLImmediate.currentRenderer = null; // The currently used renderer must be re-evaluated at next render.
           }
         }
-  
+
         function CTexUnit() {
           this.env = new CTexEnv();
           this.enabled_tex1D   = false;
@@ -23583,7 +23595,7 @@ function copyTempDouble(ptr) {
           this.enabled_tex3D   = false;
           this.enabled_texCube = false;
           this.texTypesEnabled = 0; // A bitfield combination of the four flags above, used for fast access to operations.
-  
+
           this.traverseState = function CTexUnit_traverseState(keyView) {
             if (this.texTypesEnabled) {
               if (this.env.key0 == -1) {
@@ -23598,23 +23610,23 @@ function copyTempDouble(ptr) {
             }
           };
         };
-  
+
         // Class impls:
         CTexUnit.prototype.enabled = function CTexUnit_enabled() {
           return this.texTypesEnabled;
         }
-  
+
         CTexUnit.prototype.genPassLines = function CTexUnit_genPassLines(passOutputVar, passInputVar, texUnitID) {
           if (!this.enabled()) {
             return ["vec4 " + passOutputVar + " = " + passInputVar + ";"];
           }
           var lines = this.env.genPassLines(passOutputVar, passInputVar, texUnitID).join('\n');
-  
+
           var texLoadLines = '';
           var texLoadRegex = /(texture.*?\(.*?\))/g;
           var loadCounter = 0;
           var load;
-  
+
           // As an optimization, merge duplicate identical texture loads to one var.
           while(load = texLoadRegex.exec(lines)) {
             var texLoadExpr = load[1];
@@ -23632,7 +23644,7 @@ function copyTempDouble(ptr) {
           }
           return [texLoadLines + lines];
         }
-  
+
         CTexUnit.prototype.getTexType = function CTexUnit_getTexType() {
           if (this.enabled_texCube) {
             return GL_TEXTURE_CUBE_MAP;
@@ -23645,7 +23657,7 @@ function copyTempDouble(ptr) {
           }
           return 0;
         }
-  
+
         CTexEnv.prototype.genPassLines = function CTexEnv_genPassLines(passOutputVar, passInputVar, texUnitID) {
           switch (this.mode) {
             case GL_REPLACE: {
@@ -23672,7 +23684,7 @@ function copyTempDouble(ptr) {
               var texVar = prefix + "tex";
               var colorVar = prefix + "color";
               var alphaVar = prefix + "alpha";
-  
+
               return [
                 "vec4 " + texVar + " = " + genTexUnitSampleExpr(texUnitID) + ";",
                 "vec3 " + colorVar + " = " + passInputVar + ".rgb + " + texVar + ".rgb;",
@@ -23704,7 +23716,7 @@ function copyTempDouble(ptr) {
               var texVar = prefix + "tex";
               var colorVar = prefix + "color";
               var alphaVar = prefix + "alpha";
-  
+
               return [
                 "vec4 " + texVar + " = " + genTexUnitSampleExpr(texUnitID) + ";",
                 [
@@ -23727,7 +23739,7 @@ function copyTempDouble(ptr) {
               var texVar = prefix + "tex";
               var colorVar = prefix + "color";
               var alphaVar = prefix + "alpha";
-  
+
               return [
                 "vec4 " + texVar + " = " + genTexUnitSampleExpr(texUnitID) + ";",
                 [
@@ -23751,11 +23763,11 @@ function copyTempDouble(ptr) {
               var alphaLines = this.genCombinerLines(false, alphaVar,
                                                      passInputVar, texUnitID,
                                                      this.alphaCombiner, this.alphaSrc, this.alphaOp);
-  
+
               // Generate scale, but avoid generating an identity op that multiplies by one.
               var scaledColor = (this.colorScale == 1) ? colorVar : (colorVar + " * " + valToFloatLiteral(this.colorScale));
               var scaledAlpha = (this.alphaScale == 1) ? alphaVar : (alphaVar + " * " + valToFloatLiteral(this.alphaScale));
-  
+
               var line = [
                 "vec4 " + passOutputVar,
                 " = ",
@@ -23769,10 +23781,10 @@ function copyTempDouble(ptr) {
               return [].concat(colorLines, alphaLines, [line]);
             }
           }
-  
+
           return abort_noSupport("Unsupported TexEnv mode: 0x" + this.mode.toString(16));
         }
-  
+
         CTexEnv.prototype.genCombinerLines = function CTexEnv_getCombinerLines(isColor, outputVar,
                                                                                passInputVar, texUnitID,
                                                                                combiner, srcArr, opArr)
@@ -23782,21 +23794,21 @@ function copyTempDouble(ptr) {
             case GL_REPLACE:
               argsNeeded = 1;
               break;
-  
+
             case GL_MODULATE:
             case GL_ADD:
             case GL_SUBTRACT:
               argsNeeded = 2;
               break;
-  
+
             case GL_INTERPOLATE:
               argsNeeded = 3;
               break;
-  
+
             default:
               return abort_noSupport("Unsupported combiner: 0x" + combiner.toString(16));
           }
-  
+
           var constantExpr = [
             "vec4(",
               valToFloatLiteral(this.envColor[0]),
@@ -23814,7 +23826,7 @@ function copyTempDouble(ptr) {
                                            : null;
           var src2Expr = (argsNeeded >= 3) ? genCombinerSourceExpr(texUnitID, constantExpr, passInputVar, srcArr[2], opArr[2])
                                            : null;
-  
+
           var outputType = isColor ? "vec3" : "float";
           var lines = null;
           switch (combiner) {
@@ -23859,7 +23871,7 @@ function copyTempDouble(ptr) {
               var prefix = TEXENVJIT_NAMESPACE_PREFIX + 'env' + texUnitID + "_";
               var arg2Var = prefix + "colorSrc2";
               var arg2Line = getTypeFromCombineOp(this.colorOp[2]) + " " + arg2Var + " = " + src2Expr + ";";
-  
+
               var line = [
                 outputType + " " + outputVar,
                 " = ",
@@ -23874,14 +23886,14 @@ function copyTempDouble(ptr) {
               ];
               break;
             }
-  
+
             default:
               return abort_sanity("Unmatched TexEnv.colorCombiner?");
           }
-  
+
           return lines;
         }
-  
+
         return {
           // Exports:
           init: function(gl, specifiedMaxTextureImageUnits) {
@@ -23896,62 +23908,62 @@ function copyTempDouble(ptr) {
               s_texUnits.push(new CTexUnit());
             }
           },
-  
+
           setGLSLVars: function(uTexUnitPrefix, vTexCoordPrefix, vPrimColor, uTexMatrixPrefix) {
             TEX_UNIT_UNIFORM_PREFIX   = uTexUnitPrefix;
             TEX_COORD_VARYING_PREFIX  = vTexCoordPrefix;
             PRIM_COLOR_VARYING        = vPrimColor;
             TEX_MATRIX_UNIFORM_PREFIX = uTexMatrixPrefix;
           },
-  
+
           genAllPassLines: function(resultDest, indentSize) {
             indentSize = indentSize || 0;
-  
+
             s_requiredTexUnitsForPass.length = 0; // Clear the list.
             var lines = [];
             var lastPassVar = PRIM_COLOR_VARYING;
             for (var i = 0; i < s_texUnits.length; i++) {
               if (!s_texUnits[i].enabled()) continue;
-  
+
               s_requiredTexUnitsForPass.push(i);
-  
+
               var prefix = TEXENVJIT_NAMESPACE_PREFIX + 'env' + i + "_";
               var passOutputVar = prefix + "result";
-  
+
               var newLines = s_texUnits[i].genPassLines(passOutputVar, lastPassVar, i);
               lines = lines.concat(newLines, [""]);
-  
+
               lastPassVar = passOutputVar;
             }
             lines.push(resultDest + " = " + lastPassVar + ";");
-  
+
             var indent = "";
             for (var i = 0; i < indentSize; i++) indent += " ";
-  
+
             var output = indent + lines.join("\n" + indent);
-  
+
             return output;
           },
-  
+
           getUsedTexUnitList: function() {
             return s_requiredTexUnitsForPass;
           },
-  
+
           traverseState: function(keyView) {
             for (var i = 0; i < s_texUnits.length; i++) {
               s_texUnits[i].traverseState(keyView);
             }
           },
-  
+
           getTexUnitType: function(texUnitID) {
             return s_texUnits[texUnitID].getTexType();
           },
-  
+
           // Hooks:
           hook_activeTexture: function(texture) {
             s_activeTexture = texture - GL_TEXTURE0;
           },
-  
+
           hook_enable: function(cap) {
             var cur = getCurTexUnit();
             switch (cap) {
@@ -23985,7 +23997,7 @@ function copyTempDouble(ptr) {
                 break;
             }
           },
-  
+
           hook_disable: function(cap) {
             var cur = getCurTexUnit();
             switch (cap) {
@@ -24019,11 +24031,11 @@ function copyTempDouble(ptr) {
                 break;
             }
           },
-  
+
           hook_texEnvf: function(target, pname, param) {
             if (target != GL_TEXTURE_ENV)
               return;
-  
+
             var env = getCurTexUnit().env;
             switch (pname) {
               case GL_RGB_SCALE:
@@ -24038,16 +24050,16 @@ function copyTempDouble(ptr) {
                   env.alphaScale = param;
                 }
                 break;
-  
+
               default:
                 Module.printErr('WARNING: Unhandled `pname` in call to `glTexEnvf`.');
             }
           },
-  
+
           hook_texEnvi: function(target, pname, param) {
             if (target != GL_TEXTURE_ENV)
               return;
-  
+
             var env = getCurTexUnit().env;
             switch (pname) {
               case GL_TEXTURE_ENV_MODE:
@@ -24056,7 +24068,7 @@ function copyTempDouble(ptr) {
                   env.mode = param;
                 }
                 break;
-  
+
               case GL_COMBINE_RGB:
                 if (env.colorCombiner != param) {
                   env.invalidateKey();
@@ -24069,7 +24081,7 @@ function copyTempDouble(ptr) {
                   env.alphaCombiner = param;
                 }
                 break;
-  
+
               case GL_SRC0_RGB:
                 if (env.colorSrc[0] != param) {
                   env.invalidateKey();
@@ -24088,7 +24100,7 @@ function copyTempDouble(ptr) {
                   env.colorSrc[2] = param;
                 }
                 break;
-  
+
               case GL_SRC0_ALPHA:
                 if (env.alphaSrc[0] != param) {
                   env.invalidateKey();
@@ -24107,7 +24119,7 @@ function copyTempDouble(ptr) {
                   env.alphaSrc[2] = param;
                 }
                 break;
-  
+
               case GL_OPERAND0_RGB:
                 if (env.colorOp[0] != param) {
                   env.invalidateKey();
@@ -24126,7 +24138,7 @@ function copyTempDouble(ptr) {
                   env.colorOp[2] = param;
                 }
                 break;
-  
+
               case GL_OPERAND0_ALPHA:
                 if (env.alphaOp[0] != param) {
                   env.invalidateKey();
@@ -24145,7 +24157,7 @@ function copyTempDouble(ptr) {
                   env.alphaOp[2] = param;
                 }
                 break;
-  
+
               case GL_RGB_SCALE:
                 if (env.colorScale != param) {
                   env.invalidateKey();
@@ -24158,15 +24170,15 @@ function copyTempDouble(ptr) {
                   env.alphaScale = param;
                 }
                 break;
-  
+
               default:
                 Module.printErr('WARNING: Unhandled `pname` in call to `glTexEnvi`.');
             }
           },
-  
+
           hook_texEnvfv: function(target, pname, params) {
             if (target != GL_TEXTURE_ENV) return;
-  
+
             var env = getCurTexUnit().env;
             switch (pname) {
               case GL_TEXTURE_ENV_COLOR: {
@@ -24183,97 +24195,97 @@ function copyTempDouble(ptr) {
                 Module.printErr('WARNING: Unhandled `pname` in call to `glTexEnvfv`.');
             }
           },
-  
+
           hook_getTexEnviv: function(target, pname, param) {
             if (target != GL_TEXTURE_ENV)
               return;
-  
+
             var env = getCurTexUnit().env;
             switch (pname) {
               case GL_TEXTURE_ENV_MODE:
                 HEAP32[((param)>>2)]=env.mode;
                 return;
-  
+
               case GL_TEXTURE_ENV_COLOR:
                 HEAP32[((param)>>2)]=Math.max(Math.min(env.envColor[0]*255, 255, -255));
                 HEAP32[(((param)+(1))>>2)]=Math.max(Math.min(env.envColor[1]*255, 255, -255));
                 HEAP32[(((param)+(2))>>2)]=Math.max(Math.min(env.envColor[2]*255, 255, -255));
                 HEAP32[(((param)+(3))>>2)]=Math.max(Math.min(env.envColor[3]*255, 255, -255));
                 return;
-  
+
               case GL_COMBINE_RGB:
                 HEAP32[((param)>>2)]=env.colorCombiner;
                 return;
-  
+
               case GL_COMBINE_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaCombiner;
                 return;
-  
+
               case GL_SRC0_RGB:
                 HEAP32[((param)>>2)]=env.colorSrc[0];
                 return;
-  
+
               case GL_SRC1_RGB:
                 HEAP32[((param)>>2)]=env.colorSrc[1];
                 return;
-  
+
               case GL_SRC2_RGB:
                 HEAP32[((param)>>2)]=env.colorSrc[2];
                 return;
-  
+
               case GL_SRC0_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaSrc[0];
                 return;
-  
+
               case GL_SRC1_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaSrc[1];
                 return;
-  
+
               case GL_SRC2_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaSrc[2];
                 return;
-  
+
               case GL_OPERAND0_RGB:
                 HEAP32[((param)>>2)]=env.colorOp[0];
                 return;
-  
+
               case GL_OPERAND1_RGB:
                 HEAP32[((param)>>2)]=env.colorOp[1];
                 return;
-  
+
               case GL_OPERAND2_RGB:
                 HEAP32[((param)>>2)]=env.colorOp[2];
                 return;
-  
+
               case GL_OPERAND0_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaOp[0];
                 return;
-  
+
               case GL_OPERAND1_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaOp[1];
                 return;
-  
+
               case GL_OPERAND2_ALPHA:
                 HEAP32[((param)>>2)]=env.alphaOp[2];
                 return;
-  
+
               case GL_RGB_SCALE:
                 HEAP32[((param)>>2)]=env.colorScale;
                 return;
-  
+
               case GL_ALPHA_SCALE:
                 HEAP32[((param)>>2)]=env.alphaScale;
                 return;
-  
+
               default:
                 Module.printErr('WARNING: Unhandled `pname` in call to `glGetTexEnvi`.');
             }
           },
-  
+
           hook_getTexEnvfv: function(target, pname, param) {
             if (target != GL_TEXTURE_ENV)
               return;
-  
+
             var env = getCurTexUnit().env;
             switch (pname) {
               case GL_TEXTURE_ENV_COLOR:
@@ -24333,13 +24345,13 @@ function copyTempDouble(ptr) {
         var attributes = GLImmediate.liveClientAttributes;
         var cacheMap = GLImmediate.rendererCache;
         var keyView = cacheMap.getStaticKeyView().reset();
-  
+
         // By attrib state:
         var enabledAttributesKey = 0;
         for (var i = 0; i < attributes.length; i++) {
           enabledAttributesKey |= 1 << attributes[i].name;
         }
-  
+
         // By fog state:
         var fogParam = 0;
         if (GLEmulation.fogEnabled) {
@@ -24356,13 +24368,13 @@ function copyTempDouble(ptr) {
           }
         }
         keyView.next((enabledAttributesKey << 2) | fogParam);
-  
+
         // By cur program:
         keyView.next(GL.currProgram);
         if (!GL.currProgram) {
           GLImmediate.TexEnvJIT.traverseState(keyView);
         }
-  
+
         // If we don't already have it, create it.
         var renderer = keyView.get();
         if (!renderer) {
@@ -24380,11 +24392,11 @@ function copyTempDouble(ptr) {
           var texAttribName = GLImmediate.TEXTURE0 + i;
           if (!GLImmediate.enabledClientAttributes[texAttribName])
             continue;
-  
-  
+
+
           hasTextures = true;
         }
-  
+
         var ret = {
           init: function init() {
             // For fixed-function shader generation.
@@ -24393,7 +24405,7 @@ function copyTempDouble(ptr) {
             var vTexCoordPrefix = 'v_texCoord';
             var vPrimColor = 'v_color';
             var uTexMatrixPrefix = GLImmediate.useTextureMatrix ? 'u_textureMatrix' : null;
-  
+
             if (useCurrProgram) {
               if (GL.shaderInfos[GL.programShaders[GL.currProgram][0]].type == GLctx.VERTEX_SHADER) {
                 this.vertexShader = GL.shaders[GL.programShaders[GL.currProgram][0]];
@@ -24425,10 +24437,10 @@ function copyTempDouble(ptr) {
                     break;
                 }
               }
-  
+
               GLImmediate.TexEnvJIT.setGLSLVars(uTexUnitPrefix, vTexCoordPrefix, vPrimColor, uTexMatrixPrefix);
               var fsTexEnvPass = GLImmediate.TexEnvJIT.genAllPassLines('gl_FragColor', 2);
-  
+
               var texUnitAttribList = '';
               var texUnitVaryingList = '';
               var texUnitUniformList = '';
@@ -24440,17 +24452,17 @@ function copyTempDouble(ptr) {
                 texUnitVaryingList += 'varying vec4 ' + vTexCoordPrefix + texUnit + ';\n';
                 texUnitUniformList += 'uniform sampler2D ' + uTexUnitPrefix + texUnit + ';\n';
                 vsTexCoordInits += '  ' + vTexCoordPrefix + texUnit + ' = ' + aTexCoordPrefix + texUnit + ';\n';
-  
+
                 if (GLImmediate.useTextureMatrix) {
                   texUnitUniformList += 'uniform mat4 ' + uTexMatrixPrefix + texUnit + ';\n';
                 }
               }
-  
+
               var vsFogVaryingInit = null;
               if (GLEmulation.fogEnabled) {
                 vsFogVaryingInit = '  v_fogFragCoord = abs(ecPosition.z);\n';
               }
-  
+
               var vsSource = [
                 'attribute vec4 a_position;',
                 'attribute vec4 a_color;',
@@ -24470,11 +24482,11 @@ function copyTempDouble(ptr) {
                 '}',
                 ''
               ].join('\n').replace(/\n\n+/g, '\n');
-  
+
               this.vertexShader = GLctx.createShader(GLctx.VERTEX_SHADER);
               GLctx.shaderSource(this.vertexShader, vsSource);
               GLctx.compileShader(this.vertexShader);
-  
+
               var fogHeaderIfNeeded = null;
               if (GLEmulation.fogEnabled) {
                 fogHeaderIfNeeded = [
@@ -24492,12 +24504,12 @@ function copyTempDouble(ptr) {
                   '',
                 ].join("\n");
               }
-  
+
               var fogPass = null;
               if (GLEmulation.fogEnabled) {
                 fogPass = 'gl_FragColor = vec4(mix(u_fogColor.rgb, gl_FragColor.rgb, ffog(v_fogFragCoord)), gl_FragColor.a);\n';
               }
-  
+
               var fsSource = [
                 'precision mediump float;',
                 texUnitVaryingList,
@@ -24511,15 +24523,15 @@ function copyTempDouble(ptr) {
                 '}',
                 ''
               ].join("\n").replace(/\n\n+/g, '\n');
-  
+
               this.fragmentShader = GLctx.createShader(GLctx.FRAGMENT_SHADER);
               GLctx.shaderSource(this.fragmentShader, fsSource);
               GLctx.compileShader(this.fragmentShader);
-  
+
               this.program = GLctx.createProgram();
               GLctx.attachShader(this.program, this.vertexShader);
               GLctx.attachShader(this.program, this.fragmentShader);
-  
+
               // As optimization, bind all attributes to prespecified locations, so that the FFP emulation
               // code can submit attributes to any generated FFP shader without having to examine each shader in turn.
               // These prespecified locations are only assumed if GL_FFP_ONLY is specified, since user could also create their
@@ -24534,21 +24546,21 @@ function copyTempDouble(ptr) {
               }
               GLctx.linkProgram(this.program);
             }
-  
+
             // Stores an array that remembers which matrix uniforms are up-to-date in this FFP renderer, so they don't need to be resubmitted
             // each time we render with this program.
             this.textureMatrixVersion = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
-  
+
             this.positionLocation = GLctx.getAttribLocation(this.program, 'a_position');
-  
+
             this.texCoordLocations = [];
-  
+
             for (var i = 0; i < GLImmediate.MAX_TEXTURES; i++) {
               if (!GLImmediate.enabledClientAttributes[GLImmediate.TEXTURE0 + i]) {
                 this.texCoordLocations[i] = -1;
                 continue;
               }
-  
+
               if (useCurrProgram) {
                 this.texCoordLocations[i] = GLctx.getAttribLocation(this.program, 'a_texCoord' + i);
               } else {
@@ -24572,24 +24584,24 @@ function copyTempDouble(ptr) {
               GLctx.vertexAttrib4fv(this.colorLocation, [1,1,1,1]);
               GLctx.useProgram(prevBoundProg);
             }
-  
+
             this.textureMatrixLocations = [];
             for (var i = 0; i < GLImmediate.MAX_TEXTURES; i++) {
               this.textureMatrixLocations[i] = GLctx.getUniformLocation(this.program, 'u_textureMatrix' + i);
             }
             this.normalLocation = GLctx.getAttribLocation(this.program, 'a_normal');
-  
+
             this.modelViewLocation = GLctx.getUniformLocation(this.program, 'u_modelView');
             this.projectionLocation = GLctx.getUniformLocation(this.program, 'u_projection');
-  
+
             this.hasTextures = hasTextures;
             this.hasNormal = GLImmediate.enabledClientAttributes[GLImmediate.NORMAL] &&
                              GLImmediate.clientAttributes[GLImmediate.NORMAL].size > 0 &&
                              this.normalLocation >= 0;
             this.hasColor = (this.colorLocation === 0) || this.colorLocation > 0;
-  
+
             this.floatType = GLctx.FLOAT; // minor optimization
-  
+
             this.fogColorLocation = GLctx.getUniformLocation(this.program, 'u_fogColor');
             this.fogEndLocation = GLctx.getUniformLocation(this.program, 'u_fogEnd');
             this.fogScaleLocation = GLctx.getUniformLocation(this.program, 'u_fogScale');
@@ -24597,7 +24609,7 @@ function copyTempDouble(ptr) {
             this.hasFog = !!(this.fogColorLocation || this.fogEndLocation ||
                              this.fogScaleLocation || this.fogDensityLocation);
           },
-  
+
           prepare: function prepare() {
             // Calculate the array buffer
             var arrayBuffer;
@@ -24609,7 +24621,7 @@ function copyTempDouble(ptr) {
             } else {
               arrayBuffer = GL.currArrayBuffer;
             }
-  
+
             // If the array buffer is unchanged and the renderer as well, then we can avoid all the work here
             // XXX We use some heuristics here, and this may not work in all cases. Try disabling GL_UNSAFE_OPTS if you
             // have odd glitches
@@ -24622,12 +24634,12 @@ function copyTempDouble(ptr) {
             if (!canSkip && lastRenderer) lastRenderer.cleanup();
             if (!GL.currArrayBuffer) {
               // Bind the array buffer and upload data after cleaning up the previous renderer
-  
+
               if (arrayBuffer != GLImmediate.lastArrayBuffer) {
                 GLctx.bindBuffer(GLctx.ARRAY_BUFFER, arrayBuffer);
                 GLImmediate.lastArrayBuffer = arrayBuffer;
               }
-  
+
               GLctx.bufferSubData(GLctx.ARRAY_BUFFER, start, GLImmediate.vertexData.subarray(start >> 2, end >> 2));
             }
             if (canSkip) return;
@@ -24635,14 +24647,14 @@ function copyTempDouble(ptr) {
             GLImmediate.lastProgram = GL.currProgram || this.program;
             GLImmediate.lastStride == GLImmediate.stride;
             GLImmediate.matricesModified = false;
-  
+
             if (!GL.currProgram) {
               if (GLImmediate.fixedFunctionProgram != this.program) {
                 GLctx.useProgram(this.program);
                 GLImmediate.fixedFunctionProgram = this.program;
               }
             }
-  
+
             if (this.modelViewLocation && this.modelViewMatrixVersion != GLImmediate.matrixVersion[0/*m*/]) {
               this.modelViewMatrixVersion = GLImmediate.matrixVersion[0/*m*/];
               GLctx.uniformMatrix4fv(this.modelViewLocation, false, GLImmediate.matrix[0/*m*/]);
@@ -24651,11 +24663,11 @@ function copyTempDouble(ptr) {
               this.projectionMatrixVersion = GLImmediate.matrixVersion[1/*p*/];
               GLctx.uniformMatrix4fv(this.projectionLocation, false, GLImmediate.matrix[1/*p*/]);
             }
-  
+
             var clientAttributes = GLImmediate.clientAttributes;
             var posAttr = clientAttributes[GLImmediate.VERTEX];
-  
-  
+
+
             GLctx.vertexAttribPointer(this.positionLocation, posAttr.size, posAttr.type, false, GLImmediate.stride, posAttr.offset);
             GLctx.enableVertexAttribArray(this.positionLocation);
             if (this.hasNormal) {
@@ -24668,7 +24680,7 @@ function copyTempDouble(ptr) {
                 var attribLoc = this.texCoordLocations[i];
                 if (attribLoc === undefined || attribLoc < 0) continue;
                 var texAttr = clientAttributes[GLImmediate.TEXTURE0+i];
-  
+
                 if (texAttr.size) {
                   GLctx.vertexAttribPointer(attribLoc, texAttr.size, texAttr.type, false, GLImmediate.stride, texAttr.offset);
                   GLctx.enableVertexAttribArray(attribLoc);
@@ -24700,7 +24712,7 @@ function copyTempDouble(ptr) {
               if (this.fogDensityLocation) GLctx.uniform1f(this.fogDensityLocation, GLEmulation.fogDensity);
             }
           },
-  
+
           cleanup: function cleanup() {
             GLctx.disableVertexAttribArray(this.positionLocation);
             if (this.hasTextures) {
@@ -24724,7 +24736,7 @@ function copyTempDouble(ptr) {
               GLctx.bindBuffer(GLctx.ARRAY_BUFFER, null);
               GLImmediate.lastArrayBuffer = null;
             }
-  
+
             GLImmediate.lastRenderer = null;
             GLImmediate.lastProgram = null;
             GLImmediate.matricesModified = true;
@@ -24751,7 +24763,7 @@ function copyTempDouble(ptr) {
           GLImmediate.flush(null, first);
           GLImmediate.mode = -1;
         };
-  
+
         _glDrawElements = _emscripten_glDrawElements = function _glDrawElements(mode, count, type, indices, start, end) { // start, end are given if we come from glDrawRangeElements
           if (GLImmediate.totalEnabledClientAttributes == 0 && mode <= 6 && GL.currElementArrayBuffer) {
             GLctx.drawElements(mode, count, type, indices);
@@ -24767,28 +24779,28 @@ function copyTempDouble(ptr) {
           GLImmediate.flush(count, 0, indices);
           GLImmediate.mode = -1;
         };
-  
+
         // TexEnv stuff needs to be prepared early, so do it here.
         // init() is too late for -O2, since it freezes the GL functions
         // by that point.
         GLImmediate.MapTreeLib = GLImmediate.spawnMapTreeLib();
         GLImmediate.spawnMapTreeLib = null;
-  
+
         GLImmediate.TexEnvJIT = GLImmediate.spawnTexEnvJIT();
         GLImmediate.spawnTexEnvJIT = null;
-  
+
         GLImmediate.setupHooks();
       },setupHooks:function () {
         if (!GLEmulation.hasRunInit) {
           GLEmulation.init();
         }
-  
+
         var glActiveTexture = _glActiveTexture;
         _glActiveTexture = _emscripten_glActiveTexture = function _glActiveTexture(texture) {
           GLImmediate.TexEnvJIT.hook_activeTexture(texture);
           glActiveTexture(texture);
         };
-  
+
         var glEnable = _glEnable;
         _glEnable = _emscripten_glEnable = function _glEnable(cap) {
           GLImmediate.TexEnvJIT.hook_enable(cap);
@@ -24799,7 +24811,7 @@ function copyTempDouble(ptr) {
           GLImmediate.TexEnvJIT.hook_disable(cap);
           glDisable(cap);
         };
-  
+
         var glTexEnvf = (typeof(_glTexEnvf) != 'undefined') ? _glTexEnvf : function(){};
         _glTexEnvf = _emscripten_glTexEnvf = function _glTexEnvf(target, pname, param) {
           GLImmediate.TexEnvJIT.hook_texEnvf(target, pname, param);
@@ -24818,15 +24830,15 @@ function copyTempDouble(ptr) {
           // Don't call old func, since we are the implementor.
           //glTexEnvfv(target, pname, param);
         };
-  
+
         _glGetTexEnviv = function _glGetTexEnviv(target, pname, param) {
           GLImmediate.TexEnvJIT.hook_getTexEnviv(target, pname, param);
         };
-  
+
         _glGetTexEnvfv = function _glGetTexEnvfv(target, pname, param) {
           GLImmediate.TexEnvJIT.hook_getTexEnvfv(target, pname, param);
         };
-  
+
         var glGetIntegerv = _glGetIntegerv;
         _glGetIntegerv = _emscripten_glGetIntegerv = function _glGetIntegerv(pname, params) {
           switch (pname) {
@@ -24846,15 +24858,15 @@ function copyTempDouble(ptr) {
       },initted:false,init:function () {
         Module.printErr('WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports');
         GLImmediate.initted = true;
-  
+
         if (!Module.useWebGL) return; // a 2D canvas may be currently used TODO: make sure we are actually called in that case
-  
+
         // User can override the maximum number of texture units that we emulate. Using fewer texture units increases runtime performance
         // slightly, so it is advantageous to choose as small value as needed.
         GLImmediate.MAX_TEXTURES = Module['GL_MAX_TEXTURE_IMAGE_UNITS'] || GLctx.getParameter(GLctx.MAX_TEXTURE_IMAGE_UNITS);
-  
+
         GLImmediate.TexEnvJIT.init(GLctx, GLImmediate.MAX_TEXTURES);
-  
+
         GLImmediate.NUM_ATTRIBUTES = 3 /*pos+normal+color attributes*/ + GLImmediate.MAX_TEXTURES;
         GLImmediate.clientAttributes = [];
         GLEmulation.enabledClientAttribIndices = [];
@@ -24862,7 +24874,7 @@ function copyTempDouble(ptr) {
           GLImmediate.clientAttributes.push({});
           GLEmulation.enabledClientAttribIndices.push(false);
         }
-  
+
         // Initialize matrix library
         // When user sets a matrix, increment a 'version number' on the new data, and when rendering, submit
         // the matrices to the shader program only if they have an old version of the data.
@@ -24875,18 +24887,18 @@ function copyTempDouble(ptr) {
           GLImmediate.matrix.push(GLImmediate.matrixLib.mat4.create());
           GLImmediate.matrixLib.mat4.identity(GLImmediate.matrix[i]);
         }
-  
+
         // Renderer cache
         GLImmediate.rendererCache = GLImmediate.MapTreeLib.create();
-  
+
         // Buffers for data
         GLImmediate.tempData = new Float32Array(GL.MAX_TEMP_BUFFER_SIZE >> 2);
         GLImmediate.indexData = new Uint16Array(GL.MAX_TEMP_BUFFER_SIZE >> 1);
-  
+
         GLImmediate.vertexDataU8 = new Uint8Array(GLImmediate.tempData.buffer);
-  
+
         GL.generateTempBuffers(true);
-  
+
         GLImmediate.clientColor = new Float32Array([1, 1, 1, 1]);
       },prepareClientAttributes:function prepareClientAttributes(count, beginEnd) {
         // If no client attributes were modified since we were last called, do nothing. Note that this
@@ -24897,7 +24909,7 @@ function copyTempDouble(ptr) {
           return;
         }
         GLImmediate.modifiedClientAttributes = false;
-  
+
         // The role of prepareClientAttributes is to examine the set of client-side vertex attribute buffers
         // that user code has submitted, and to prepare them to be uploaded to a VBO in GPU memory
         // (since WebGL does not support client-side rendering, i.e. rendering from vertex data in CPU memory)
@@ -24905,13 +24917,13 @@ function copyTempDouble(ptr) {
         // 1. Fully planar: all attributes are in their own separate tightly-packed arrays in CPU memory.
         // 2. Fully interleaved: all attributes share a single array where data is interleaved something like (pos,uv,normal), (pos,uv,normal), ...
         // 3. Complex hybrid: Multiple separate arrays that either are sparsely strided, and/or partially interleave vertex attributes.
-  
+
         // For simplicity, we support the case (2) as the fast case. For (1) and (3), we do a memory copy of the
         // vertex data here to prepare a relayouted buffer that is of the structure in case (2). The reason
         // for this is that it allows the emulation code to get away with using just one VBO buffer for rendering,
         // and not have to maintain multiple ones. Therefore cases (1) and (3) will be very slow, and case (2) is fast.
-  
-        // Detect which case we are in by using a quick heuristic by examining the strides of the buffers. If all the buffers have identical 
+
+        // Detect which case we are in by using a quick heuristic by examining the strides of the buffers. If all the buffers have identical
         // stride, we assume we have case (2), otherwise we have something more complex.
         var clientStartPointer = 0x7FFFFFFF;
         var bytes = 0; // Total number of bytes taken up by a single vertex.
@@ -24930,7 +24942,7 @@ function copyTempDouble(ptr) {
             maxStride = Math.max(maxStride, attr.stride);
           }
         }
-  
+
         if ((minStride != maxStride || maxStride < bytes) && !beginEnd) {
           // We are in cases (1) or (3): slow path, shuffle the data around into a single interleaved vertex buffer.
           // The immediate-mode glBegin()/glEnd() vertex submission gets automatically generated in appropriate layout,
@@ -24988,9 +25000,9 @@ function copyTempDouble(ptr) {
       },flush:function flush(numProvidedIndexes, startIndex, ptr) {
         startIndex = startIndex || 0;
         ptr = ptr || 0;
-  
+
         var renderer = GLImmediate.getRenderer();
-  
+
         // Generate index data in a format suitable for GLES 2.0/WebGL
         var numVertexes = 4 * GLImmediate.vertexCounter / GLImmediate.stride;
         var emulatedElementArrayBuffer = false;
@@ -25024,30 +25036,30 @@ function copyTempDouble(ptr) {
           GLctx.bindBuffer(GLctx.ELEMENT_ARRAY_BUFFER, GL.tempQuadIndexBuffer);
           emulatedElementArrayBuffer = true;
         }
-  
+
         renderer.prepare();
-  
+
         if (numIndexes) {
           GLctx.drawElements(GLctx.TRIANGLES, numIndexes, GLctx.UNSIGNED_SHORT, ptr);
         } else {
           GLctx.drawArrays(GLImmediate.mode, startIndex, numVertexes);
         }
-  
+
         if (emulatedElementArrayBuffer) {
           GLctx.bindBuffer(GLctx.ELEMENT_ARRAY_BUFFER, GL.buffers[GL.currElementArrayBuffer] || null);
         }
-  
+
       }};
   GLImmediate.matrixLib = (function() {
-  
+
   /**
    * @fileoverview gl-matrix - High performance matrix and vector operations for WebGL
    * @author Brandon Jones
    * @version 1.2.4
    */
-  
+
   // Modifed for emscripten: Global scoping etc.
-  
+
   /*
    * Copyright (c) 2011 Brandon Jones
    *
@@ -25070,38 +25082,38 @@ function copyTempDouble(ptr) {
    *    3. This notice may not be removed or altered from any source
    *    distribution.
    */
-  
-  
+
+
   /**
    * @class 3 Dimensional Vector
    * @name vec3
    */
   var vec3 = {};
-  
+
   /**
    * @class 3x3 Matrix
    * @name mat3
    */
   var mat3 = {};
-  
+
   /**
    * @class 4x4 Matrix
    * @name mat4
    */
   var mat4 = {};
-  
+
   /**
    * @class Quaternion
    * @name quat4
    */
   var quat4 = {};
-  
+
   var MatrixArray = Float32Array;
-  
+
   /*
    * vec3
    */
-   
+
   /**
    * Creates a new instance of a vec3 using the default array type
    * Any javascript array-like objects containing at least 3 numeric elements can serve as a vec3
@@ -25112,7 +25124,7 @@ function copyTempDouble(ptr) {
    */
   vec3.create = function (vec) {
       var dest = new MatrixArray(3);
-  
+
       if (vec) {
           dest[0] = vec[0];
           dest[1] = vec[1];
@@ -25120,10 +25132,10 @@ function copyTempDouble(ptr) {
       } else {
           dest[0] = dest[1] = dest[2] = 0;
       }
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the values of one vec3 to another
    *
@@ -25136,10 +25148,10 @@ function copyTempDouble(ptr) {
       dest[0] = vec[0];
       dest[1] = vec[1];
       dest[2] = vec[2];
-  
+
       return dest;
   };
-  
+
   /**
    * Performs a vector addition
    *
@@ -25156,13 +25168,13 @@ function copyTempDouble(ptr) {
           vec[2] += vec2[2];
           return vec;
       }
-  
+
       dest[0] = vec[0] + vec2[0];
       dest[1] = vec[1] + vec2[1];
       dest[2] = vec[2] + vec2[2];
       return dest;
   };
-  
+
   /**
    * Performs a vector subtraction
    *
@@ -25179,13 +25191,13 @@ function copyTempDouble(ptr) {
           vec[2] -= vec2[2];
           return vec;
       }
-  
+
       dest[0] = vec[0] - vec2[0];
       dest[1] = vec[1] - vec2[1];
       dest[2] = vec[2] - vec2[2];
       return dest;
   };
-  
+
   /**
    * Performs a vector multiplication
    *
@@ -25202,13 +25214,13 @@ function copyTempDouble(ptr) {
           vec[2] *= vec2[2];
           return vec;
       }
-  
+
       dest[0] = vec[0] * vec2[0];
       dest[1] = vec[1] * vec2[1];
       dest[2] = vec[2] * vec2[2];
       return dest;
   };
-  
+
   /**
    * Negates the components of a vec3
    *
@@ -25219,13 +25231,13 @@ function copyTempDouble(ptr) {
    */
   vec3.negate = function (vec, dest) {
       if (!dest) { dest = vec; }
-  
+
       dest[0] = -vec[0];
       dest[1] = -vec[1];
       dest[2] = -vec[2];
       return dest;
   };
-  
+
   /**
    * Multiplies the components of a vec3 by a scalar value
    *
@@ -25242,13 +25254,13 @@ function copyTempDouble(ptr) {
           vec[2] *= val;
           return vec;
       }
-  
+
       dest[0] = vec[0] * val;
       dest[1] = vec[1] * val;
       dest[2] = vec[2] * val;
       return dest;
   };
-  
+
   /**
    * Generates a unit vector of the same direction as the provided vec3
    * If vector length is 0, returns [0, 0, 0]
@@ -25260,10 +25272,10 @@ function copyTempDouble(ptr) {
    */
   vec3.normalize = function (vec, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0], y = vec[1], z = vec[2],
           len = Math.sqrt(x * x + y * y + z * z);
-  
+
       if (!len) {
           dest[0] = 0;
           dest[1] = 0;
@@ -25275,14 +25287,14 @@ function copyTempDouble(ptr) {
           dest[2] = z;
           return dest;
       }
-  
+
       len = 1 / len;
       dest[0] = x * len;
       dest[1] = y * len;
       dest[2] = z * len;
       return dest;
   };
-  
+
   /**
    * Generates the cross product of two vec3s
    *
@@ -25294,16 +25306,16 @@ function copyTempDouble(ptr) {
    */
   vec3.cross = function (vec, vec2, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0], y = vec[1], z = vec[2],
           x2 = vec2[0], y2 = vec2[1], z2 = vec2[2];
-  
+
       dest[0] = y * z2 - z * y2;
       dest[1] = z * x2 - x * z2;
       dest[2] = x * y2 - y * x2;
       return dest;
   };
-  
+
   /**
    * Caclulates the length of a vec3
    *
@@ -25315,7 +25327,7 @@ function copyTempDouble(ptr) {
       var x = vec[0], y = vec[1], z = vec[2];
       return Math.sqrt(x * x + y * y + z * z);
   };
-  
+
   /**
    * Caclulates the dot product of two vec3s
    *
@@ -25327,7 +25339,7 @@ function copyTempDouble(ptr) {
   vec3.dot = function (vec, vec2) {
       return vec[0] * vec2[0] + vec[1] * vec2[1] + vec[2] * vec2[2];
   };
-  
+
   /**
    * Generates a unit vector pointing from one vector to another
    *
@@ -25339,26 +25351,26 @@ function copyTempDouble(ptr) {
    */
   vec3.direction = function (vec, vec2, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0] - vec2[0],
           y = vec[1] - vec2[1],
           z = vec[2] - vec2[2],
           len = Math.sqrt(x * x + y * y + z * z);
-  
+
       if (!len) {
           dest[0] = 0;
           dest[1] = 0;
           dest[2] = 0;
           return dest;
       }
-  
+
       len = 1 / len;
       dest[0] = x * len;
       dest[1] = y * len;
       dest[2] = z * len;
       return dest;
   };
-  
+
   /**
    * Performs a linear interpolation between two vec3
    *
@@ -25371,14 +25383,14 @@ function copyTempDouble(ptr) {
    */
   vec3.lerp = function (vec, vec2, lerp, dest) {
       if (!dest) { dest = vec; }
-  
+
       dest[0] = vec[0] + lerp * (vec2[0] - vec[0]);
       dest[1] = vec[1] + lerp * (vec2[1] - vec[1]);
       dest[2] = vec[2] + lerp * (vec2[2] - vec[2]);
-  
+
       return dest;
   };
-  
+
   /**
    * Calculates the euclidian distance between two vec3
    *
@@ -25392,10 +25404,10 @@ function copyTempDouble(ptr) {
       var x = vec2[0] - vec[0],
           y = vec2[1] - vec[1],
           z = vec2[2] - vec[2];
-          
+
       return Math.sqrt(x*x + y*y + z*z);
   };
-  
+
   /**
    * Projects the specified vec3 from screen space into object space
    * Based on the <a href="http://webcvs.freedesktop.org/mesa/Mesa/src/glu/mesa/project.c?revision=1.4&view=markup">Mesa gluUnProject implementation</a>
@@ -25410,28 +25422,28 @@ function copyTempDouble(ptr) {
    */
   vec3.unproject = function (vec, view, proj, viewport, dest) {
       if (!dest) { dest = vec; }
-  
+
       var m = mat4.create();
       var v = new MatrixArray(4);
-      
+
       v[0] = (vec[0] - viewport[0]) * 2.0 / viewport[2] - 1.0;
       v[1] = (vec[1] - viewport[1]) * 2.0 / viewport[3] - 1.0;
       v[2] = 2.0 * vec[2] - 1.0;
       v[3] = 1.0;
-      
+
       mat4.multiply(proj, view, m);
       if(!mat4.inverse(m)) { return null; }
-      
+
       mat4.multiplyVec4(m, v);
       if(v[3] === 0.0) { return null; }
-  
+
       dest[0] = v[0] / v[3];
       dest[1] = v[1] / v[3];
       dest[2] = v[2] / v[3];
-      
+
       return dest;
   };
-  
+
   /**
    * Returns a string representation of a vector
    *
@@ -25442,11 +25454,11 @@ function copyTempDouble(ptr) {
   vec3.str = function (vec) {
       return '[' + vec[0] + ', ' + vec[1] + ', ' + vec[2] + ']';
   };
-  
+
   /*
    * mat3
    */
-  
+
   /**
    * Creates a new instance of a mat3 using the default array type
    * Any javascript array-like object containing at least 9 numeric elements can serve as a mat3
@@ -25457,7 +25469,7 @@ function copyTempDouble(ptr) {
    */
   mat3.create = function (mat) {
       var dest = new MatrixArray(9);
-  
+
       if (mat) {
           dest[0] = mat[0];
           dest[1] = mat[1];
@@ -25469,10 +25481,10 @@ function copyTempDouble(ptr) {
           dest[7] = mat[7];
           dest[8] = mat[8];
       }
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the values of one mat3 to another
    *
@@ -25493,7 +25505,7 @@ function copyTempDouble(ptr) {
       dest[8] = mat[8];
       return dest;
   };
-  
+
   /**
    * Sets a mat3 to an identity matrix
    *
@@ -25514,7 +25526,7 @@ function copyTempDouble(ptr) {
       dest[8] = 1;
       return dest;
   };
-  
+
   /**
    * Transposes a mat3 (flips the values over the diagonal)
    *
@@ -25529,7 +25541,7 @@ function copyTempDouble(ptr) {
       if (!dest || mat === dest) {
           var a01 = mat[1], a02 = mat[2],
               a12 = mat[5];
-  
+
           mat[1] = mat[3];
           mat[2] = mat[6];
           mat[3] = a01;
@@ -25538,7 +25550,7 @@ function copyTempDouble(ptr) {
           mat[7] = a12;
           return mat;
       }
-  
+
       dest[0] = mat[0];
       dest[1] = mat[3];
       dest[2] = mat[6];
@@ -25550,7 +25562,7 @@ function copyTempDouble(ptr) {
       dest[8] = mat[8];
       return dest;
   };
-  
+
   /**
    * Copies the elements of a mat3 into the upper 3x3 elements of a mat4
    *
@@ -25561,30 +25573,30 @@ function copyTempDouble(ptr) {
    */
   mat3.toMat4 = function (mat, dest) {
       if (!dest) { dest = mat4.create(); }
-  
+
       dest[15] = 1;
       dest[14] = 0;
       dest[13] = 0;
       dest[12] = 0;
-  
+
       dest[11] = 0;
       dest[10] = mat[8];
       dest[9] = mat[7];
       dest[8] = mat[6];
-  
+
       dest[7] = 0;
       dest[6] = mat[5];
       dest[5] = mat[4];
       dest[4] = mat[3];
-  
+
       dest[3] = 0;
       dest[2] = mat[2];
       dest[1] = mat[1];
       dest[0] = mat[0];
-  
+
       return dest;
   };
-  
+
   /**
    * Returns a string representation of a mat3
    *
@@ -25597,11 +25609,11 @@ function copyTempDouble(ptr) {
           ', ' + mat[3] + ', ' + mat[4] + ', ' + mat[5] +
           ', ' + mat[6] + ', ' + mat[7] + ', ' + mat[8] + ']';
   };
-  
+
   /*
    * mat4
    */
-  
+
   /**
    * Creates a new instance of a mat4 using the default array type
    * Any javascript array-like object containing at least 16 numeric elements can serve as a mat4
@@ -25612,7 +25624,7 @@ function copyTempDouble(ptr) {
    */
   mat4.create = function (mat) {
       var dest = new MatrixArray(16);
-  
+
       if (mat) {
           dest[0] = mat[0];
           dest[1] = mat[1];
@@ -25631,10 +25643,10 @@ function copyTempDouble(ptr) {
           dest[14] = mat[14];
           dest[15] = mat[15];
       }
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the values of one mat4 to another
    *
@@ -25662,7 +25674,7 @@ function copyTempDouble(ptr) {
       dest[15] = mat[15];
       return dest;
   };
-  
+
   /**
    * Sets a mat4 to an identity matrix
    *
@@ -25690,7 +25702,7 @@ function copyTempDouble(ptr) {
       dest[15] = 1;
       return dest;
   };
-  
+
   /**
    * Transposes a mat4 (flips the values over the diagonal)
    *
@@ -25705,7 +25717,7 @@ function copyTempDouble(ptr) {
           var a01 = mat[1], a02 = mat[2], a03 = mat[3],
               a12 = mat[6], a13 = mat[7],
               a23 = mat[11];
-  
+
           mat[1] = mat[4];
           mat[2] = mat[8];
           mat[3] = mat[12];
@@ -25720,7 +25732,7 @@ function copyTempDouble(ptr) {
           mat[14] = a23;
           return mat;
       }
-  
+
       dest[0] = mat[0];
       dest[1] = mat[4];
       dest[2] = mat[8];
@@ -25739,7 +25751,7 @@ function copyTempDouble(ptr) {
       dest[15] = mat[15];
       return dest;
   };
-  
+
   /**
    * Calculates the determinant of a mat4
    *
@@ -25753,7 +25765,7 @@ function copyTempDouble(ptr) {
           a10 = mat[4], a11 = mat[5], a12 = mat[6], a13 = mat[7],
           a20 = mat[8], a21 = mat[9], a22 = mat[10], a23 = mat[11],
           a30 = mat[12], a31 = mat[13], a32 = mat[14], a33 = mat[15];
-  
+
       return (a30 * a21 * a12 * a03 - a20 * a31 * a12 * a03 - a30 * a11 * a22 * a03 + a10 * a31 * a22 * a03 +
               a20 * a11 * a32 * a03 - a10 * a21 * a32 * a03 - a30 * a21 * a02 * a13 + a20 * a31 * a02 * a13 +
               a30 * a01 * a22 * a13 - a00 * a31 * a22 * a13 - a20 * a01 * a32 * a13 + a00 * a21 * a32 * a13 +
@@ -25761,7 +25773,7 @@ function copyTempDouble(ptr) {
               a10 * a01 * a32 * a23 - a00 * a11 * a32 * a23 - a20 * a11 * a02 * a33 + a10 * a21 * a02 * a33 +
               a20 * a01 * a12 * a33 - a00 * a21 * a12 * a33 - a10 * a01 * a22 * a33 + a00 * a11 * a22 * a33);
   };
-  
+
   /**
    * Calculates the inverse matrix of a mat4
    *
@@ -25772,13 +25784,13 @@ function copyTempDouble(ptr) {
    */
   mat4.inverse = function (mat, dest) {
       if (!dest) { dest = mat; }
-  
+
       // Cache the matrix values (makes for huge speed increases!)
       var a00 = mat[0], a01 = mat[1], a02 = mat[2], a03 = mat[3],
           a10 = mat[4], a11 = mat[5], a12 = mat[6], a13 = mat[7],
           a20 = mat[8], a21 = mat[9], a22 = mat[10], a23 = mat[11],
           a30 = mat[12], a31 = mat[13], a32 = mat[14], a33 = mat[15],
-  
+
           b00 = a00 * a11 - a01 * a10,
           b01 = a00 * a12 - a02 * a10,
           b02 = a00 * a13 - a03 * a10,
@@ -25791,14 +25803,14 @@ function copyTempDouble(ptr) {
           b09 = a21 * a32 - a22 * a31,
           b10 = a21 * a33 - a23 * a31,
           b11 = a22 * a33 - a23 * a32,
-  
+
           d = (b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06),
           invDet;
-  
+
           // Calculate the determinant
           if (!d) { return null; }
           invDet = 1 / d;
-  
+
       dest[0] = (a11 * b11 - a12 * b10 + a13 * b09) * invDet;
       dest[1] = (-a01 * b11 + a02 * b10 - a03 * b09) * invDet;
       dest[2] = (a31 * b05 - a32 * b04 + a33 * b03) * invDet;
@@ -25815,10 +25827,10 @@ function copyTempDouble(ptr) {
       dest[13] = (a00 * b09 - a01 * b07 + a02 * b06) * invDet;
       dest[14] = (-a30 * b03 + a31 * b01 - a32 * b00) * invDet;
       dest[15] = (a20 * b03 - a21 * b01 + a22 * b00) * invDet;
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the upper 3x3 elements of a mat4 into another mat4
    *
@@ -25829,7 +25841,7 @@ function copyTempDouble(ptr) {
    */
   mat4.toRotationMat = function (mat, dest) {
       if (!dest) { dest = mat4.create(); }
-  
+
       dest[0] = mat[0];
       dest[1] = mat[1];
       dest[2] = mat[2];
@@ -25846,10 +25858,10 @@ function copyTempDouble(ptr) {
       dest[13] = 0;
       dest[14] = 0;
       dest[15] = 1;
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the upper 3x3 elements of a mat4 into a mat3
    *
@@ -25860,7 +25872,7 @@ function copyTempDouble(ptr) {
    */
   mat4.toMat3 = function (mat, dest) {
       if (!dest) { dest = mat3.create(); }
-  
+
       dest[0] = mat[0];
       dest[1] = mat[1];
       dest[2] = mat[2];
@@ -25870,10 +25882,10 @@ function copyTempDouble(ptr) {
       dest[6] = mat[8];
       dest[7] = mat[9];
       dest[8] = mat[10];
-  
+
       return dest;
   };
-  
+
   /**
    * Calculates the inverse of the upper 3x3 elements of a mat4 and copies the result into a mat3
    * The resulting matrix is useful for calculating transformed normals
@@ -25889,19 +25901,19 @@ function copyTempDouble(ptr) {
       var a00 = mat[0], a01 = mat[1], a02 = mat[2],
           a10 = mat[4], a11 = mat[5], a12 = mat[6],
           a20 = mat[8], a21 = mat[9], a22 = mat[10],
-  
+
           b01 = a22 * a11 - a12 * a21,
           b11 = -a22 * a10 + a12 * a20,
           b21 = a21 * a10 - a11 * a20,
-  
+
           d = a00 * b01 + a01 * b11 + a02 * b21,
           id;
-  
+
       if (!d) { return null; }
       id = 1 / d;
-  
+
       if (!dest) { dest = mat3.create(); }
-  
+
       dest[0] = b01 * id;
       dest[1] = (-a22 * a01 + a02 * a21) * id;
       dest[2] = (a12 * a01 - a02 * a11) * id;
@@ -25911,10 +25923,10 @@ function copyTempDouble(ptr) {
       dest[6] = b21 * id;
       dest[7] = (-a21 * a00 + a01 * a20) * id;
       dest[8] = (a11 * a00 - a01 * a10) * id;
-  
+
       return dest;
   };
-  
+
   /**
    * Performs a matrix multiplication
    *
@@ -25926,18 +25938,18 @@ function copyTempDouble(ptr) {
    */
   mat4.multiply = function (mat, mat2, dest) {
       if (!dest) { dest = mat; }
-  
+
       // Cache the matrix values (makes for huge speed increases!)
       var a00 = mat[0], a01 = mat[1], a02 = mat[2], a03 = mat[3],
           a10 = mat[4], a11 = mat[5], a12 = mat[6], a13 = mat[7],
           a20 = mat[8], a21 = mat[9], a22 = mat[10], a23 = mat[11],
           a30 = mat[12], a31 = mat[13], a32 = mat[14], a33 = mat[15],
-  
+
           b00 = mat2[0], b01 = mat2[1], b02 = mat2[2], b03 = mat2[3],
           b10 = mat2[4], b11 = mat2[5], b12 = mat2[6], b13 = mat2[7],
           b20 = mat2[8], b21 = mat2[9], b22 = mat2[10], b23 = mat2[11],
           b30 = mat2[12], b31 = mat2[13], b32 = mat2[14], b33 = mat2[15];
-  
+
       dest[0] = b00 * a00 + b01 * a10 + b02 * a20 + b03 * a30;
       dest[1] = b00 * a01 + b01 * a11 + b02 * a21 + b03 * a31;
       dest[2] = b00 * a02 + b01 * a12 + b02 * a22 + b03 * a32;
@@ -25954,10 +25966,10 @@ function copyTempDouble(ptr) {
       dest[13] = b30 * a01 + b31 * a11 + b32 * a21 + b33 * a31;
       dest[14] = b30 * a02 + b31 * a12 + b32 * a22 + b33 * a32;
       dest[15] = b30 * a03 + b31 * a13 + b32 * a23 + b33 * a33;
-  
+
       return dest;
   };
-  
+
   /**
    * Transforms a vec3 with the given matrix
    * 4th vector component is implicitly '1'
@@ -25970,16 +25982,16 @@ function copyTempDouble(ptr) {
    */
   mat4.multiplyVec3 = function (mat, vec, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0], y = vec[1], z = vec[2];
-  
+
       dest[0] = mat[0] * x + mat[4] * y + mat[8] * z + mat[12];
       dest[1] = mat[1] * x + mat[5] * y + mat[9] * z + mat[13];
       dest[2] = mat[2] * x + mat[6] * y + mat[10] * z + mat[14];
-  
+
       return dest;
   };
-  
+
   /**
    * Transforms a vec4 with the given matrix
    *
@@ -25991,17 +26003,17 @@ function copyTempDouble(ptr) {
    */
   mat4.multiplyVec4 = function (mat, vec, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0], y = vec[1], z = vec[2], w = vec[3];
-  
+
       dest[0] = mat[0] * x + mat[4] * y + mat[8] * z + mat[12] * w;
       dest[1] = mat[1] * x + mat[5] * y + mat[9] * z + mat[13] * w;
       dest[2] = mat[2] * x + mat[6] * y + mat[10] * z + mat[14] * w;
       dest[3] = mat[3] * x + mat[7] * y + mat[11] * z + mat[15] * w;
-  
+
       return dest;
   };
-  
+
   /**
    * Translates a matrix by the given vector
    *
@@ -26016,7 +26028,7 @@ function copyTempDouble(ptr) {
           a00, a01, a02, a03,
           a10, a11, a12, a13,
           a20, a21, a22, a23;
-  
+
       if (!dest || mat === dest) {
           mat[12] = mat[0] * x + mat[4] * y + mat[8] * z + mat[12];
           mat[13] = mat[1] * x + mat[5] * y + mat[9] * z + mat[13];
@@ -26024,22 +26036,22 @@ function copyTempDouble(ptr) {
           mat[15] = mat[3] * x + mat[7] * y + mat[11] * z + mat[15];
           return mat;
       }
-  
+
       a00 = mat[0]; a01 = mat[1]; a02 = mat[2]; a03 = mat[3];
       a10 = mat[4]; a11 = mat[5]; a12 = mat[6]; a13 = mat[7];
       a20 = mat[8]; a21 = mat[9]; a22 = mat[10]; a23 = mat[11];
-  
+
       dest[0] = a00; dest[1] = a01; dest[2] = a02; dest[3] = a03;
       dest[4] = a10; dest[5] = a11; dest[6] = a12; dest[7] = a13;
       dest[8] = a20; dest[9] = a21; dest[10] = a22; dest[11] = a23;
-  
+
       dest[12] = a00 * x + a10 * y + a20 * z + mat[12];
       dest[13] = a01 * x + a11 * y + a21 * z + mat[13];
       dest[14] = a02 * x + a12 * y + a22 * z + mat[14];
       dest[15] = a03 * x + a13 * y + a23 * z + mat[15];
       return dest;
   };
-  
+
   /**
    * Scales a matrix by the given vector
    *
@@ -26051,7 +26063,7 @@ function copyTempDouble(ptr) {
    */
   mat4.scale = function (mat, vec, dest) {
       var x = vec[0], y = vec[1], z = vec[2];
-  
+
       if (!dest || mat === dest) {
           mat[0] *= x;
           mat[1] *= x;
@@ -26067,7 +26079,7 @@ function copyTempDouble(ptr) {
           mat[11] *= z;
           return mat;
       }
-  
+
       dest[0] = mat[0] * x;
       dest[1] = mat[1] * x;
       dest[2] = mat[2] * x;
@@ -26086,14 +26098,14 @@ function copyTempDouble(ptr) {
       dest[15] = mat[15];
       return dest;
   };
-  
+
   /**
    * Rotates a matrix by the given angle around the specified axis
    * If rotating around a primary axis (X,Y,Z) one of the specialized rotation functions should be used instead for performance
    *
    * @param {mat4} mat mat4 to rotate
    * @param {number} angle Angle (in radians) to rotate
-   * @param {vec3} axis vec3 representing the axis to rotate around 
+   * @param {vec3} axis vec3 representing the axis to rotate around
    * @param {mat4} [dest] mat4 receiving operation result. If not specified result is written to mat
    *
    * @returns {mat4} dest if specified, mat otherwise
@@ -26108,7 +26120,7 @@ function copyTempDouble(ptr) {
           b00, b01, b02,
           b10, b11, b12,
           b20, b21, b22;
-  
+
       if (!len) { return null; }
       if (len !== 1) {
           len = 1 / len;
@@ -26116,20 +26128,20 @@ function copyTempDouble(ptr) {
           y *= len;
           z *= len;
       }
-  
+
       s = Math.sin(angle);
       c = Math.cos(angle);
       t = 1 - c;
-  
+
       a00 = mat[0]; a01 = mat[1]; a02 = mat[2]; a03 = mat[3];
       a10 = mat[4]; a11 = mat[5]; a12 = mat[6]; a13 = mat[7];
       a20 = mat[8]; a21 = mat[9]; a22 = mat[10]; a23 = mat[11];
-  
+
       // Construct the elements of the rotation matrix
       b00 = x * x * t + c; b01 = y * x * t + z * s; b02 = z * x * t - y * s;
       b10 = x * y * t - z * s; b11 = y * y * t + c; b12 = z * y * t + x * s;
       b20 = x * z * t + y * s; b21 = y * z * t - x * s; b22 = z * z * t + c;
-  
+
       if (!dest) {
           dest = mat;
       } else if (mat !== dest) { // If the source and destination differ, copy the unchanged last row
@@ -26138,25 +26150,25 @@ function copyTempDouble(ptr) {
           dest[14] = mat[14];
           dest[15] = mat[15];
       }
-  
+
       // Perform rotation-specific matrix multiplication
       dest[0] = a00 * b00 + a10 * b01 + a20 * b02;
       dest[1] = a01 * b00 + a11 * b01 + a21 * b02;
       dest[2] = a02 * b00 + a12 * b01 + a22 * b02;
       dest[3] = a03 * b00 + a13 * b01 + a23 * b02;
-  
+
       dest[4] = a00 * b10 + a10 * b11 + a20 * b12;
       dest[5] = a01 * b10 + a11 * b11 + a21 * b12;
       dest[6] = a02 * b10 + a12 * b11 + a22 * b12;
       dest[7] = a03 * b10 + a13 * b11 + a23 * b12;
-  
+
       dest[8] = a00 * b20 + a10 * b21 + a20 * b22;
       dest[9] = a01 * b20 + a11 * b21 + a21 * b22;
       dest[10] = a02 * b20 + a12 * b21 + a22 * b22;
       dest[11] = a03 * b20 + a13 * b21 + a23 * b22;
       return dest;
   };
-  
+
   /**
    * Rotates a matrix by the given angle around the X axis
    *
@@ -26177,7 +26189,7 @@ function copyTempDouble(ptr) {
           a21 = mat[9],
           a22 = mat[10],
           a23 = mat[11];
-  
+
       if (!dest) {
           dest = mat;
       } else if (mat !== dest) { // If the source and destination differ, copy the unchanged rows
@@ -26185,26 +26197,26 @@ function copyTempDouble(ptr) {
           dest[1] = mat[1];
           dest[2] = mat[2];
           dest[3] = mat[3];
-  
+
           dest[12] = mat[12];
           dest[13] = mat[13];
           dest[14] = mat[14];
           dest[15] = mat[15];
       }
-  
+
       // Perform axis-specific matrix multiplication
       dest[4] = a10 * c + a20 * s;
       dest[5] = a11 * c + a21 * s;
       dest[6] = a12 * c + a22 * s;
       dest[7] = a13 * c + a23 * s;
-  
+
       dest[8] = a10 * -s + a20 * c;
       dest[9] = a11 * -s + a21 * c;
       dest[10] = a12 * -s + a22 * c;
       dest[11] = a13 * -s + a23 * c;
       return dest;
   };
-  
+
   /**
    * Rotates a matrix by the given angle around the Y axis
    *
@@ -26225,7 +26237,7 @@ function copyTempDouble(ptr) {
           a21 = mat[9],
           a22 = mat[10],
           a23 = mat[11];
-  
+
       if (!dest) {
           dest = mat;
       } else if (mat !== dest) { // If the source and destination differ, copy the unchanged rows
@@ -26233,26 +26245,26 @@ function copyTempDouble(ptr) {
           dest[5] = mat[5];
           dest[6] = mat[6];
           dest[7] = mat[7];
-  
+
           dest[12] = mat[12];
           dest[13] = mat[13];
           dest[14] = mat[14];
           dest[15] = mat[15];
       }
-  
+
       // Perform axis-specific matrix multiplication
       dest[0] = a00 * c + a20 * -s;
       dest[1] = a01 * c + a21 * -s;
       dest[2] = a02 * c + a22 * -s;
       dest[3] = a03 * c + a23 * -s;
-  
+
       dest[8] = a00 * s + a20 * c;
       dest[9] = a01 * s + a21 * c;
       dest[10] = a02 * s + a22 * c;
       dest[11] = a03 * s + a23 * c;
       return dest;
   };
-  
+
   /**
    * Rotates a matrix by the given angle around the Z axis
    *
@@ -26273,7 +26285,7 @@ function copyTempDouble(ptr) {
           a11 = mat[5],
           a12 = mat[6],
           a13 = mat[7];
-  
+
       if (!dest) {
           dest = mat;
       } else if (mat !== dest) { // If the source and destination differ, copy the unchanged last row
@@ -26281,27 +26293,27 @@ function copyTempDouble(ptr) {
           dest[9] = mat[9];
           dest[10] = mat[10];
           dest[11] = mat[11];
-  
+
           dest[12] = mat[12];
           dest[13] = mat[13];
           dest[14] = mat[14];
           dest[15] = mat[15];
       }
-  
+
       // Perform axis-specific matrix multiplication
       dest[0] = a00 * c + a10 * s;
       dest[1] = a01 * c + a11 * s;
       dest[2] = a02 * c + a12 * s;
       dest[3] = a03 * c + a13 * s;
-  
+
       dest[4] = a00 * -s + a10 * c;
       dest[5] = a01 * -s + a11 * c;
       dest[6] = a02 * -s + a12 * c;
       dest[7] = a03 * -s + a13 * c;
-  
+
       return dest;
   };
-  
+
   /**
    * Generates a frustum matrix with the given bounds
    *
@@ -26338,7 +26350,7 @@ function copyTempDouble(ptr) {
       dest[15] = 0;
       return dest;
   };
-  
+
   /**
    * Generates a perspective projection matrix with the given bounds
    *
@@ -26355,7 +26367,7 @@ function copyTempDouble(ptr) {
           right = top * aspect;
       return mat4.frustum(-right, right, -top, top, near, far, dest);
   };
-  
+
   /**
    * Generates a orthogonal projection matrix with the given bounds
    *
@@ -26392,7 +26404,7 @@ function copyTempDouble(ptr) {
       dest[15] = 1;
       return dest;
   };
-  
+
   /**
    * Generates a look-at matrix with the given eye position, focal point, and up axis
    *
@@ -26405,7 +26417,7 @@ function copyTempDouble(ptr) {
    */
   mat4.lookAt = function (eye, center, up, dest) {
       if (!dest) { dest = mat4.create(); }
-  
+
       var x0, x1, x2, y0, y1, y2, z0, z1, z2, len,
           eyex = eye[0],
           eyey = eye[1],
@@ -26416,22 +26428,22 @@ function copyTempDouble(ptr) {
           centerx = center[0],
           centery = center[1],
           centerz = center[2];
-  
+
       if (eyex === centerx && eyey === centery && eyez === centerz) {
           return mat4.identity(dest);
       }
-  
+
       //vec3.direction(eye, center, z);
       z0 = eyex - centerx;
       z1 = eyey - centery;
       z2 = eyez - centerz;
-  
+
       // normalize (no check needed for 0 because of early return)
       len = 1 / Math.sqrt(z0 * z0 + z1 * z1 + z2 * z2);
       z0 *= len;
       z1 *= len;
       z2 *= len;
-  
+
       //vec3.normalize(vec3.cross(up, z, x));
       x0 = upy * z2 - upz * z1;
       x1 = upz * z0 - upx * z2;
@@ -26447,12 +26459,12 @@ function copyTempDouble(ptr) {
           x1 *= len;
           x2 *= len;
       }
-  
+
       //vec3.normalize(vec3.cross(z, x, y));
       y0 = z1 * x2 - z2 * x1;
       y1 = z2 * x0 - z0 * x2;
       y2 = z0 * x1 - z1 * x0;
-  
+
       len = Math.sqrt(y0 * y0 + y1 * y1 + y2 * y2);
       if (!len) {
           y0 = 0;
@@ -26464,7 +26476,7 @@ function copyTempDouble(ptr) {
           y1 *= len;
           y2 *= len;
       }
-  
+
       dest[0] = x0;
       dest[1] = y0;
       dest[2] = z0;
@@ -26481,10 +26493,10 @@ function copyTempDouble(ptr) {
       dest[13] = -(y0 * eyex + y1 * eyey + y2 * eyez);
       dest[14] = -(z0 * eyex + z1 * eyey + z2 * eyez);
       dest[15] = 1;
-  
+
       return dest;
   };
-  
+
   /**
    * Creates a matrix from a quaternion rotation and vector translation
    * This is equivalent to (but much faster than):
@@ -26503,13 +26515,13 @@ function copyTempDouble(ptr) {
    */
   mat4.fromRotationTranslation = function (quat, vec, dest) {
       if (!dest) { dest = mat4.create(); }
-  
+
       // Quaternion math
       var x = quat[0], y = quat[1], z = quat[2], w = quat[3],
           x2 = x + x,
           y2 = y + y,
           z2 = z + z,
-  
+
           xx = x * x2,
           xy = x * y2,
           xz = x * z2,
@@ -26519,7 +26531,7 @@ function copyTempDouble(ptr) {
           wx = w * x2,
           wy = w * y2,
           wz = w * z2;
-  
+
       dest[0] = 1 - (yy + zz);
       dest[1] = xy + wz;
       dest[2] = xz - wy;
@@ -26536,10 +26548,10 @@ function copyTempDouble(ptr) {
       dest[13] = vec[1];
       dest[14] = vec[2];
       dest[15] = 1;
-      
+
       return dest;
   };
-  
+
   /**
    * Returns a string representation of a mat4
    *
@@ -26553,11 +26565,11 @@ function copyTempDouble(ptr) {
           ', ' + mat[8] + ', ' + mat[9] + ', ' + mat[10] + ', ' + mat[11] +
           ', ' + mat[12] + ', ' + mat[13] + ', ' + mat[14] + ', ' + mat[15] + ']';
   };
-  
+
   /*
    * quat4
    */
-  
+
   /**
    * Creates a new instance of a quat4 using the default array type
    * Any javascript array containing at least 4 numeric elements can serve as a quat4
@@ -26568,17 +26580,17 @@ function copyTempDouble(ptr) {
    */
   quat4.create = function (quat) {
       var dest = new MatrixArray(4);
-  
+
       if (quat) {
           dest[0] = quat[0];
           dest[1] = quat[1];
           dest[2] = quat[2];
           dest[3] = quat[3];
       }
-  
+
       return dest;
   };
-  
+
   /**
    * Copies the values of one quat4 to another
    *
@@ -26592,14 +26604,14 @@ function copyTempDouble(ptr) {
       dest[1] = quat[1];
       dest[2] = quat[2];
       dest[3] = quat[3];
-  
+
       return dest;
   };
-  
+
   /**
    * Calculates the W component of a quat4 from the X, Y, and Z components.
-   * Assumes that quaternion is 1 unit in length. 
-   * Any existing W component will be ignored. 
+   * Assumes that quaternion is 1 unit in length.
+   * Any existing W component will be ignored.
    *
    * @param {quat4} quat quat4 to calculate W component of
    * @param {quat4} [dest] quat4 receiving calculated values. If not specified result is written to quat
@@ -26608,7 +26620,7 @@ function copyTempDouble(ptr) {
    */
   quat4.calculateW = function (quat, dest) {
       var x = quat[0], y = quat[1], z = quat[2];
-  
+
       if (!dest || quat === dest) {
           quat[3] = -Math.sqrt(Math.abs(1.0 - x * x - y * y - z * z));
           return quat;
@@ -26619,7 +26631,7 @@ function copyTempDouble(ptr) {
       dest[3] = -Math.sqrt(Math.abs(1.0 - x * x - y * y - z * z));
       return dest;
   };
-  
+
   /**
    * Calculates the dot product of two quaternions
    *
@@ -26631,7 +26643,7 @@ function copyTempDouble(ptr) {
   quat4.dot = function(quat, quat2){
       return quat[0]*quat2[0] + quat[1]*quat2[1] + quat[2]*quat2[2] + quat[3]*quat2[3];
   };
-  
+
   /**
    * Calculates the inverse of a quat4
    *
@@ -26644,9 +26656,9 @@ function copyTempDouble(ptr) {
       var q0 = quat[0], q1 = quat[1], q2 = quat[2], q3 = quat[3],
           dot = q0*q0 + q1*q1 + q2*q2 + q3*q3,
           invDot = dot ? 1.0/dot : 0;
-      
+
       // TODO: Would be faster to return [0,0,0,0] immediately if dot == 0
-      
+
       if(!dest || quat === dest) {
           quat[0] *= -invDot;
           quat[1] *= -invDot;
@@ -26660,8 +26672,8 @@ function copyTempDouble(ptr) {
       dest[3] = quat[3]*invDot;
       return dest;
   };
-  
-  
+
+
   /**
    * Calculates the conjugate of a quat4
    * If the quaternion is normalized, this function is faster than quat4.inverse and produces the same result.
@@ -26684,7 +26696,7 @@ function copyTempDouble(ptr) {
       dest[3] = quat[3];
       return dest;
   };
-  
+
   /**
    * Calculates the length of a quat4
    *
@@ -26697,7 +26709,7 @@ function copyTempDouble(ptr) {
       var x = quat[0], y = quat[1], z = quat[2], w = quat[3];
       return Math.sqrt(x * x + y * y + z * z + w * w);
   };
-  
+
   /**
    * Generates a unit quaternion of the same direction as the provided quat4
    * If quaternion length is 0, returns [0, 0, 0, 0]
@@ -26709,7 +26721,7 @@ function copyTempDouble(ptr) {
    */
   quat4.normalize = function (quat, dest) {
       if (!dest) { dest = quat; }
-  
+
       var x = quat[0], y = quat[1], z = quat[2], w = quat[3],
           len = Math.sqrt(x * x + y * y + z * z + w * w);
       if (len === 0) {
@@ -26724,10 +26736,10 @@ function copyTempDouble(ptr) {
       dest[1] = y * len;
       dest[2] = z * len;
       dest[3] = w * len;
-  
+
       return dest;
   };
-  
+
   /**
    * Performs quaternion addition
    *
@@ -26751,7 +26763,7 @@ function copyTempDouble(ptr) {
       dest[3] = quat[3]+quat2[3];
       return dest;
   };
-  
+
   /**
    * Performs a quaternion multiplication
    *
@@ -26763,18 +26775,18 @@ function copyTempDouble(ptr) {
    */
   quat4.multiply = function (quat, quat2, dest) {
       if (!dest) { dest = quat; }
-  
+
       var qax = quat[0], qay = quat[1], qaz = quat[2], qaw = quat[3],
           qbx = quat2[0], qby = quat2[1], qbz = quat2[2], qbw = quat2[3];
-  
+
       dest[0] = qax * qbw + qaw * qbx + qay * qbz - qaz * qby;
       dest[1] = qay * qbw + qaw * qby + qaz * qbx - qax * qbz;
       dest[2] = qaz * qbw + qaw * qbz + qax * qby - qay * qbx;
       dest[3] = qaw * qbw - qax * qbx - qay * qby - qaz * qbz;
-  
+
       return dest;
   };
-  
+
   /**
    * Transforms a vec3 with the given quaternion
    *
@@ -26786,24 +26798,24 @@ function copyTempDouble(ptr) {
    */
   quat4.multiplyVec3 = function (quat, vec, dest) {
       if (!dest) { dest = vec; }
-  
+
       var x = vec[0], y = vec[1], z = vec[2],
           qx = quat[0], qy = quat[1], qz = quat[2], qw = quat[3],
-  
+
           // calculate quat * vec
           ix = qw * x + qy * z - qz * y,
           iy = qw * y + qz * x - qx * z,
           iz = qw * z + qx * y - qy * x,
           iw = -qx * x - qy * y - qz * z;
-  
+
       // calculate result * inverse quat
       dest[0] = ix * qw + iw * -qx + iy * -qz - iz * -qy;
       dest[1] = iy * qw + iw * -qy + iz * -qx - ix * -qz;
       dest[2] = iz * qw + iw * -qz + ix * -qy - iy * -qx;
-  
+
       return dest;
   };
-  
+
   /**
    * Multiplies the components of a quaternion by a scalar value
    *
@@ -26827,7 +26839,7 @@ function copyTempDouble(ptr) {
       dest[3] = quat[3]*val;
       return dest;
   };
-  
+
   /**
    * Calculates a 3x3 matrix from the given quat4
    *
@@ -26838,12 +26850,12 @@ function copyTempDouble(ptr) {
    */
   quat4.toMat3 = function (quat, dest) {
       if (!dest) { dest = mat3.create(); }
-  
+
       var x = quat[0], y = quat[1], z = quat[2], w = quat[3],
           x2 = x + x,
           y2 = y + y,
           z2 = z + z,
-  
+
           xx = x * x2,
           xy = x * y2,
           xz = x * z2,
@@ -26853,22 +26865,22 @@ function copyTempDouble(ptr) {
           wx = w * x2,
           wy = w * y2,
           wz = w * z2;
-  
+
       dest[0] = 1 - (yy + zz);
       dest[1] = xy + wz;
       dest[2] = xz - wy;
-  
+
       dest[3] = xy - wz;
       dest[4] = 1 - (xx + zz);
       dest[5] = yz + wx;
-  
+
       dest[6] = xz + wy;
       dest[7] = yz - wx;
       dest[8] = 1 - (xx + yy);
-  
+
       return dest;
   };
-  
+
   /**
    * Calculates a 4x4 matrix from the given quat4
    *
@@ -26879,12 +26891,12 @@ function copyTempDouble(ptr) {
    */
   quat4.toMat4 = function (quat, dest) {
       if (!dest) { dest = mat4.create(); }
-  
+
       var x = quat[0], y = quat[1], z = quat[2], w = quat[3],
           x2 = x + x,
           y2 = y + y,
           z2 = z + z,
-  
+
           xx = x * x2,
           xy = x * y2,
           xz = x * z2,
@@ -26894,30 +26906,30 @@ function copyTempDouble(ptr) {
           wx = w * x2,
           wy = w * y2,
           wz = w * z2;
-  
+
       dest[0] = 1 - (yy + zz);
       dest[1] = xy + wz;
       dest[2] = xz - wy;
       dest[3] = 0;
-  
+
       dest[4] = xy - wz;
       dest[5] = 1 - (xx + zz);
       dest[6] = yz + wx;
       dest[7] = 0;
-  
+
       dest[8] = xz + wy;
       dest[9] = yz - wx;
       dest[10] = 1 - (xx + yy);
       dest[11] = 0;
-  
+
       dest[12] = 0;
       dest[13] = 0;
       dest[14] = 0;
       dest[15] = 1;
-  
+
       return dest;
   };
-  
+
   /**
    * Performs a spherical linear interpolation between two quat4
    *
@@ -26930,13 +26942,13 @@ function copyTempDouble(ptr) {
    */
   quat4.slerp = function (quat, quat2, slerp, dest) {
       if (!dest) { dest = quat; }
-  
+
       var cosHalfTheta = quat[0] * quat2[0] + quat[1] * quat2[1] + quat[2] * quat2[2] + quat[3] * quat2[3],
           halfTheta,
           sinHalfTheta,
           ratioA,
           ratioB;
-  
+
       if (Math.abs(cosHalfTheta) >= 1.0) {
           if (dest !== quat) {
               dest[0] = quat[0];
@@ -26946,10 +26958,10 @@ function copyTempDouble(ptr) {
           }
           return dest;
       }
-  
+
       halfTheta = Math.acos(cosHalfTheta);
       sinHalfTheta = Math.sqrt(1.0 - cosHalfTheta * cosHalfTheta);
-  
+
       if (Math.abs(sinHalfTheta) < 0.001) {
           dest[0] = (quat[0] * 0.5 + quat2[0] * 0.5);
           dest[1] = (quat[1] * 0.5 + quat2[1] * 0.5);
@@ -26957,18 +26969,18 @@ function copyTempDouble(ptr) {
           dest[3] = (quat[3] * 0.5 + quat2[3] * 0.5);
           return dest;
       }
-  
+
       ratioA = Math.sin((1 - slerp) * halfTheta) / sinHalfTheta;
       ratioB = Math.sin(slerp * halfTheta) / sinHalfTheta;
-  
+
       dest[0] = (quat[0] * ratioA + quat2[0] * ratioB);
       dest[1] = (quat[1] * ratioA + quat2[1] * ratioB);
       dest[2] = (quat[2] * ratioA + quat2[2] * ratioB);
       dest[3] = (quat[3] * ratioA + quat2[3] * ratioB);
-  
+
       return dest;
   };
-  
+
   /**
    * Returns a string representation of a quaternion
    *
@@ -26979,29 +26991,29 @@ function copyTempDouble(ptr) {
   quat4.str = function (quat) {
       return '[' + quat[0] + ', ' + quat[1] + ', ' + quat[2] + ', ' + quat[3] + ']';
   };
-  
-  
+
+
   return {
     vec3: vec3,
     mat3: mat3,
     mat4: mat4,
     quat4: quat4
   };
-  
+
   })();
-  
+
   ;
   var GLImmediateSetup={};function _glBegin(mode) {
       // Push the old state:
       GLImmediate.enabledClientAttributes_preBegin = GLImmediate.enabledClientAttributes;
       GLImmediate.enabledClientAttributes = [];
-  
+
       GLImmediate.clientAttributes_preBegin = GLImmediate.clientAttributes;
       GLImmediate.clientAttributes = []
       for (var i = 0; i < GLImmediate.clientAttributes_preBegin.length; i++) {
         GLImmediate.clientAttributes.push({});
       }
-  
+
       GLImmediate.mode = mode;
       GLImmediate.vertexCounter = 0;
       var components = GLImmediate.rendererComponents = [];
@@ -27012,7 +27024,7 @@ function copyTempDouble(ptr) {
       GLImmediate.vertexData = GLImmediate.tempData;
     }
 
-  
+
   function _emscripten_glVertex3f(x, y, z) {
       GLImmediate.vertexData[GLImmediate.vertexCounter++] = x;
       GLImmediate.vertexData[GLImmediate.vertexCounter++] = y;
@@ -27029,7 +27041,7 @@ function copyTempDouble(ptr) {
       GLImmediate.flush();
       GLImmediate.disableBeginEndClientAttributes();
       GLImmediate.mode = -1;
-  
+
       // Pop the old state:
       GLImmediate.enabledClientAttributes = GLImmediate.enabledClientAttributes_preBegin;
       GLImmediate.clientAttributes = GLImmediate.clientAttributes_preBegin;
@@ -27037,13 +27049,13 @@ function copyTempDouble(ptr) {
       GLImmediate.modifiedClientAttributes = true;
     }
 
-  
+
   function _emscripten_glColor4f(r, g, b, a) {
       r = Math.max(Math.min(r, 1), 0);
       g = Math.max(Math.min(g, 1), 0);
       b = Math.max(Math.min(b, 1), 0);
       a = Math.max(Math.min(a, 1), 0);
-  
+
       // TODO: make ub the default, not f, save a few mathops
       if (GLImmediate.mode >= 0) {
         var start = GLImmediate.vertexCounter << 2;
@@ -27098,7 +27110,7 @@ function copyTempDouble(ptr) {
       if (!(attr in SDL.glAttributes)) {
         abort('Unknown SDL GL attribute (' + attr + '). Please check if your SDL version is supported.');
       }
-  
+
       SDL.glAttributes[attr] = value;
     }
 
@@ -27111,14 +27123,14 @@ function copyTempDouble(ptr) {
       ['mousedown', 'mouseup', 'mousemove', 'DOMMouseScroll', 'mousewheel', 'mouseout'].forEach(function(event) {
         Module['canvas'].addEventListener(event, SDL.receiveEvent, true);
       });
-  
+
       // (0,0) means 'use fullscreen' in native; in Emscripten, use the current canvas size.
       if (width == 0 && height == 0) {
         var canvas = Module['canvas'];
         width = canvas.width;
         height = canvas.height;
       }
-  
+
       Browser.setCanvasSize(width, height, true);
       // Free the old surface first.
       if (SDL.screen) {
@@ -27178,7 +27190,7 @@ function copyTempDouble(ptr) {
 
   function _emscripten_glGetString(name_) {
       if (GL.stringCache[name_]) return GL.stringCache[name_];
-      var ret; 
+      var ret;
       switch(name_) {
         case 0x1F00 /* GL_VENDOR */:
         case 0x1F01 /* GL_RENDERER */:
@@ -27286,7 +27298,7 @@ function copyTempDouble(ptr) {
         case 0x1908 /* GL_RGBA */:
           sizePerPixel = 4;
           break;
-        default: 
+        default:
           GL.recordError(0x0500/*GL_INVALID_ENUM*/);
           return;
       }
@@ -27336,15 +27348,15 @@ function copyTempDouble(ptr) {
       for (var i = 0; i < n; i++) {
         var id = HEAP32[(((buffers)+(i*4))>>2)];
         var buffer = GL.buffers[id];
-  
+
         // From spec: "glDeleteBuffers silently ignores 0's and names that do not
         // correspond to existing buffer objects."
         if (!buffer) continue;
-  
+
         GLctx.deleteBuffer(buffer);
         buffer.name = 0;
         GL.buffers[id] = null;
-  
+
         if (id == GL.currArrayBuffer) GL.currArrayBuffer = 0;
         if (id == GL.currElementArrayBuffer) GL.currElementArrayBuffer = 0;
       }
@@ -27444,7 +27456,7 @@ function copyTempDouble(ptr) {
 
   function _emscripten_glGetUniformLocation(program, name) {
       name = Pointer_stringify(name);
-  
+
       var arrayOffset = 0;
       // If user passed an array accessor "[index]", parse the array index off the accessor.
       if (name.indexOf(']', name.length-1) !== -1) {
@@ -27458,7 +27470,7 @@ function copyTempDouble(ptr) {
         }
         name = name.slice(0, ls);
       }
-  
+
       var ptable = GL.programInfos[program];
       if (!ptable) {
         return -1;
@@ -27501,10 +27513,10 @@ function copyTempDouble(ptr) {
   function _emscripten_glGetActiveUniform(program, index, bufSize, length, size, type, name) {
       program = GL.programs[program];
       var info = GLctx.getActiveUniform(program, index);
-  
+
       var infoname = info.name.slice(0, Math.max(0, bufSize - 1));
       writeStringToMemory(infoname, name);
-  
+
       if (length) {
         HEAP32[((length)>>2)]=infoname.length;
       }
@@ -27688,13 +27700,13 @@ function copyTempDouble(ptr) {
 
   function _emscripten_glBindBuffer(target, buffer) {
       var bufferObj = buffer ? GL.buffers[buffer] : null;
-  
+
       if (target == GLctx.ARRAY_BUFFER) {
         GLImmediate.lastArrayBuffer = GL.currArrayBuffer = buffer;
       } else if (target == GLctx.ELEMENT_ARRAY_BUFFER) {
         GL.currElementArrayBuffer = buffer;
       }
-  
+
       GLctx.bindBuffer(target, bufferObj);
     }
 
@@ -27727,10 +27739,10 @@ function copyTempDouble(ptr) {
   function _emscripten_glGetActiveAttrib(program, index, bufSize, length, size, type, name) {
       program = GL.programs[program];
       var info = GLctx.getActiveAttrib(program, index);
-  
+
       var infoname = info.name.slice(0, Math.max(0, bufSize - 1));
       writeStringToMemory(infoname, name);
-  
+
       if (length) {
         HEAP32[((length)>>2)]=infoname.length;
       }
@@ -28020,11 +28032,11 @@ function copyTempDouble(ptr) {
       HEAP32[((p)>>2)]=attribute ? attribute.pointer : 0;
     }
 
-  
+
   function _emscripten_glDrawElements(mode, count, type, indices) {
-  
+
       GLctx.drawElements(mode, count, type, indices);
-  
+
     }function _emscripten_glDrawRangeElements(mode, start, end, count, type, indices) {
       _emscripten_glDrawElements(mode, count, type, indices, start, end);
     }
@@ -28086,11 +28098,11 @@ function copyTempDouble(ptr) {
       }
     }
 
-  
+
   function _emscripten_glEnableVertexAttribArray(index) {
       GLctx.enableVertexAttribArray(index);
     }
-  
+
   function _emscripten_glVertexAttribPointer(index, size, type, normalized, stride, ptr) {
       GLctx.vertexAttribPointer(index, size, type, normalized, stride, ptr);
     }function _emscripten_glBindVertexArray(vao) {
@@ -28169,9 +28181,9 @@ function copyTempDouble(ptr) {
     }
 
   function _emscripten_glDrawArrays(mode, first, count) {
-  
+
       GLctx.drawArrays(mode, first, count);
-  
+
     }
 
 
@@ -28195,7 +28207,7 @@ function copyTempDouble(ptr) {
     }
 
   function _emscripten_glVertexAttribDivisor(index, divisor) {
-      GL.instancedArraysExt.vertexAttribDivisorANGLE(index, divisor);    
+      GL.instancedArraysExt.vertexAttribDivisorANGLE(index, divisor);
     }
 
   function _emscripten_glDrawArraysInstanced(mode, first, count, primcount) {
@@ -28460,7 +28472,7 @@ function copyTempDouble(ptr) {
       return -1;
     }
 
-  
+
   function _copysign(a, b) {
       return __reallyNegative(a) === __reallyNegative(b) ? a : -a;
     }var _copysignl=_copysign;
@@ -29997,9 +30009,9 @@ var i64Math = (function() { // Emscripten wrapper
    * The above copyright notice and this permission notice shall be
    * included in all copies or substantial portions of the Software.
    *
-   * THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
-   * EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
-   * WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  
+   * THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND,
+   * EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY
+   * WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
    *
    * IN NO EVENT SHALL TOM WU BE LIABLE FOR ANY SPECIAL, INCIDENTAL,
    * INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER
